@@ -7,7 +7,7 @@ A governance framework for designing, allocating, and governing authority in AI-
 
 ## Paper
 
-[SCOPE v1.0 PDF](papers/SCOPE_v1.0.pdf)
+[SCOPE v1.0 PDF](papers/SCOPE_Paper_v1.0.pdf)
 
 ## Abstract
 
