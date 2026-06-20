@@ -37,4 +37,4 @@ Topology Modeling Guide](papers/Appendix_B_Authority_Topology_Modelling.pdf)
 
 Version 1.0 (July 2026)
 
-**Feedback and discussion welcome via GitHub Issues.**
+**Feedback and discussion welcome via [GitHub Issues](https://github.com/GondarMD/scope/issues).**
