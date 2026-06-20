@@ -26,14 +26,15 @@ Topology Modeling Guide](papers/Appendix_B_Authority_Topology_Modelling.pdf)
 
 ## Core Concepts
 
-- Authority Progression Model
-- Exposure
-- Authority Topology
-- Expansion Gates
-- Scope Ledger
+- [Authority Progression Model](images/Authority_Exposure_Landscape.png)
+- [Exposure](images/Exposure_as_an_Emergent_Property.png)
+- [Authority Topology](images/Authority_Topology.png)
+- [Expansion Gates](images/Expansion_Gates.png)
+- Scope Ledger [an example Ledger entry](images/Scope_Ledger_Entry_Example.png)
+
 
 ## Status
 
 Version 1.0 (July 2026)
 
-Feedback and discussion welcome via GitHub Issues.
+**Feedback and discussion welcome via GitHub Issues.**
