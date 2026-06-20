@@ -11,7 +11,7 @@ A governance framework for designing, allocating, and governing authority in AI-
 
 ## Abstract
 
-AI systems increasingly expand from assistive tools into authority-bearing organisational roles...
+[Click to read...](papers/Abstract_v1.0.md)
 
 ## Core Concepts
 
