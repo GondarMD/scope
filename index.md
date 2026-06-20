@@ -5,13 +5,24 @@ Staged Control of Progressive Exposure
 
 A governance framework for designing, allocating, and governing authority in AI-enabled systems.
 
-## Paper
+## Main Paper
 
 [SCOPE v1.0 PDF](papers/SCOPE_Paper_v1.0.pdf)
 
 ## Abstract
+This paper introduces SCOPE (Staged Control of Progressive Exposure), a framework for governing authority as a deliberate design process. 
 
-[Click to read...](papers/Abstract_v1.0.md)
+[Read the full Abstract](papers/Abstract_v1.0.md)
+
+## Appendices
+
+[Appendix A:
+Positioning within the AI Governance Ecosystem](papers/Appendix_A_Competitive_Positioning.pdf)
+
+
+[Appendix B:
+Topology Modeling Guide](papers/Appendix_B_Authority_Topology_Modelling.pdf)
+
 
 ## Core Concepts
 
