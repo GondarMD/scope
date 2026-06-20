@@ -25,4 +25,4 @@ AI systems increasingly expand from assistive tools into authority-bearing organ
 
 Version 1.0 (July 2026)
 
-Feedback and discussion welcome.
+Feedback and discussion welcome via GitHub Issues.
