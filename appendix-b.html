@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Appendix B. Topology Modeling | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+    <div class="actions">
+        <a href="SCOPE.pdf">Download PDF</a>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <ul>
+<li><a href="index.html">Abstract</a></li>
+<li><a href="problem.html">1. Introduction - The Authority Problem</a></li>
+<li><a href="authority-model.html">2. The Authority Progression Model</a></li>
+<li><a href="exposure-property.html">3. Exposure, Visibility and Decision Surfaces</a></li>
+<li><a href="authority-topologies.html">4. Designing Authority Topologies</a></li>
+<li><a href="expansion-gates.html">5. Gating Expansion</a></li>
+<li><a href="scope-ledger.html">6. The Scope Ledger</a></li>
+<li><a href="economics.html">7. Economic Implications of Authority Governance</a></li>
+<li><a href="governance-cycle.html">8. The SCOPE Governance Cycle</a></li>
+<li><a href="limitations.html">Limitations and Future Direction</a></li>
+<li><a href="appendix-a.html">Appendix A. Competitive Positioning</a></li>
+<li><a href="appendix-b.html">Appendix B. Topology Modeling</a></li>
+</ul>
+    </aside>
+
+    <main class="content">
+		<article>
+			<h1 id="appendix-b-topology-modeling">APPENDIX B - TOPOLOGY MODELING</h1>
+<h2 id="modelling-language">Modelling Language</h2>
+<h3 id="purpose">Purpose</h3>
+<p>This appendix introduces a visual modelling language for representing how AI systems accumulate authority over time. The language uses a notation system to show four critical boundaries — data, influence, exposure, execution — and how they shift as systems evolve.</p>
+<p>Authority topology diagrams are the primary artifact. The design conversation that produces them is supporting context.</p>
+<h2 id="visual-primitives-notation">Visual Primitives &amp; Notation</h2>
+<p>The following symbols form the vocabulary for authority topology diagrams. Use these consistently across all topologies to enable comparison and pattern recognition.</p>
+<h3 id="core-elements"><strong>Core Elements</strong></h3>
+<p><img alt="Visual Elements for Topology Mapping" src="images/appendixB/Visual_Elements_For_Topology_Mapping.png" /></p>
+<hr />
+<h3 id="boundary-notation"><strong>Boundary Notation</strong></h3>
+<p><img alt="Visual Elements for showing Technical Boundaries|" src="images/appendixB/Visual_Elements_For_Technical_Boundaries.png" /></p>
+<h3 id="authority-level-notation"><strong>Authority Level Notation</strong></h3>
+<p>Use a label on the diagram to indicate current authority level:</p>
+<pre><code>[ASSIST]
+Human sees all options. System provides interpretation.
+No boundary crossed.
+
+[RECOMMEND]  
+Human sees all options + system recommendation.
+Judgment boundary crossed (anchoring effect).
+
+[CONSTRAIN]
+Human sees filtered options (system decides visibility).
+Influence boundary crossed. Exposure boundary crossed.
+
+[ACT]
+System executes directly. Human audits/handles exceptions.
+Execution boundary crossed.
+</code></pre>
+<hr />
+<h3 id="topology-mutation-notation"><strong>Topology Mutation Notation</strong></h3>
+<p><img alt="Visual Elements for Topology Mutation" src="images/appendixB/Visual_Elements_For_Topology_Mutation.png" /></p>
+<h2 id="topology-diagram-methodology">Topology Diagram Methodology</h2>
+<p>A topology diagram shows the current authority state visually. It answers: What can the system see? What can it influence? What can it execute? Where do humans operate?</p>
+<h3 id="basic-structure"><strong>Basic Structure</strong></h3>
+<p>Every topology diagram has three horizontal zones (read top to bottom):</p>
+<pre><code>┌─────────────────────────────────────────────────┐
+│ DATA ZONE                                       │
+│ (What the system can see / what is restricted)  │
+├─────────────────────────────────────────────────┤
+│ DECISION ZONE                                   │
+│ (Where influence happens / where humans decide) │
+├─────────────────────────────────────────────────┤
+│ EXECUTION ZONE                                  │
+│ (What actually happens in the world)            │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2 id="drawing-a-topology-diagram-step-by-step">Drawing a Topology Diagram: Step-by-Step</h2>
+<p><strong>Step 1: Identify Data Sources</strong> Draw all data the system accesses (top zone). Use ⬡ for each category. Draw ⛔ for restricted data. Draw ████ between them to show the boundary.</p>
+<p>Example:</p>
+<p><img alt="Example showing Data Boundary" src="images/appendixB/Visual_Elements_For_Data_Access.png" /></p>
+<p><strong>Step 2: Draw the AI System:</strong> Place □ in the decision zone, positioned to show what it influences.</p>
+<p><strong>Step 3: Draw Decision Points &amp; Humans:</strong> Draw ◇ for each critical decision/transition. Draw ○ for each human actor involved.</p>
+<p><strong>Step 4: Draw Influence Arrows:</strong> Use ⇢ to show where the system shapes what humans see or decide.</p>
+<p><strong>Step 5: Draw Execution Arrows:</strong> Use → to show where the system directly executes actions.</p>
+<p><strong>Step 6: Mark Boundaries:</strong> Draw ════════ to show where the exposure boundary is crossed (where human visibility becomes incomplete).</p>
+<p><strong>Step 7: Mark Oversight:</strong> Draw 👁 to show how humans monitor the system.</p>
+<hr />
+<h2 id="visibility-decision-surfaces">Visibility &amp; Decision Surfaces</h2>
+<p>Authority topologies do not just describe workflow; they explain how visibility is shared.</p>
+<p>A useful way to think about this is through the concept of a Decision Surface.</p>
+<p>The Decision Surface represents the set of cases, options, information, or actions that a human decision-maker can see. Instead of trying to model the Decision Surface visually, provide a state description. The possible states include:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Decision Surface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complete</td>
+<td>Human sees the full relevant set</td>
+</tr>
+<tr>
+<td>Augmented</td>
+<td>Human sees the full set plus AI-generated information</td>
+</tr>
+<tr>
+<td>Filtered</td>
+<td>AI determines which subset is shown</td>
+</tr>
+<tr>
+<td>Generated</td>
+<td>AI creates options not otherwise available</td>
+</tr>
+</tbody>
+</table>
+<p>Changes to the Decision Surface reflect changes in how influence is allocated. A decrease in Decision Surface visibility often signals an early sign of expanding authority.</p>
+<p>The Decision Surface differs from authority. A system might lack execution authority but can still significantly impact outcomes by controlling the Decision Surface available to humans.</p>
+<p>This is most evident in Constrain authority, where the system decides what humans see, review, or consider.</p>
+<hr />
+<h2 id="indicating-topology-mutation">Indicating Topology Mutation</h2>
+<h3 id="mutation-format">Mutation Format</h3>
+<pre><code>Δ Recommend → Constrain
+
++ Queue prioritization
++ Visibility filtering
+- Full human visibility
++ Hidden false-negative risk
++ Attention allocation authority
+</code></pre>
+<h3 id="mutation-categories">Mutation Categories</h3>
+<pre><code>ΔC  Context Mutation     New data access
+ΔI  Influence Mutation   New recommendation/filtering capability
+ΔV  Visibility Mutation      
+
+Decision Surface changes
+ΔA  Authority Mutation     New decision rights
+ΔE  Execution Mutation     New operational actions
+ΔX  Exposure Mutation     New consequential risk
+</code></pre>
+<p>This becomes extremely powerful later, as it allows for describing a system's evolution. </p>
+<p>For instance:</p>
+<pre><code>ΔC Historical invoices added
+ΔI Routing recommendations introduced
+ΔV Queue filtering enabled
+ΔA Exception routing delegated
+ΔE Routine invoices auto-routed
+</code></pre>
+<p>Now the topology evolution becomes visible.</p>
+<hr />
+<h2 id="the-four-authority-states-as-visual-progressions">The Four Authority States as Visual Progressions</h2>
+<p>The following shows how topologies look at each authority level. These are templates; your system will vary.</p>
+<h3 id="assist-system-provides-information">[ASSIST] — System Provides Information</h3>
+<p>``
+<img alt="Assist System Flow" src="images/appendixB/Assist_System_Flow.png" /></p>
+<hr />
+<h3 id="recommend-system-proposes-actions">[RECOMMEND] — System Proposes Actions</h3>
+<p><img alt="Recommend System Flow|" src="images/appendixB/Recommend_System_Flow.png" /></p>
+<hr />
+<h3 id="constrain-system-shapes-visibility">[CONSTRAIN] — System Shapes Visibility</h3>
+<p><img alt="Constrain System Flow" src="images/appendixB/Constrain_System_Flow.png" /></p>
+<hr />
+<h3 id="act-system-executes-directly">[ACT] — System Executes Directly</h3>
+<p><img alt="Act System Flow" src="images/appendixB/Act_System_Flow.png" /></p>
+<hr />
+<h2 id="the-five-question-conversation-supporting-context">The Five-Question Conversation (Supporting Context)</h2>
+<p>The visual topology diagram is created through a structured design conversation. This discussion brings out the decisions that fill the diagram.</p>
+<h3 id="why-this-conversation-first">Why This Conversation First?</h3>
+<p>You don't begin with drawing a diagram. You start by considering five key questions. The answers to these questions form the diagram.</p>
+<p>The diagram is the result. The conversation is the thinking behind it.</p>
+<h3 id="the-five-questions">The Five Questions</h3>
+<p><strong>Question 1: What Problem Are We Solving?</strong> Be specific: scale, current process, cost, failure modes, success metrics. 
+<em>Output for diagram</em>: Problem statement (label at top of diagram).</p>
+<p><strong>Question 2: What Can the System See?</strong>  Compare capability needs with the organisation's willingness to provide access.
+<em>Output for diagram:</em> Data sources (⬡) and boundaries (████, ⛔) in DATA ZONE.</p>
+<p><strong>Question 3: What Transitions Can This System Influence?</strong> Consider filtering, prioritization, routing, escalation.
+<em>Output for diagram</em>: Influence arrows (⇢) in DECISION ZONE.</p>
+<p><strong>Question 4: What Can This System Execute?</strong> Identify operational state changes the system can directly cause. 
+<em>Output for diagram:</em> Execution arrows (→) in EXECUTION ZONE.</p>
+<p><strong>Question 5: Where Does Exposure Begin?</strong> Determine at what point humans lose sight of the entire operational surface.<br />
+<em>Output for diagram:</em> Exposure boundary marker (════════) at the right level.</p>
+<h3 id="conversation-diagram-mapping">Conversation → Diagram Mapping</h3>
+<pre><code>QUESTION 2 DATA        →  DATA ZONE (⬡, ⛔, ████)
+QUESTION 3 INFLUENCE   →  DECISION ZONE (⇢, ◇, ○)
+QUESTION 4 EXECUTION   →  EXECUTION ZONE (→, ⬢, 👁)
+QUESTION 5 EXPOSURE    →  EXPOSURE BOUNDARY (════════) placement
+</code></pre>
+<hr />
+<h2 id="b5-five-consistency-checks-as-visual-validation-gates">B5: Five Consistency Checks as Visual Validation Gates</h2>
+<p>Before a topology diagram is approved, it must pass five validation checks. These checks are expressed visually and textually.</p>
+<h3 id="coherence-checks">Coherence Checks</h3>
+<h4 id="check-1-data-influence-alignment">Check 1: Data → Influence Alignment</h4>
+<pre><code>
+Visual: 
+Can you draw an arrow from the data sources (⬡) to the influence actions (⇢) the system claims to perform?
+
+Note: If there are influence actions but no data source to support them diagram is incomplete.
+
+Textual: 
+Does the system have access to all data categories needed to perform the influence it claims?
+
+Pass criteria: 
+Every ⇢ arrow has a supporting ⬡ data source.
+
+</code></pre>
+<h4 id="check-2-influence-authority-alignment">Check 2: Influence → Authority Alignment</h4>
+<pre><code>Visual:
+Do the ⇢ arrows match the claimed authority level?
+
+- Assist: No ⇢ arrows (no influence)
+- Recommend: ⇢ to decision point (shapes judgment)
+- Constrain: ⇢ to filtered dataset/queue (shapes visibility)
+- Act: → arrows instead (direct execution)
+
+Pass criteria:
+The arrows match the authority label on the card.
+
+</code></pre>
+<h4 id="check-3-boundaries-exposure-alignment">Check 3: Boundaries → Exposure Alignment</h4>
+<pre><code>Visual: 
+Is there an ════════ marker? Is it at the right level?
+
+Note: If system claims Constrain authority, the ════════ should be drawn between the system and human visibility. If Act authority, the ════════ should be drawn at execution.
+
+Pass criteria: 
+All exposure points are visually represented; no unacknowledged boundaries.
+
+</code></pre>
+<h4 id="check-4-authority-human-role-alignment">Check 4: Authority → Human Role Alignment</h4>
+<pre><code>Visual: 
+Are there enough ○ actors to perform the role claimed?
+
+Note: If system claims Act authority with humans in &quot;oversight&quot; role, count whether humans have time to audit the volume shown.
+
+Pass criteria: 
+Human role is operationally feasible given volume shown.
+
+</code></pre>
+<h3 id="governance-checks">Governance Checks</h3>
+<h4 id="check-5-reversibility-gate-robustness">Check 5: Reversibility &amp; Gate Robustness</h4>
+<pre><code>Visual: 
+Can you draw a demotion path?
+
+Note: Add a dashed arrow showing: If this system fails, it demotes one level and enters a more restrictive topology.
+
+Example: Act → Constrain (system stops direct execution; humans review before execution).
+
+Pass criteria: 
+Demotion path is clear and executable.
+
+</code></pre>
+<h3 id="operational-checks">Operational Checks</h3>
+<h4 id="check-6-decision-surface-integrity">Check 6: Decision Surface Integrity</h4>
+<pre><code>Visual:  
+Can you clearly identify:
+    - what humans see
+    - what humans do not see
+    - who determines that visibility
+
+Textual: 
+Does the topology accurately represent the Decision Surface available to each actor?
+
+Pass Criteria: 
+Every human decision point has an explicitly modelled Decision Surface. 
+Any reduction in visibility must be represented as a Decision Surface change, topology mutation, or an Increase in exposure.
+</code></pre>
+<h2 id="scope-card-format-visual-first">SCOPE Card Format (Visual-First)</h2>
+<p>A SCOPE Card is a one-page visual record of a system's authority state at a specific point. It is filed in the Scope Ledger.</p>
+<h3 id="scope-card-layout">SCOPE Card Layout</h3>
+<p><img alt="SCOPE Card Layout" src="images/appendixB/Scope_Card_Layout.png" /></p>
+<p><strong>Card Content Details:</strong></p>
+<ul>
+<li><strong>Top:</strong> System name, authority level, entry number, approval date, ledger owner</li>
+<li><strong>Left (40%):</strong> Topology diagram (visual)</li>
+<li><strong>Bottom left:</strong> Authority state summary + human role + reversibility status</li>
+<li><strong>Bottom left:</strong> Expansion pressure (what organisational question will drive the next expansion?)</li>
+<li><strong>Right (60%):</strong> Exposure analysis + critical metrics + gate triggers</li>
+</ul>
+<p><strong>Design Notes:</strong> The card should be scannable in 30 seconds. A practitioner should see the authority state, the topology, and the critical expansion pressure without reading dense text.</p>
+<h2 id="worked-example-invoice-routing-system">Worked Example — Invoice Routing System</h2>
+<p>This example shows a system progressing from Entry 001 (initial design at Act/Constrain) through a gate check to Entry 002 (expanded authority).</p>
+<p><strong>Entry 001 — Initial Topology (Assist → Recommend → Constrain → Act Progression)</strong></p>
+<p>In this example, note that the invoice system does not start at Act authority. It starts at Recommend and is designed to progress.</p>
+<hr />
+<h4 id="entry-sl-invoiceroute-001a-initial-deployment-recommend">Entry SL-InvoiceRoute-001A — Initial Deployment [RECOMMEND]</h4>
+<p><strong>Topology Diagram Detail:</strong>
+<img alt="Initial Topology (Recommend)" src="images/Initial_Topology_Recommend.png" /></p>
+<p><em>SCOPE Card — Entry 001A:</em>
+The SCOPE Card reflecting this initial state is as shown below:</p>
+<p><img alt="Scope Card at initial deployment" src="images/appendixB/SL_InvoiceRoute_001.png" /></p>
+<p><strong>90-Day Gate Review Passes</strong></p>
+<p>After 90 days:</p>
+<ul>
+<li>Accuracy: 99.2% ✓</li>
+<li>Override rate: 3.2% ✓</li>
+<li>Exception detection: 96% sensitivity, 0.8% false negatives ✓</li>
+<li>Finance team articulates routing rules confidently ✓</li>
+</ul>
+<p>*All gate criteria met.  Authority can expand.</p>
+<p><strong>Entry SL-InvoiceRoute-002 — Expanded Topology (Constrain + Act)</strong></p>
+<p>The system now operates at <strong>two authority levels simultaneously</strong>: Act for routine invoices (80%), Constrain for exception detection (20%).</p>
+<p><strong>Visual Diagram:</strong>
+The updated topology diagram corresponding to this expansion is shown below.</p>
+<p><img alt="Updated Topology with expansion into Act/Constrain" src="images/Updated_Topology_Act_Constrain.png" /></p>
+<hr />
+<p><em>SCOPE Card — Entry 002:</em>
+The Scope Card reflecting this new state is shown below:</p>
+<p><img alt="Second SCOPE Card reflecting authority expansion" src="images/appendixB/SL_InvoiceRoute_002.png" /></p>
+<h2 id="visualizing-the-progression">Visualizing the Progression</h2>
+<p>The visual progression shows how topology changes at expansion:</p>
+<p><img alt="Visual Progression of Authority Expansion in the example" src="images/appendixB/Invoice_Example_Visual_Progression.png" /></p>
+<hr />
+<h2 id="integration-with-scope-ledger">INTEGRATION WITH SCOPE LEDGER</h2>
+<p>The topology diagram and SCOPE Card are filed in the Scope Ledger as visual + textual records.</p>
+<p>The Scope Ledger Entry for Entry 002 includes:</p>
+<ol>
+<li><strong>Visual:</strong> SCOPE Card (topology diagram + summary info)</li>
+<li><strong>Textual:</strong> Extended entry with detailed boundaries, exposures, gates, monitoring plan</li>
+<li><strong>Governance:</strong> Approval signatures, review dates, monitoring cadence</li>
+</ol>
+<p>The visual is primary. The text is supporting detail.</p>
+<h2 id="summary-visual-first-governance">Summary: Visual-First Governance</h2>
+<p>Authority topologies are best understood <em>visually</em>, not through text.</p>
+<ul>
+<li>A practitioner looking at the Entry 001A diagram immediately understands: "All invoices visible; the system recommends, humans decide." </li>
+<li>A practitioner looking at the Entry 002 diagram sees right away: "80% are invisible (auto-routed); 20% are filtered (exceptions)." </li>
+<li>The shift from Entry 001A to Entry 002 shows visually how exposure increases.</li>
+</ul>
+<p>The five-question conversation is how you create the diagram. The consistency checks ensure the diagram is clear. The SCOPE Card stores the diagram in the Ledger.</p>
+<p>The diagram itself, the visual representation of authority allocation, is the key artifact.</p>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>

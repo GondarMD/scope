@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>2. The Authority Progression Model | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+    <div class="actions">
+        <a href="SCOPE.pdf">Download PDF</a>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <ul>
+<li><a href="index.html">Abstract</a></li>
+<li><a href="problem.html">1. Introduction - The Authority Problem</a></li>
+<li><a href="authority-model.html">2. The Authority Progression Model</a></li>
+<li><a href="exposure-property.html">3. Exposure, Visibility and Decision Surfaces</a></li>
+<li><a href="authority-topologies.html">4. Designing Authority Topologies</a></li>
+<li><a href="expansion-gates.html">5. Gating Expansion</a></li>
+<li><a href="scope-ledger.html">6. The Scope Ledger</a></li>
+<li><a href="economics.html">7. Economic Implications of Authority Governance</a></li>
+<li><a href="governance-cycle.html">8. The SCOPE Governance Cycle</a></li>
+<li><a href="limitations.html">Limitations and Future Direction</a></li>
+<li><a href="appendix-a.html">Appendix A. Competitive Positioning</a></li>
+<li><a href="appendix-b.html">Appendix B. Topology Modeling</a></li>
+</ul>
+    </aside>
+
+    <main class="content">
+		<article>
+			<h1 id="2-the-authority-progression-model">2. The AUTHORITY PROGRESSION MODEL</h1>
+<p>The Authority Progression Model outlines four different authority states that AI systems typically go through: Assist, Recommend, Constrain, and Act. Each stage marks a shift not in capability, but in how authority is shared between humans and AI systems.</p>
+<p>Not all systems need to progress through all four stages. Some may stay at Assist or Recommend permanently. As shown in Figure 1, the model helps map how authority changes as systems become more integrated into organisational workflows.</p>
+<h2 id="assist-supporting-human-interpretation">Assist: Supporting Human Interpretation</h2>
+<p>In the Assist stage, the AI system provides information that helps humans understand but does not suggest actions or change workflows. Examples include summarizing, classifying, extracting, transcribing, or retrieving information. </p>
+<p>The system may have access to relevant data and context, but its outputs are purely informational. Humans are responsible for interpreting the information, making decisions, and taking actions.</p>
+<p>Authority remains fully with humans. The system can help with understanding but cannot affect outcomes directly; that influence comes through human interpretation.  The main feature of Assist systems is that the decision-making framework stays the same. Humans see all available options and have complete visibility over the workflow.</p>
+<p>For instance, a recruitment team handling applications: at the Assist stage, an AI system summarizes each application and highlights key qualifications. Recruiters can view every application. The system provides helpful information without influencing which candidates are considered.</p>
+<h2 id="recommend-shaping-human-judgment">Recommend: Shaping Human Judgment</h2>
+<p>The shift into the Recommend stage happens when the system starts to suggest actions. Recommendations may include responses, routing options, risk assessments, prioritization scores, or other types of guidance.</p>
+<p>This marks a significant increase in authority as the system begins to influence human judgment rather than just providing information.</p>
+<p>Humans still make final decisions and take action, but their decision-making increasingly references the outputs from the system. Recommendations can focus attention, frame choices, and create cognitive biases.</p>
+<p>Nevertheless, humans maintain full visibility of the operational environment. The decision-making framework remains complete, and every case, option, or workflow state is visible to operators, even if recommendations affect how those options are assessed.</p>
+<p>In the recruitment example: at the Recommend stage, the system suggests which candidates should advance to interviews based on their match scores. Recruiters can review all applications, but their focus is influenced by system outputs. Recommend systems guide how decisions are considered without changing the available choices.</p>
+<h2 id="constrain-shaping-the-decision-surface">Constrain: Shaping the Decision Surface</h2>
+<p>Constrain marks the critical transition in the progression model.</p>
+<p>At this stage, the system does more than advise—it starts to shape the options, cases, or information available for human review. This can happen through prioritizing, filtering, routing, escalation management, or other means that decide what gets attention.</p>
+<p>The significant feature of Constrain systems is that they <em>alter the decision surface</em>.</p>
+<p>Instead of evaluating a complete operational picture, humans now interact with a subset chosen or organized by the system. Some cases may be prioritized for review, while others are deprioritized or omitted entirely.</p>
+<p>In the recruitment context: at the Constrain stage, the system filters the candidate pool, showing only those who meet a specific score threshold. Recruiters no longer see all applicants. The decision surface is now defined by the system, meaning errors can involve not just incorrect recommendations but also qualified candidates who were never presented.</p>
+<p>This transition has profound governance implications. Although humans may still perform all final approvals, their visibility is now shaped by the system. Here, humans remain responsible for operations but lose clarity about the entire decision landscape. The accountability gap at Constrain is hidden; humans cannot know what they aren't seeing.</p>
+<h2 id="act-executing-operational-decisions">Act: Executing Operational Decisions</h2>
+<p>At the Act stage, the system is allowed to take operational actions on its own within set limits. These actions can include approving transactions, routing cases, starting workflows, changing system states, or triggering downstream processes.</p>
+<p>Humans can still oversee, set policy limits, and review exceptions, but the system directly handles regular operational tasks.</p>
+<p>This shift presents a new kind of governance challenge. Errors can spread much more quickly than human review processes. Risks extend beyond decision quality to issues like reversibility, recovery, and auditability. The organisation depends not just on the accuracy of the system's outputs but also on the reliability of its operations.</p>
+<p>In the recruitment example: at the Act stage, the system automatically moves candidates forward or rejects them at designated stages without human review. Errors can enter offer pipelines, rejection communications, and candidate records before any human sees them.</p>
+<p><img alt="Fig 1: The Authority-Progression Landscape" src="images/Authority_Exposure_Landscape.png" /><em>Figure 1: The Authority-Exposure Model</em></p>
+<h2 id="progression-as-authority-expansion">Progression as Authority Expansion</h2>
+<p>Viewed together, the four stages show a shift from informational support to operational authority:</p>
+<ul>
+<li>Assist systems influence <em>interpretation</em>.</li>
+<li>Recommend systems influence <em>judgment</em>.</li>
+<li>Constrain systems influence <em>visibility and attention</em>.</li>
+<li>Act systems influence <em>operational outcomes</em> directly.</li>
+</ul>
+<p>Each transition changes the relationship between humans, systems, and important decisions. SCOPE's purpose is to make sure that each transition is intentional, clear, and deserved. It should not just happen automatically because of capability.</p>
+<p>The next question is why some transitions are more important than others. To answer this, we need to understand what is actually at risk when authority increases.</p>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>

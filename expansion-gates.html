@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>5. Gating Expansion | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+    <div class="actions">
+        <a href="SCOPE.pdf">Download PDF</a>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <ul>
+<li><a href="index.html">Abstract</a></li>
+<li><a href="problem.html">1. Introduction - The Authority Problem</a></li>
+<li><a href="authority-model.html">2. The Authority Progression Model</a></li>
+<li><a href="exposure-property.html">3. Exposure, Visibility and Decision Surfaces</a></li>
+<li><a href="authority-topologies.html">4. Designing Authority Topologies</a></li>
+<li><a href="expansion-gates.html">5. Gating Expansion</a></li>
+<li><a href="scope-ledger.html">6. The Scope Ledger</a></li>
+<li><a href="economics.html">7. Economic Implications of Authority Governance</a></li>
+<li><a href="governance-cycle.html">8. The SCOPE Governance Cycle</a></li>
+<li><a href="limitations.html">Limitations and Future Direction</a></li>
+<li><a href="appendix-a.html">Appendix A. Competitive Positioning</a></li>
+<li><a href="appendix-b.html">Appendix B. Topology Modeling</a></li>
+</ul>
+    </aside>
+
+    <main class="content">
+		<article>
+			<h1 id="5-gating-expansion-how-systems-gain-authority">5. GATING EXPANSION: HOW SYSTEMS GAIN AUTHORITY</h1>
+<p>Authority topologies are not fixed. As systems show reliable performance, organisations often want to increase their authority. Each expansion changes the exposure profile. The key question is how to manage that expansion.</p>
+<p>SCOPE views authority expansion as a conscious governance choice. It needs justification, review, and approval rather than happening automatically from proven capability.</p>
+<p><em>Expansion gates</em> are the method used to implement authority lag, as shown in Figure 4.</p>
+<p><img alt="Figure 4: Expansion Gates" src="images/Expansion_Gates.png" />
+<em>Figure 4: Expansion Gates</em></p>
+<p>An expansion gate is a formal governance checkpoint that must be passed before authority can be expanded. Its purpose is to interrupt the natural tendency for authority to build up due to operational success and increasing organisational trust.</p>
+<p>When an organisation suggests a change in authority, such as granting access to more data, letting a system influence more of a workflow, or allowing autonomous action, that change does not happen automatically. Instead, it goes through a formal review process. The expansion gate checks whether the proposed authority has been earned.</p>
+<p>The expansion gate checks whether the proposed authority has been earned. Evidence is evaluated based on four criteria:</p>
+<ul>
+<li><em>Performance</em>: Does the system reliably achieve the intended outcome?</li>
+<li><em>Reliability</em>: Does performance remain stable under changing conditions?</li>
+<li><em>Trust Signals</em>: Do operational users show sustained confidence in system behavior?</li>
+<li><em>Compliance</em>: Does the proposed expansion align with legal, regulatory, and organisational requirements?</li>
+</ul>
+<p>Only when sufficient evidence exists across these areas should authority be expanded. This approach makes authority dependent on proven evidence rather than technical ability alone.</p>
+<h2 id="authority-should-lag-capability">Authority Should Lag Capability</h2>
+<p>Capability describes what a system can do. Authority describes what a system is allowed to do in a specific operational setting.</p>
+<p>A system may show the technical ability to perform a task well before it is appropriate to grant the related authority. Technical performance is necessary for expansion, but it is not enough on its own. Decisions about expansion must also look at the resulting risk profile and the organisation's willingness to accept it. </p>
+<p>SCOPE therefore sees demonstrated capability as necessary but not enough for authority expansion.</p>
+<h2 id="boundary-movement-and-exposure-deltas">Boundary Movement and Exposure Deltas</h2>
+<p>As mentioned in Part 4, topology changes happen through boundary movement. An expansion might involve moving a data boundary, an influence boundary, an exposure boundary, an execution boundary, or a combination of these four.</p>
+<p>Not all boundary movements have the same impact. Some movements lead to only slight additional exposure, while others change the system's role within an organisation.</p>
+<p>For example, expanding a recommendation system to include confidence scoring may involve a modest shift of the influence boundary. On the other hand, expanding that same system to automatically filter incoming cases means moving the exposure boundary and creates a fundamentally different exposure profile.</p>
+<hr />
+<p>Boundary movement has three important characteristics:</p>
+<ul>
+<li><em>Direction</em>: What authority is being added, removed, or modified?</li>
+<li><em>Magnitude</em>: How significant is the proposed movement?</li>
+<li><em>Exposure Delta</em>: How does the movement change the resulting exposure profile?</li>
+</ul>
+<p>An exposure delta shows the difference between the current exposure profile and the proposed exposure profile.</p>
+<p><img alt="Figure 5: Boundary Movements &amp; Exposure Deltas" src="images/Boundary_Movement_and_Exposure_Delta.png" />
+<em>Figure 5: Boundary Movements and Exposure Delta</em></p>
+<p>Figure 5 shows that expanding authority is not a one-time event; it's a process that crosses one or more governance boundaries. The central axis displays four dimensions that can change as a system's role grows:</p>
+<ul>
+<li>Data (what it can access), </li>
+<li>Influence (how much it shapes decisions), </li>
+<li>Exposure (the potential impact if it is wrong), and,</li>
+<li>Execution (what actions it can perform). </li>
+</ul>
+<p>The example vectors indicate that different paths of expansion lead to different exposure changes.</p>
+<p>For instance, expanding a system from Recommend to Recommend + Data mainly increases access to context and usually causes a relatively small increase in exposure. In contrast, shifting from Recommend to Constrain alters the system's influence on decision-making and can result in a much larger change in exposure.</p>
+<p>The figure's key takeaway is that governance reviews should not only consider if authority is growing, but also look at which boundaries are shifting and by how much. Different paths can create significantly different exposure profiles.</p>
+<p>Exposure deltas are the focus for reviewing authority expansion decisions.</p>
+<h2 id="expansion-reviews">Expansion Reviews</h2>
+<p>Every request for authority expansion should include four categories of information. These address four specific governance questions:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Information Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can the system perform the task?</td>
+<td>Capability Indicators</td>
+</tr>
+<tr>
+<td>Can the system perform the task consistently?</td>
+<td>Reliability Indicators</td>
+</tr>
+<tr>
+<td>What changes if authority is expanded?</td>
+<td>Exposure Assessment</td>
+</tr>
+<tr>
+<td>Why is the change worth accepting?</td>
+<td>Business Justification</td>
+</tr>
+</tbody>
+</table>
+<p>An expansion review should evaluate all four.</p>
+<h3 id="capability-indicators"><strong>Capability Indicators</strong></h3>
+<p>Capability indicators evaluate if a system can perform the proposed task. Relevant measures may include accuracy, precision, recall, task completion rates, quality of outcomes, or other relevant indicators suitable for the operational context.</p>
+<p>Capability indicators answer a simple question: "Can the system perform the proposed function?"</p>
+<h3 id="reliability-indicators"><strong>Reliability Indicators</strong></h3>
+<p>Reliability indicators assess whether the system's performance stays stable over time, conditions, and operational environments.</p>
+<p>A system that works well under ideal conditions may still be inappropriate for authority expansion if its behavior is inconsistent, unpredictable, or hard to reproduce.</p>
+<p>Trust signals may also be relevant at this stage. Examples include user override rates, operator adoption patterns, escalation frequencies, or other indicators that show how the system performs in real operational workflows.</p>
+<p>Reliability indicators answer another question: "Can the system perform the proposed function consistently?"</p>
+<h2 id="exposure-assessment">Exposure Assessment</h2>
+<p>While capability and reliability establish the technical limits of the system, exposure assessment evaluates what changes if more authority is granted.</p>
+<p>The goal of exposure assessment is not to find out if exposure increases. Exposure nearly always goes up when authority expands. The aim is to clarify the nature and significance of that increase.</p>
+<p>SCOPE evaluates exposure across three dimensions:</p>
+<ul>
+<li><em>Visibility</em>: What information, cases, or decisions become hidden, filtered, or mediated?</li>
+<li><em>Dependency</em>: How much do organisational outcomes depend on system behavior?</li>
+<li><em>Autonomy</em>: What extra operational authority is granted, and how reversible are its consequences?</li>
+</ul>
+<p>These dimensions create a repeatable assessment framework. Each dimension can be evaluated using defined criteria and given a qualitative rating. This allows organisations to compare exposure profiles and assess proposed authority changes without needing a universal numerical exposure score. </p>
+<p>Examples of such criteria and suitable ratings are in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Criteria</th>
+<th>Possible Ratings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visibility</td>
+<td>- What percentage of cases remain visible to humans?<br>- Can hidden cases be audited?<br>- Can suppressed items be recovered?</td>
+<td>- Low: full visibility retained<br>- Medium: Partial filtering<br>- High: Significant suppression<br>- Critical: Visibility largely removed</td>
+</tr>
+<tr>
+<td>Dependency</td>
+<td>- What proportion of outcomes depend on the system?<br>- Can operations continue if the system fails?<br>- Is there an independent decision path?</td>
+<td>- Low: Advisory only<br>- Medium: Influential<br>- High: Operationally significant<br>Critical: Mission-dependent</td>
+</tr>
+<tr>
+<td>Autonomy</td>
+<td>- Can the system execute actions?<br>- Can actions be reversed?<br>- How quickly do consequences propagate?</td>
+<td>- Low: no execution<br>- Medium: Limited execution<br>- High: Autonomous execution<br>- Critical: high-scale irreversible execution</td>
+</tr>
+<tr>
+<td>Exposure assessment answers the question: "What additional exposure are we accepting?"</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Consider a support-ticket system shifting from Recommend to Constrain. Exposure assessment may show that the proposed setup would lower human review coverage from 100% of tickets to 30%. This change creates a hidden group whose outcomes rely on system filtering choices. Governance reviewers must then decide if the existing reliability indicators and business reasons are enough to justify that change.</p>
+<h2 id="business-justification">Business Justification</h2>
+<p>Capability indicators show if expansion is possible. Exposure assessment identifies what changes will occur.</p>
+<p>Business justification explains why the increase in exposure is acceptable.</p>
+<p>Relevant factors may include operational efficiency, reduced workload, faster response times, cost savings, better service quality, regulatory requirements, or other organisational goals. </p>
+<p>Business justification answers the question: "Why is the increase in exposure justified?"</p>
+<h2 id="governance-review-and-approval">Governance Review and Approval</h2>
+<p>The expansion gate serves as the governance checkpoint. The expansion review is the process for gathering and evaluating evidence. The outcome of this review is either approval or rejection.</p>
+<p>Here’s an example of the outcome from an expansion review based on the ideas discussed earlier:</p>
+<pre><code>
+Current Authority: Recommend
+
+Proposed Authority: Constrain
+
+Boundary Movement: Exposure Boundary
+
+Exposure Delta: Human review coverage reduced from 100% to 30%
+
+Expansion Review Outcome: Approved subject to quarterly review.
+
+</code></pre>
+<p>Expansion reviews should include both technical and governance stakeholders.</p>
+<p>Technical reviewers look at capability and reliability indicators. Governance reviewers assess exposure evaluations and business justification.</p>
+<p>The goal is not to remove judgment from expansion decisions. Instead, it is to ensure that capability, exposure, and organisational goals are assessed clearly rather than implicitly.</p>
+<p>Expansion reviews are not simple pass-fail processes. Capability indicators determine if expansion is technically possible. Exposure assessments clarify what changes occur if authority is expanded. Business justification explains why those changes are worth accepting. Governance reviewers must consider these aspects together. Larger exposure changes typically need stronger business justification and more supporting evidence than smaller ones.</p>
+<p>Therefore, all expansion requests must be reviewed, documented, and approved before altering authority boundaries.</p>
+<p>The specific roles, responsibilities, and approval authorities should be defined within the organisation’s governance structure and recorded in the Scope Ledger.</p>
+<h2 id="authority-staging">Authority Staging</h2>
+<p>Authority should grow gradually.</p>
+<p>The point of staging is not to delay deployment unnecessarily. It is to make sure that authority increases only after gathering supporting evidence and carefully assessing exposure.</p>
+<p>Generally, systems should move through authority stages one at a time. Jumping between non-adjacent stages should need extra justification because bigger boundary shifts usually lead to larger changes in exposure.</p>
+<p>Thus, authority staging turns expansion from an assumption into a governance process.</p>
+<h2 id="expansion-as-exposure-management">Expansion as Exposure Management</h2>
+<p>Every authority expansion suggests a change in organisational exposure. Systems gain more authority not just because they can use it, but because an evaluation of a proposed topology change has taken place, the resulting exposure change has been assessed, and the increase in exposure has been deemed acceptable.</p>
+<p>SCOPE does not set universal exposure limits. Acceptable exposure varies based on the organisation’s context, operational effects, regulatory requirements, and risk tolerance. The goal of exposure assessment is to make the changes clear so that organisations can make informed governance choices.</p>
+<p>Making a single expansion decision well is crucial but not enough. Organisations that make good decisions can still lose focus: personnel change, systems develop, and the reasons for past decisions become hard to trace. The next question is how to keep governance memory intact throughout the system's lifecycle.</p>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>

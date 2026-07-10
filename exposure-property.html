@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>3. Exposure, Visibility and Decision Surfaces | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+    <div class="actions">
+        <a href="SCOPE.pdf">Download PDF</a>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <ul>
+<li><a href="index.html">Abstract</a></li>
+<li><a href="problem.html">1. Introduction - The Authority Problem</a></li>
+<li><a href="authority-model.html">2. The Authority Progression Model</a></li>
+<li><a href="exposure-property.html">3. Exposure, Visibility and Decision Surfaces</a></li>
+<li><a href="authority-topologies.html">4. Designing Authority Topologies</a></li>
+<li><a href="expansion-gates.html">5. Gating Expansion</a></li>
+<li><a href="scope-ledger.html">6. The Scope Ledger</a></li>
+<li><a href="economics.html">7. Economic Implications of Authority Governance</a></li>
+<li><a href="governance-cycle.html">8. The SCOPE Governance Cycle</a></li>
+<li><a href="limitations.html">Limitations and Future Direction</a></li>
+<li><a href="appendix-a.html">Appendix A. Competitive Positioning</a></li>
+<li><a href="appendix-b.html">Appendix B. Topology Modeling</a></li>
+</ul>
+    </aside>
+
+    <main class="content">
+		<article>
+			<h1 id="3-exposure-visibility-and-decision-surfaces">3. EXPOSURE, VISIBILITY, AND DECISION SURFACES</h1>
+<p>The shift from Assist to Act has different governance implications. To understand this, we must look at the changes that happen at each transition, focusing not on capabilities but on what the organisation is risking.</p>
+<h2 id="exposure-as-a-system-property">Exposure as a System Property</h2>
+<p>In many governance discussions, exposure is seen as a consequence of failure — assessed through incidents, harms, or regulatory breaches after they occur. SCOPE views exposure differently. It sees exposure as a feature of a system's design that can be evaluated before deployment, not just inferred after an incident.</p>
+<p>SCOPE defines exposure as the extent to which organisational outcomes rely on system behavior. </p>
+<p>As shown in Figure 2, exposure arises from the interaction of Authority, Topology, and Context. We can examine exposure before these dependencies become established.</p>
+<p><img alt="Figure 2: Exposure as an Emergent Property" src="images/Exposure_as_an_Emergent_Property.png" />
+<em>Figure 2: Exposure as an Emergent Property</em></p>
+<hr />
+<p>This reframe is important for practical reasons. If exposure is a property, rather than a result, it can be designed, defined, and managed. We can no longer assess authority only based on what a system can do. We also need to consider how organisational outcomes rely on system behavior.</p>
+<p>The table in Figure 2 reveals another important point: two systems with the same authority levels in the same operational area can have very different exposure profiles. This difference depends on how influence is shared and the context of the system.</p>
+<p>For example, a recommendation system for patient admission sequencing (System A) operates with low exposure. In contrast, an automated triage system that decides who receives urgent care (System B) operates with high exposure, even though they have the same underlying authority.</p>
+<h2 id="visibility-and-decision-surfaces">Visibility and Decision Surfaces</h2>
+<p>Exposure grows as organisations become more dependent on how systems behave.</p>
+<p>One main way this dependency increases is through visibility into the <em>decision surface</em>. The decision surface includes the information, cases, options, or workflow states that a human decision-maker can access at a specific moment.</p>
+<p>In straightforward workflows, human operators can see the relevant information and make decisions with a complete understanding of the operational environment. As systems become more integrated into workflows, they start to customize the decision surface that remains visible.
+ 
+At the Assist stage, visibility does not change much. The system may summarize, classify, or organize information, but humans still see the entire operational picture.</p>
+<p>At the Recommend stage, the system begins to influence how information gets evaluated. Recommendations might shape judgment, but they do not change the fundamental decision surface. Human operators still see all relevant cases and options.</p>
+<p>At the Constrain stage, this shifts significantly. The system filters, prioritizes, routes, suppresses, or escalates information, which shapes the decision surface. Humans are no longer looking at the complete operational environment. Instead, their focus is limited to the version of the environment that the system presents.</p>
+<p>This results in a new kind of organisational dependency. Outcomes increasingly rely not just on human decisions, but also on what the system determines is visible for review.</p>
+<h2 id="exposure-boundaries">Exposure Boundaries</h2>
+<p>However, exposure does not increase evenly across the Authority Progression Model. Certain transitions fundamentally change the link between system behavior and organisational outcomes.</p>
+<p>SCOPE refers to these transitions as <em>exposure boundaries</em>.</p>
+<p>An exposure boundary is crossed when changes in system behavior can significantly affect organisational outcomes.</p>
+<p>As shown in Figure 2, during the Assist stage, exposure remains relatively low because humans maintain full visibility and decision authority. Therefore, changes in system behavior are not significant.</p>
+<p>At the Recommend stage, exposure starts to grow as human judgment is influenced by system outputs. The level of exposure partly depends on how operators engage with recommendations and the degree of independent evaluation maintained.</p>
+<p>The first major structural exposure boundary occurs at Constrain. Here, the system decides which cases are shown, reviewed, prioritized, or escalated. organisational outcomes depend on decisions that humans might never see. Failures can include hidden false negatives, ignored escalations, unnoticed edge cases, and systematic blind spots.</p>
+<p>Significant exposure arises at Constrain before a system gains the authority to act autonomously. The accountability gap at Constrain is often invisible because decision-makers cannot assess information that never reaches them.</p>
+<p>Act increases the exposure seen at Constrain and introduces a new exposure dimension by allowing system behavior to directly change operational states.</p>
+<p>Instead of just shaping visibility, the system starts to alter operational states directly. The exposure boundary effectively shifts higher into the workflow, moving from attention allocation to action execution.</p>
+<p>Exposure is no longer just filtered through human review; it becomes part of the operational processes themselves. The resulting exposure profile is marked not only by visibility and dependency but also by the speed, scale, spread, and reversibility of autonomous actions.</p>
+<p>Many governance approaches primarily focus on autonomous action as the main source of organisational risk. SCOPE argues that significant exposure often arises earlier, when systems start shaping visibility and directing organisational attention. </p>
+<p>If exposure is a structural feature of how a system is designed, the next question is how to choose those structures intentionally. That is the focus of authority topology design.</p>
+<h2 id="an-example-to-ground-the-concepts">An Example to Ground the Concepts</h2>
+<p>Consider a finance team processing supplier invoices.</p>
+<p>At Assist, an AI system extracts key fields from each invoice, such as vendor, amount, and due date, and flags any issues for human review. Every invoice is seen by a human. The decision-making process remains the same: the finance team has full visibility of all invoices.</p>
+<p>At Recommend, the system suggests which invoices should be paid first, which ones should be disputed, and which should go to specific approvers. The team can still review all invoices on their own, but their focus is increasingly influenced by what the system suggests.</p>
+<p>At Constrain, the system automatically sends invoices below a set value directly for payment without human review. It only highlights invoices above that threshold for approval. Finance staff no longer see every invoice. Now, the success of the organisation relies on the system's ability to accurately identify which invoices need a human's attention. Problems may come not from wrong approvals but from invoices that should have been reviewed but were not.</p>
+<p>At Act, the system starts payment for approved invoices on its own. Risk no longer comes just from which invoices are shown, but also from the financial transactions based on them. Mistakes can affect cash flow, vendor relationships, and compliance records before any human catches them.</p>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>

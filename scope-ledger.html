@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>6. The Scope Ledger | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+    <div class="actions">
+        <a href="SCOPE.pdf">Download PDF</a>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <ul>
+<li><a href="index.html">Abstract</a></li>
+<li><a href="problem.html">1. Introduction - The Authority Problem</a></li>
+<li><a href="authority-model.html">2. The Authority Progression Model</a></li>
+<li><a href="exposure-property.html">3. Exposure, Visibility and Decision Surfaces</a></li>
+<li><a href="authority-topologies.html">4. Designing Authority Topologies</a></li>
+<li><a href="expansion-gates.html">5. Gating Expansion</a></li>
+<li><a href="scope-ledger.html">6. The Scope Ledger</a></li>
+<li><a href="economics.html">7. Economic Implications of Authority Governance</a></li>
+<li><a href="governance-cycle.html">8. The SCOPE Governance Cycle</a></li>
+<li><a href="limitations.html">Limitations and Future Direction</a></li>
+<li><a href="appendix-a.html">Appendix A. Competitive Positioning</a></li>
+<li><a href="appendix-b.html">Appendix B. Topology Modeling</a></li>
+</ul>
+    </aside>
+
+    <main class="content">
+		<article>
+			<h1 id="6-the-scope-ledger">6. THE SCOPE LEDGER</h1>
+<p>Every authority decision sets the stage for the decisions that come after it. A proposed expansion can't be assessed on its own; reviewers need to grasp the existing authority, the exposure that has been accepted, and the reasoning behind previous expansions. Without a solid history, authority reviews turn into isolated judgments that fail to connect with the earlier decisions shaping the current situation.</p>
+<p>SCOPE addresses this through the Scope Ledger.</p>
+<h2 id="the-scope-ledger-as-a-system-of-record">The Scope Ledger as a System of Record</h2>
+<p>The Scope Ledger is the organisational system of record for authority, exposure, and authority decisions.</p>
+<p>Its goal is not just to document the current state of a system. It aims to preserve the historical context needed to assess future changes in authority. Therefore, the Ledger records both:</p>
+<ul>
+<li>The current authority topology and exposure profile of a system.</li>
+<li>The decisions that established that topology and exposure profile.</li>
+</ul>
+<p>A system's current authority can often be observed directly. However, the reasoning behind that authority is often overlooked. This includes why the authority exists, what exposure was accepted to achieve it, and what evidence supported the decision. The Scope Ledger keeps that context.</p>
+<p>It's important to note that the Ledger is not an activity log. It captures decisions about scope and authority, not the operational history of the system. Operational logs, audit trails, and system telemetry are kept as separate records. The Ledger documents the governance decisions that define and change authority.</p>
+<h2 id="what-the-ledger-records">What the Ledger Records</h2>
+<p>Each governed system maintains a record within the Scope Ledger.</p>
+<p>At minimum, that record should contain:</p>
+<ul>
+<li>Current authority stage.</li>
+<li>Current authority topology and boundary definitions.</li>
+<li>Current exposure profile.</li>
+<li>Approved authority changes.</li>
+<li>Exposure assessments and exposure deltas.</li>
+<li>Business justification.</li>
+<li>Gate review outcomes.</li>
+<li>Approval decisions.</li>
+<li>Review schedules and outcomes.</li>
+</ul>
+<p>When authority changes are approved, new entries are added to the record. Existing entries are neither removed nor rewritten.</p>
+<p>The goal is not to create documentation just for the sake of it. The aim is to preserve the reasoning behind authority decisions so future reviews can assess them in context.</p>
+<p>Figure 6 shows how these fields are recorded in a real Ledger entry for an invoice processing system that is expanding from Recommend to Constrain authority.</p>
+<p><img alt="Figure 5: Scope Ledger Entry" src="images/Scope_Ledger_Entry_Example.png" />
+<em>Figure 6: Example of a SCOPE Ledger Entry</em></p>
+<hr />
+<h2 id="triggering-review-and-change">Triggering Review and Change</h2>
+<p>The Scope Ledger is not a passive repository. It serves as  an active governance mechanism.</p>
+<p>New entries or reviews start with specific trigger events. Common triggers include:</p>
+<ul>
+<li>
+<p>Scheduled periodic review.</p>
+</li>
+<li>
+<p>Changes in performance or reliability indicators that could impact operations.</p>
+</li>
+<li>
+<p>Significant environmental changes, such as regulatory changes, organisational restructuring, vendor replacement, or major data source modifications.</p>
+</li>
+<li>
+<p>Formal requests to expand, reduce, or otherwise modify system authority.</p>
+</li>
+</ul>
+<p>These triggers make sure that authority governance stays linked to operational reality instead of turning into a simple documentation task.</p>
+<p>Authority changes go through the expansion review process explained earlier in Part 5. This process looks at capability indicators, reliability indicators, exposure assessments, and business justifications before recording approval decisions in the Ledger.</p>
+<p>This includes approved expansions, rejected expansions, deferred decisions, and authority contractions.</p>
+<p>A Ledger that only logs approved changes does not serve as a governance tool. Governance needs to show both the decisions that were accepted and those that were turned down.</p>
+<h2 id="authority-expansion-and-historical-context">Authority Expansion and Historical Context</h2>
+<p>Authority decisions build on one another.</p>
+<p>A system might start at Assist, move to Recommend, later cross an exposure boundary to Constrain, and eventually gain limited execution authority. Each expansion may be justified on its own.</p>
+<hr />
+<p>However, the overall authority profile shows the result of many decisions made over time. Future expansion reviews should go beyond just evaluating the proposed changes. Reviewers need to understand:</p>
+<ul>
+<li>What authority already exists.</li>
+<li>What exposure has already been accepted.</li>
+<li>What assumptions supported previous expansions.</li>
+<li>Whether those assumptions still hold true.</li>
+<li>How authority has built up over time.</li>
+</ul>
+<p>The Scope Ledger offers this context. Without it, authority reviews risk becoming isolated decisions that are disconnected from the history that shaped the current system.</p>
+<h2 id="roles-and-accountability">Roles and Accountability</h2>
+<p>The Scope Ledger defines responsibility for authority decisions.</p>
+<p>Authority ownership follows accountability for outcomes, not technical management.</p>
+<p>The person responsible for the operational outcomes of the system should also manage its authority level. For instance, in an invoice processing system, the finance function would typically hold authority ownership instead of the technology function.</p>
+<p>Several roles are involved in the governance process:</p>
+<ul>
+<li>A Ledger Owner accountable for business outcomes and current authority level.</li>
+<li>Technical reviewers who validate topology definitions, check exposure assessments, and assess technical feasibility.</li>
+<li>Risk and compliance reviewers, who evaluate consistency with the organisation’s risk appetite and regulatory requirements.</li>
+<li>Independent auditors or reviewers, who verify governance integrity and ensure compliance with the process.</li>
+</ul>
+<p>This separation of roles ensures that authority decisions are assessed independently, preventing any single stakeholder from controlling both the request for authority and the record of that authority.</p>
+<hr />
+<h2 id="integrity-traceability-and-immutability">Integrity, Traceability, and Immutability</h2>
+<p>Since the Scope Ledger serves as the system of record for authority, its contents must be durable, attributable, and traceable.</p>
+<p>Authority decisions should not be deleted when systems change, personnel shift, or organisational priorities adjust. Instead, new entries should replace earlier entries while keeping the historical record intact.</p>
+<p>Immutability has two key purposes. First, it maintains the historical context needed for future authority decisions. Second, it prevents the past alteration of authority decisions, exposure assessments, and approval outcomes.</p>
+<h2 id="the-ledger-as-a-shared-governance-artifact">The Ledger as a Shared Governance Artifact</h2>
+<p>In many cases, authority is not managed only within the organisation using the system.</p>
+<p>Vendors, implementation partners, external assessors, and regulators may all influence the lifecycle of authority decisions. Therefore, the Scope Ledger offers a common governance tool that can be shared across organisational lines.</p>
+<p>In more developed implementations, the Ledger may play a role in contractual, procurement, assurance, or regulatory processes. Extending authority may require vendor involvement, approval, or renegotiating commercial terms, creating a shared governance system for authority growth.</p>
+<p>The wider economic implications of this model are discussed in the next section.</p>
+<h2 id="review-reaffirmation-and-contraction">Review, Reaffirmation, and Contraction</h2>
+<p>The Scope Ledger does more than support authority expansion.</p>
+<p>Periodic reviews enable organisations to assess whether existing authority is still justified. The frequency of reviews should relate to the authority level, exposure profile, and operational consequences of the system.</p>
+<p>Changes in operating conditions, organisation priorities, regulatory needs, or system performance may challenge the assumptions made when authority was first granted, triggering a review.</p>
+<p>Review outcomes may include:</p>
+<ul>
+<li>Reaffirmation of the current authority level.</li>
+<li>Additional controls or monitoring requirements.</li>
+<li>Authority contraction or shifting boundaries.</li>
+<li>Starting a new authority expansion review.</li>
+</ul>
+<p>The Ledger thus manages the entire lifecycle of authority: its growth, maintenance, and contraction.</p>
+<p>A worked example of a Ledger entry and authority review lifecycle is provided in Appendix B.</p>
+<p>The Scope Ledger makes authority visible and traceable. However, it cannot, on its own, align the incentives that promote authority expansion. Achieving that requires a different mechanism that connects authority to its economic impacts.</p>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>

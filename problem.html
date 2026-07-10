@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>1. Introduction - The Authority Problem | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+    <div class="actions">
+        <a href="SCOPE.pdf">Download PDF</a>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <ul>
+<li><a href="index.html">Abstract</a></li>
+<li><a href="problem.html">1. Introduction - The Authority Problem</a></li>
+<li><a href="authority-model.html">2. The Authority Progression Model</a></li>
+<li><a href="exposure-property.html">3. Exposure, Visibility and Decision Surfaces</a></li>
+<li><a href="authority-topologies.html">4. Designing Authority Topologies</a></li>
+<li><a href="expansion-gates.html">5. Gating Expansion</a></li>
+<li><a href="scope-ledger.html">6. The Scope Ledger</a></li>
+<li><a href="economics.html">7. Economic Implications of Authority Governance</a></li>
+<li><a href="governance-cycle.html">8. The SCOPE Governance Cycle</a></li>
+<li><a href="limitations.html">Limitations and Future Direction</a></li>
+<li><a href="appendix-a.html">Appendix A. Competitive Positioning</a></li>
+<li><a href="appendix-b.html">Appendix B. Topology Modeling</a></li>
+</ul>
+    </aside>
+
+    <main class="content">
+		<article>
+			<h1 id="1-the-authority-problem">1. THE AUTHORITY PROBLEM</h1>
+<h2 id="ai-systems-are-becoming-operational-systems">AI Systems Are Becoming Operational Systems</h2>
+<p>Organizations tend to approach the adoption of artificial intelligence as a standard software procurement exercise. In this approach, AI systems are evaluated as isolated productivity tools, measuring how much faster a user can summarize documents, draft emails, or complete lines of code. This framing is a fundamental category error. AI systems do not behave like passive software applications. Since they operate as embedded agents integrated directly into workflows, they progressively mediate organizational action. Their deployment is not a matter of software licensing; it is an active allocation of operational authority.</p>
+<p>To understand why this is the case, we must examine how AI systems produce value. Unlike static software, an AI’s output depends entirely on the dimensions of its environment—the quality of data feeds, workflow placement, and human interaction. Collectively, we call this <em>context</em>. This relationship is multiplicative rather than additive —context acts as a force multiplier on any capability the system possesses:</p>
+<blockquote>
+<p><em>AI Value = (Outcome_with_AI - Outcome_without_AI) * Context</em></p>
+</blockquote>
+<p>Because context acts as a multiplier, even minor shifts in how a system is integrated can cause its value, and its consequences, to scale exponentially. As organizations chase this context multiplier, they expand the system across three core operational variables: <em>scope</em> (the surface area of workflows and data the system can access), <em>authority</em> (what the system is allowed to decide or execute), and <em>exposure</em> (what is at risk when the system fails). Understood this way, AI deployment is never static. It is a dynamic redistribution of operational influence.</p>
+<h2 id="scope-expands-incrementally">Scope Expands Incrementally</h2>
+<p>How does this operational authority accumulate? Organizations rarely grant expansive decision rights to an AI system in a single, deliberate stroke. Instead, authority is acquired incrementally through localized optimization without systematic oversight—a process we call <em>rational scope drift</em>. This drift does not stem from corporate negligence or reckless experimentation. Rather, it is driven by a series of highly logical, localized optimizations: a business unit integrates a new data source to improve recommendation accuracy; a developer requests an API connection to streamline manual routing; a manager approves a minor automation script to clear a backlog. Each of these decisions appears entirely rational in isolation.</p>
+<p>The danger of these incremental shifts is not the sudden emergence of autonomous system agency, but rather the gradual normalization of expanded authority. Consider a customer support assistant. It is introduced to generate draft responses for agent review. Soon, it is permitted to categorize and route incoming tickets to optimize response times. Eventually, it is authorized to automatically process low-value customer refunds. At no point did the organization consciously decide to delegate financial authority to a machine. Yet, through successive, convenience-driven integrations, a simple productivity tool has become a core operational gatekeeper.</p>
+<h2 id="the-progression-model">The Progression Model</h2>
+<p>To manage this drift, we must formalize the path it follows. AI systems transition through a predictable progression of influence: <strong>Assist → Recommend → Constrain → Act</strong>.</p>
+<pre><code>Assist [Generates drafts] ──&gt; Recommend [Suggests actions] ──&gt; Constrain [Filters choices] ──&gt; Act [Executes autonomously]
+</code></pre>
+<p>Note that these authority levels are not properties of the AI system itself. Rather, they reflect design choices about how the system integrates into an organizational workflow. The same underlying model can operate at Assist level in one context (e.g. generating candidate hypotheses for a researcher) and Constrain level in another (filtering which hypotheses appear in a prioritized list). </p>
+<p>Authority level is determined by three design boundaries: what <strong>data</strong> the system can access, what <strong>tools</strong> it can call, and what <strong>actions</strong> it can execute. These boundaries determine where the human remains in control of outcomes. </p>
+<p>The progression model above describes the natural path such systems follow <em>when boundaries are not deliberately designed</em>: drift moves systems through Assist → Recommend → Constrain → Act. </p>
+<p>Part II demonstrates how to design those boundaries deliberately, preventing drift and staging authority expansion through measurable gates.</p>
+<p>Most governance discussions focus heavily on the final stage—autonomous execution  (<strong>Act</strong>) —as the primary source of risk. However, the core conceptual observation of the SCOPE framework is that authority increases long before autonomy does. The critical inflection point in this model is not when a system executes an action, but when it begins to <strong>Constrain</strong> the human decision space. Systems shape outcomes not by acting independently, but by structuring workflows, ranking options, and filtering possibilities. Consequently, systems become operationally consequential well before they are granted autonomy.</p>
+<h2 id="constraint-authority-and-invisible-influence">Constraint Authority and Invisible Influence</h2>
+<p>This consequential-yet-unrecognized space, which we call <em>constraint authority</em>, is particularly significant because it is invisible, normalized, and difficult to audit. Where they exist, traditional risk assessments tend to flag execution authority: if a system is allowed to move funds or deploy code, it triggers compliance checks. Yet organizations routinely overlook decision-space shaping. </p>
+<p>For instance, automated triage, escalation suppression, and recommendation ranking systems are rarely scrutinized as authority-bearing integrations. In these scenarios, a human remains "in the loop" to review and sign off. However, this oversight is often an illusion. When a clinical copilot determines which patient files enter a reviewer’s queue, or a screening tool hides resumes that fall below a proprietary threshold, the system has already structured the outcome. The human is signing off on a pre-filtered sliver of reality. As a rule, the presence of a human approver does not necessarily imply meaningful human authority.</p>
+<h2 id="why-governance-lags">Why Governance Lags</h2>
+<p>This rapid accumulation of authority occurs alongside a persistent lag in organizational oversight. This delay is not the result of administrative incompetence or negligence; it is structurally and economically reinforced. In modern enterprise operations, the primary incentives are speed and cost reduction. Operational metrics around these dimensions are immediately observable and highly quantifiable. When a team automates ticket routing or resume screening, the efficiency gains show up instantly on executive dashboards: average handling times drop, backlogs shrink, and staffing costs fall.</p>
+<p>In contrast, the corresponding increase in operational risk is long-term, silent, and cumulative. Organizations heavily instrument throughput, latency, and productivity gains. They rarely instrument authority accumulation, dependency concentration, or human oversight erosion. Because there are no real-time telemetry systems for risk, exposure accumulates invisibly until it triggers a failure. Put simply: <em>efficiency appears on dashboards; exposure appears in post-mortems</em>. Because the economic rewards of automation are immediate, while the penalties of exposure are deferred, governance is structurally positioned downstream of operational drift.</p>
+<h2 id="why-existing-governance-frameworks-struggle">Why Existing Governance Frameworks Struggle</h2>
+<p>Existing governance frameworks are structurally mismatched to the operational reality of agentic systems. Standards such as NIST’s AI Risk Management Framework, ISO/IEC 42001, and the EU AI Act treat governance as a compliance-oriented exercise. These frameworks focus on pre-deployment risk classification or post-execution safety controls like toxicity filters and post-hoc logging. </p>
+<p>What they do not address is the continuous dynamic of scope expansion after deployment has already begun. This preoccupation with how to make a system behave safely within its designated boundaries fails to question how those boundaries expand. Since they do not question authority accumulation or dynamic integration, traditional frameworks remain blind to rational scope drift. They intervene after the scope has already expanded, attempting to govern execution when they should be governing exposure.</p>
+<h2 id="the-missing-operational-layer">The Missing Operational Layer</h2>
+<p>To manage agentic systems, governance must shift from an administrative exercise to an active engineering discipline. Organizations need an operational layer that makes authority allocation observable, gated, and reversible. This requires designing exposure with the same architectural rigor applied to software permissions. To do this, organizations must establish <em>authority topologies</em> that define the boundaries of data, tools, and actions a system can access. </p>
+<p>For instance, a customer service AI might have an authority topology that permits access to customer contact history and purchase records, but explicitly excludes access to payment methods or personal health data. Similarly, it might be permitted to <em>recommend</em> refunds up to $50, but not authorize them.</p>
+<p>More importantly, they must implement <em>dynamic gating</em>—clear, telemetry-driven thresholds that a system must satisfy to expand its operational footprint. Systems must earn expansion through verified performance. When an AI system moves from assisting to recommending, or from constraining to acting, the increased exposure must be verifiable through performance and risk telemetry.</p>
+<p>This latter need brings into play an operational record that makes expansion visible, reversible, and tracked in real-time. We call this operational record a <em>scope ledger</em>. By instrumenting exposure rather than merely auditing outcomes, organizations can replace accidental drift with deliberate, staged control.</p>
+<h2 id="the-inevitability-of-progression">The Inevitability of Progression</h2>
+<p>Unless we design this operational layer explicitly, authority will continue to accumulate by default. As AI systems become more capable and context-rich, the pressure to expand their integration can only grow. Without a structured methodology to gate this progression, organizations will continue to slide from productivity gains into unmanaged operational exposure. To prevent this drift, we must move beyond execution-level safety and establish a systematic approach to governance. </p>
+<p>The answer is SCOPE: Staged Control of Progressive Exposure, a pre-deployment design methodology that replaces accidental drift with deliberate, staged authority progression.</p>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>

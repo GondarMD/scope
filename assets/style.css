@@ -1,0 +1,102 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    flex: 0 0 auto;
+}
+
+.layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    overflow: hidden;
+}
+
+.sidebar {
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    padding: 2rem;
+}
+
+.content {
+    overflow-y: auto;
+    padding: 3rem;
+}
+
+.content article {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content img {
+    display: block;
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+}
+
+.chapter {
+    page-break-before: always;
+    break-before: page;
+}
+
+.chapter:first-of-type {
+    page-break-before: auto;
+    break-before: auto;
+}
+
+.toc-entry {
+    margin-bottom: 0.8rem;
+}
+
+.toc-title {
+    font-weight: 600;
+}
+
+.toc-subtitle {
+    margin-top: -0.5rem;
+    margin-left: 1.5rem;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+@media print {
+
+    .title-page {
+        break-after: page;
+    }
+
+    .chapter {
+		page-break-before: always;
+        break-before: page;
+    }
+
+    .chapter:first-of-type {
+		page-break-before: auto;
+        break-before: auto;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    p:has(img) {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

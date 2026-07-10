@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Limitations and Future Direction | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+    <div class="actions">
+        <a href="SCOPE.pdf">Download PDF</a>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <ul>
+<li><a href="index.html">Abstract</a></li>
+<li><a href="problem.html">1. Introduction - The Authority Problem</a></li>
+<li><a href="authority-model.html">2. The Authority Progression Model</a></li>
+<li><a href="exposure-property.html">3. Exposure, Visibility and Decision Surfaces</a></li>
+<li><a href="authority-topologies.html">4. Designing Authority Topologies</a></li>
+<li><a href="expansion-gates.html">5. Gating Expansion</a></li>
+<li><a href="scope-ledger.html">6. The Scope Ledger</a></li>
+<li><a href="economics.html">7. Economic Implications of Authority Governance</a></li>
+<li><a href="governance-cycle.html">8. The SCOPE Governance Cycle</a></li>
+<li><a href="limitations.html">Limitations and Future Direction</a></li>
+<li><a href="appendix-a.html">Appendix A. Competitive Positioning</a></li>
+<li><a href="appendix-b.html">Appendix B. Topology Modeling</a></li>
+</ul>
+    </aside>
+
+    <main class="content">
+		<article>
+			<h1 id="part-9-limitations-and-future-directions">PART 9 - LIMITATIONS AND FUTURE DIRECTIONS</h1>
+<p>SCOPE focuses on designing and managing authority before systems are integrated into operational workflows, which is known as pre-deployment governance.</p>
+<p>The framework suggests that authority can be identified, described, and managed through clear boundaries, review processes, and organisational decision-making. As AI systems grow more complex, distributed, and independent, maintaining these assumptions may become harder to sustain. Several areas represent key opportunities for future improvement and validation</p>
+<h2 id="multi-agent-systems">Multi-Agent Systems</h2>
+<p>New agent-based frameworks feature coordinated networks of agents. In these settings, authority stems from the delegation and coordination between agents rather than from an individual system. The current SCOPE framework assumes authority lies within a manageable system boundary; however, multi-agent setups challenge this belief.</p>
+<p>Future work should address: (1) how to model chains of delegated authority among agents, (2) how to combine exposure when several agents impact outcomes, and (3) how to control transitions in composite systems where no single agent gains new authority, but the system as a whole does.</p>
+<h2 id="boundary-recognition-in-complex-environments">Boundary Recognition in Complex Environments</h2>
+<p>SCOPE relies on the ability to pinpoint and define authority boundaries. In many operational settings, this is straightforward. Data access, execution rights, workflow integration points, and decision authority can often be clearly described and managed.</p>
+<p>However, some systems function in highly interconnected environments where authority develops gradually through integration instead of explicit design choices. Recommendation systems might subtly influence behavior through ranking effects. Routing systems could shape outcomes based on cumulative workflow dependencies. Agent-based systems may gain new capabilities through tool use, orchestration, or dynamic changes. </p>
+<p>In such settings, it may not always be easy to determine where one authority boundary ends and another begins. The issue may not just be governing the expansion of authority but recognizing that it has expanded at all.</p>
+<p>Future work may investigate ways to systematically identify authority boundaries, map influence paths, and detect authority growth in complex operational environments.</p>
+<h2 id="human-adaptation">Human Adaptation</h2>
+<p>SCOPE mainly addresses governance concerning system authority, not the organisational and behavioral impacts of authority distribution.</p>
+<p>In reality, human behavior adapts to system behavior. Operators may grow more reliant on recommendations. Organisations might redesign workflows around automated functions. Skills, responsibilities, incentives, and oversight patterns may change over time.</p>
+<p>These adjustments can change the real impact of authority in ways that authority topology alone does not capture. A recommendation system that starts with limited influence may become significant if users frequently rely on its outputs. Conversely, strong organisational practices may lessen dependency even when authority is considerable.</p>
+<p>Human factors like automation bias, skill maintenance, organisational learning, and workforce adjustments remain significant areas beyond the current scope of the framework.</p>
+<p>Future work may examine how authority governance affects organisational behavior and how human adaptation impacts realized exposure over time.</p>
+<h2 id="exposure-quantification">Exposure Quantification</h2>
+<p>SCOPE intentionally does not define a universal exposure score.</p>
+<p>Exposure emerges from the interaction of authority, topology, and operational outcomes, all of which depend on context. </p>
+<p>Financial loss, operational disruption, reputational damage, safety impacts, and regulatory issues are possible results of authority expansion. Trying to combine these different types of exposure into one metric seems impractical.</p>
+<p>Future work should create sector-specific exposure models that maintain contextual relevance.</p>
+<hr />
+<h2 id="empirical-validation">Empirical Validation</h2>
+<p>This paper offers a conceptual and operational framework. It suggests a method for managing authority evolution but does not claim empirical validation across a wide range of organisational deployments.</p>
+<p>The framework has been developed by analysing common patterns seen in the deployment and evolution of AI-enabled systems. Its concepts aim to provide a practical way to describe authority, exposure, topology, and governance choices.</p>
+<p>Future work should assess the framework through case studies, operational implementations, long-term observations, and comparative analysis across various industries and deployment contexts. Such efforts may help verify the framework's usefulness, identify limitations that are not yet clear, and guide future improvements.</p>
+<h2 id="closing-observation">Closing Observation</h2>
+<p>These limitations do not undermine the main idea of the framework. Instead, they emphasize the complexity of the issue it aims to address.</p>
+<p>The governance challenges posed by AI systems are likely to change over time. As systems become more capable, more connected, and more integrated into organisational workflows, the ways authority builds up will continue to evolve.</p>
+<p>SCOPE should be seen not as a final solution to authority governance but as a starting point for a broader discipline focused on how operational authority is assigned, expanded, limited, and reviewed over time.</p>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>
