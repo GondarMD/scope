@@ -12,7 +12,9 @@ body {
 
 .header {
     flex: 0 0 auto;
+	padding: 10px;
 }
+
 
 .layout {
     flex: 1;
