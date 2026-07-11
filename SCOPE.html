@@ -123,7 +123,7 @@
 <p>AI systems increasingly expand from assistive tools into authority-bearing organisational roles. This expansion rarely occurs through deliberate design. Instead, authority accumulates incrementally through additional integrations, broader data access, and expanding operational responsibilities. While each individual change may appear justified, the sum of these changes often results in increasing organisational exposure that remains largely unobserved until failure occurs.</p>
 <p>Existing governance frameworks provide valuable guidance on risk management, accountability, compliance, and operational oversight. However, they generally assume that the scope and authority of an AI system have already been defined. Relatively little attention has been given to how authority should be allocated, how exposure should be designed, or how authority should expand over time.</p>
 <p>This paper introduces SCOPE (Staged Control of Progressive Exposure), a framework for governing authority as a deliberate design process. SCOPE introduces five primary concepts: the Authority Progression Model, which describes how authority evolves within AI-enabled workflows; Exposure, reframed as a design property rather than a post hoc risk assessment; Authority Topology, which governs how authority is distributed across workflows and systems; Expansion Gates, which control authority growth through explicit evidence requirements; and the Scope Ledger, which provides a persistent governance record of authority evolution.</p>
-<p>The framework identifies Constraint authority, where systems shape available options and decision spaces, as a critical governance threshold that often precedes autonomous action. By making authority, exposure, and scope expansion explicit design variables, SCOPE provides a practical methodology for governing how AI systems gain influence within organisations.</p>
+<p>The framework identifies Constrain authority, where systems shape available options and decision spaces, as a critical governance threshold that often precedes autonomous action. By making authority, exposure, and scope expansion explicit design variables, SCOPE provides a practical methodology for governing how AI systems gain influence within organisations.</p>
 <p>Rather than replacing existing governance approaches, SCOPE occupies a complementary design layer focused on authority allocation and authority governance before and throughout deployment.</p>
     </section>
     
@@ -149,8 +149,8 @@
 <p>The progression model above describes the natural path such systems follow <em>when boundaries are not deliberately designed</em>: drift moves systems through Assist → Recommend → Constrain → Act. </p>
 <p>Part II demonstrates how to design those boundaries deliberately, preventing drift and staging authority expansion through measurable gates.</p>
 <p>Most governance discussions focus heavily on the final stage—autonomous execution  (<strong>Act</strong>) —as the primary source of risk. However, the core conceptual observation of the SCOPE framework is that authority increases long before autonomy does. The critical inflection point in this model is not when a system executes an action, but when it begins to <strong>Constrain</strong> the human decision space. Systems shape outcomes not by acting independently, but by structuring workflows, ranking options, and filtering possibilities. Consequently, systems become operationally consequential well before they are granted autonomy.</p>
-<h2 id="constraint-authority-and-invisible-influence">Constraint Authority and Invisible Influence</h2>
-<p>This consequential-yet-unrecognized space, which we call <em>constraint authority</em>, is particularly significant because it is invisible, normalized, and difficult to audit. Where they exist, traditional risk assessments tend to flag execution authority: if a system is allowed to move funds or deploy code, it triggers compliance checks. Yet organizations routinely overlook decision-space shaping. </p>
+<h2 id="constrain-authority-and-invisible-influence">Constrain Authority and Invisible Influence</h2>
+<p>This consequential-yet-unrecognized space, which we call <em>constrain authority</em>, is particularly significant because it is invisible, normalized, and difficult to audit. Where they exist, traditional risk assessments tend to flag execution authority: if a system is allowed to move funds or deploy code, it triggers compliance checks. Yet organizations routinely overlook decision-space shaping. </p>
 <p>For instance, automated triage, escalation suppression, and recommendation ranking systems are rarely scrutinized as authority-bearing integrations. In these scenarios, a human remains "in the loop" to review and sign off. However, this oversight is often an illusion. When a clinical copilot determines which patient files enter a reviewer’s queue, or a screening tool hides resumes that fall below a proprietary threshold, the system has already structured the outcome. The human is signing off on a pre-filtered sliver of reality. As a rule, the presence of a human approver does not necessarily imply meaningful human authority.</p>
 <h2 id="why-governance-lags">Why Governance Lags</h2>
 <p>This rapid accumulation of authority occurs alongside a persistent lag in organizational oversight. This delay is not the result of administrative incompetence or negligence; it is structurally and economically reinforced. In modern enterprise operations, the primary incentives are speed and cost reduction. Operational metrics around these dimensions are immediately observable and highly quantifiable. When a team automates ticket routing or resume screening, the efficiency gains show up instantly on executive dashboards: average handling times drop, backlogs shrink, and staffing costs fall.</p>
@@ -196,7 +196,7 @@
 <p>Humans can still oversee, set policy limits, and review exceptions, but the system directly handles regular operational tasks.</p>
 <p>This shift presents a new kind of governance challenge. Errors can spread much more quickly than human review processes. Risks extend beyond decision quality to issues like reversibility, recovery, and auditability. The organisation depends not just on the accuracy of the system's outputs but also on the reliability of its operations.</p>
 <p>In the recruitment example: at the Act stage, the system automatically moves candidates forward or rejects them at designated stages without human review. Errors can enter offer pipelines, rejection communications, and candidate records before any human sees them.</p>
-<p><img alt="Fig 1: The Authority-Progression Landscape" src="images/Authority_Exposure_Landscape.png" /><em>Figure 1: The Authority-Exposure Model</em></p>
+<p><img alt="Fig 1: The Authority-Progression Model" src="images/Authority_Exposure_Landscape.png" /><em>Figure 1: The Authority-Exposure Model</em></p>
 <h2 id="progression-as-authority-expansion">Progression as Authority Expansion</h2>
 <p>Viewed together, the four stages show a shift from informational support to operational authority:</p>
 <ul>
@@ -238,7 +238,7 @@ At the Assist stage, visibility does not change much. The system may summarize, 
 <p>An exposure boundary is crossed when changes in system behavior can significantly affect organisational outcomes.</p>
 <p>As shown in Figure 2, during the Assist stage, exposure remains relatively low because humans maintain full visibility and decision authority. Therefore, changes in system behavior are not significant.</p>
 <p>At the Recommend stage, exposure starts to grow as human judgment is influenced by system outputs. The level of exposure partly depends on how operators engage with recommendations and the degree of independent evaluation maintained.</p>
-<p>The first major structural exposure boundary occurs at Constrain. Here, the system decides which cases are shown, reviewed, prioritized, or escalated. organisational outcomes depend on decisions that humans might never see. Failures can include hidden false negatives, ignored escalations, unnoticed edge cases, and systematic blind spots.</p>
+<p>The first major structural exposure boundary occurs at Constrain. Here, the system decides which cases are shown, reviewed, prioritized, or escalated. Organisational outcomes depend on decisions that humans might never see. Failures can include hidden false negatives, ignored escalations, unnoticed edge cases, and systematic blind spots.</p>
 <p>Significant exposure arises at Constrain before a system gains the authority to act autonomously. The accountability gap at Constrain is often invisible because decision-makers cannot assess information that never reaches them.</p>
 <p>Act increases the exposure seen at Constrain and introduces a new exposure dimension by allowing system behavior to directly change operational states.</p>
 <p>Instead of just shaping visibility, the system starts to alter operational states directly. The exposure boundary effectively shifts higher into the workflow, moving from attention allocation to action execution.</p>
@@ -307,7 +307,7 @@ At the Assist stage, visibility does not change much. The system may summarize, 
 <p>Consider a clinical team that manages patient referrals in an outpatient setting.</p>
 <p>At Assist, an AI system extracts key clinical indicators from referral documents and flags any missing information. Every referral goes to a clinician. The structure allows for complete visibility, and decision-making remains entirely with human operators.</p>
 <p>At Recommend, the system classifies urgency levels and suggests appointment times. Authority spreads across the influence boundary, but visibility stays the same. Clinicians continue to review all referrals, even if their prioritization starts to reflect the system's suggestions more.</p>
-<p>At Constrain, the system automatically routes low-urgency referrals to a general queue and shows only high-urgency cases for immediate clinical review. Authority extends across the exposure boundary, meaning the clinical team does not see every referral during the initial review. organisational results depend on the system's ability to classify urgency correctly. Errors lead to recommendations that are not just mistaken; they result in cases that might never be reviewed with the right priority.</p>
+<p>At Constrain, the system automatically routes low-urgency referrals to a general queue and shows only high-urgency cases for immediate clinical review. Authority extends across the exposure boundary, meaning the clinical team does not see every referral during the initial review. Organisational results depend on the system's ability to classify urgency correctly. Errors lead to recommendations that are not just mistaken; they result in cases that might never be reviewed with the right priority.</p>
 <p>At Act, the system schedules appointments and sends confirmation communications without needing clinician approval. Authority crosses into execution and becomes part of the operational workflow. Errors can affect patient schedules, clinical capacity, and communication records before any human has a chance to review them.</p>
 <p>The clinical capability of the underlying system might be the same across all four stages. However, the structure, and thus the exposure profile, differs.</p>
 <h2 id="topology-design-as-exposure-design">Topology Design as Exposure Design</h2>
@@ -391,6 +391,7 @@ At the Assist stage, visibility does not change much. The system may summarize, 
 </tbody>
 </table>
 <p>An expansion review should evaluate all four.</p>
+<p>These four categories are how the gate criteria introduced above are actually seen in practice. Capability Indicators provide evidence for the Performance gate. Reliability Indicators are the evidence for the Reliability gate, and, where user override and adoption data is available, the Trust Signals gate as well. Exposure Assessment and Business Justification determine whether the resulting exposure is acceptable, separately from whether the system is technically ready. Compliance is verified independently by the Risk and Compliance Reviewer as part of Governance Review and Approval, below, rather than through capability or reliability evidence.</p>
 <h3 id="capability-indicators"><strong>Capability Indicators</strong></h3>
 <p>Capability indicators evaluate if a system can perform the proposed task. Relevant measures may include accuracy, precision, recall, task completion rates, quality of outcomes, or other relevant indicators suitable for the operational context.</p>
 <p>Capability indicators answer a simple question: "Can the system perform the proposed function?"</p>
@@ -510,7 +511,7 @@ Expansion Review Outcome: Approved subject to quarterly review.
 <p>When authority changes are approved, new entries are added to the record. Existing entries are neither removed nor rewritten.</p>
 <p>The goal is not to create documentation just for the sake of it. The aim is to preserve the reasoning behind authority decisions so future reviews can assess them in context.</p>
 <p>Figure 6 shows how these fields are recorded in a real Ledger entry for an invoice processing system that is expanding from Recommend to Constrain authority.</p>
-<p><img alt="Figure 5: Scope Ledger Entry" src="images/Scope_Ledger_Entry_Example.png" />
+<p><img alt="Figure 6: Scope Ledger Entry" src="images/Scope_Ledger_Entry_Example.png" />
 <em>Figure 6: Example of a SCOPE Ledger Entry</em></p>
 <hr />
 <h2 id="triggering-review-and-change">Triggering Review and Change</h2>
@@ -581,7 +582,7 @@ Expansion Review Outcome: Approved subject to quarterly review.
 <li>Starting a new authority expansion review.</li>
 </ul>
 <p>The Ledger thus manages the entire lifecycle of authority: its growth, maintenance, and contraction.</p>
-<p>A worked example of a Ledger entry and authority review lifecycle is provided in Appendix B.</p>
+<p>A worked example showing how topology changes are recorded across Ledger entries is provided in Appendix B.</p>
 <p>The Scope Ledger makes authority visible and traceable. However, it cannot, on its own, align the incentives that promote authority expansion. Achieving that requires a different mechanism that connects authority to its economic impacts.</p>
     </section>
     
@@ -701,7 +702,7 @@ Does the additional value justify the additional exposure and governance cost?
 <h2 id="governing-authority-evolution">Governing Authority Evolution</h2>
 <p>The lifecycle continues indefinitely. New information leads to new proposals. New proposals result in new reviews. New reviews bring about new decisions. New decisions update the Scope Ledger and set a revised authority state. Over time, authority evolves through a series of intentional, visible, and reviewable changes. </p>
 <p>This is the central objective of SCOPE.</p>
-<p>The framework does not seek to prevent authority expansion. Nor does it assume authority should stay fixed. organisations must be able to increase authority when justified and decrease authority when necessary. The important factor is that these changes happen through governance rather than by default.</p>
+<p>The framework does not seek to prevent authority expansion. Nor does it assume authority should stay fixed. Organisations must be able to increase authority when justified and decrease authority when necessary. The important factor is that these changes happen through governance rather than by default.</p>
 <p>The SCOPE Governance Cycle provides the method for this governance. It ensures that every authority change is proposed, reviewed against clear criteria, decided through independent assessment, recorded in a lasting record system, and monitored for evidence that might justify future reviews. Every expansion includes set review and reversal mechanisms. These are invoked as routine elements of ongoing governance, not as exception cases.</p>
 <p>The result is a system where authority remains clear, reviewable, and contingent during its evolution.</p>
 <p>Traditional governance assumes that authority is assigned once and then controlled by policy. Agentic systems challenge this view. Their authority changes constantly due to integration, operational success, and the build-up of organisational dependency. Governing that evolution needs more than just rules about what systems can do. It necessitates a disciplined approach to determine how much authority systems should have and under what conditions over time.</p>
@@ -892,7 +893,7 @@ Does the additional value justify the additional exposure and governance cost?
 <p><img alt="Visual Elements for Topology Mapping" src="images/appendixB/Visual_Elements_For_Topology_Mapping.png" /></p>
 <hr />
 <h3 id="boundary-notation"><strong>Boundary Notation</strong></h3>
-<p><img alt="Visual Elements for showing Technical Boundaries|" src="images/appendixB/Visual_Elements_For_Technical_Boundaries.png" /></p>
+<p><img alt="Visual Elements for showing Technical Boundaries" src="images/appendixB/Visual_Elements_For_Technical_Boundaries.png" /></p>
 <h3 id="authority-level-notation"><strong>Authority Level Notation</strong></h3>
 <p>Use a label on the diagram to indicate current authority level:</p>
 <pre><code>[ASSIST]
@@ -989,7 +990,6 @@ Execution boundary crossed.
 <pre><code>ΔC  Context Mutation     New data access
 ΔI  Influence Mutation   New recommendation/filtering capability
 ΔV  Visibility Mutation      
-
 Decision Surface changes
 ΔA  Authority Mutation     New decision rights
 ΔE  Execution Mutation     New operational actions
@@ -1008,11 +1008,10 @@ Decision Surface changes
 <h2 id="the-four-authority-states-as-visual-progressions">The Four Authority States as Visual Progressions</h2>
 <p>The following shows how topologies look at each authority level. These are templates; your system will vary.</p>
 <h3 id="assist-system-provides-information">[ASSIST] — System Provides Information</h3>
-<p>``
-<img alt="Assist System Flow" src="images/appendixB/Assist_System_Flow.png" /></p>
+<p><img alt="Assist System Flow" src="images/appendixB/Assist_System_Flow.png" /></p>
 <hr />
 <h3 id="recommend-system-proposes-actions">[RECOMMEND] — System Proposes Actions</h3>
-<p><img alt="Recommend System Flow|" src="images/appendixB/Recommend_System_Flow.png" /></p>
+<p><img alt="Recommend System Flow" src="images/appendixB/Recommend_System_Flow.png" /></p>
 <hr />
 <h3 id="constrain-system-shapes-visibility">[CONSTRAIN] — System Shapes Visibility</h3>
 <p><img alt="Constrain System Flow" src="images/appendixB/Constrain_System_Flow.png" /></p>
@@ -1130,21 +1129,20 @@ Any reduction in visibility must be represented as a Decision Surface change, to
 <li><strong>Top:</strong> System name, authority level, entry number, approval date, ledger owner</li>
 <li><strong>Left (40%):</strong> Topology diagram (visual)</li>
 <li><strong>Bottom left:</strong> Authority state summary + human role + reversibility status</li>
-<li><strong>Bottom left:</strong> Expansion pressure (what organisational question will drive the next expansion?)</li>
+<li><strong>Bottom middle:</strong> Expansion pressure (what organisational question will drive the next expansion?)</li>
 <li><strong>Right (60%):</strong> Exposure analysis + critical metrics + gate triggers</li>
 </ul>
 <p><strong>Design Notes:</strong> The card should be scannable in 30 seconds. A practitioner should see the authority state, the topology, and the critical expansion pressure without reading dense text.</p>
 <h2 id="worked-example-invoice-routing-system">Worked Example — Invoice Routing System</h2>
-<p>This example shows a system progressing from Entry 001 (initial design at Act/Constrain) through a gate check to Entry 002 (expanded authority).</p>
+<p>This example shows a system progressing from Entry 001 (initial design at Recommend) through a gate check to Entry 002 (expanded authority).</p>
 <p><strong>Entry 001 — Initial Topology (Assist → Recommend → Constrain → Act Progression)</strong></p>
 <p>In this example, note that the invoice system does not start at Act authority. It starts at Recommend and is designed to progress.</p>
-<hr />
 <h4 id="entry-sl-invoiceroute-001a-initial-deployment-recommend">Entry SL-InvoiceRoute-001A — Initial Deployment [RECOMMEND]</h4>
 <p><strong>Topology Diagram Detail:</strong>
-<img alt="Initial Topology (Recommend)" src="images/Initial_Topology_Recommend.png" /></p>
+<img alt="Initial Topology (Recommend)|697" src="images/appendixB/Initial_Topology_Recommend.png" /></p>
 <p><em>SCOPE Card — Entry 001A:</em>
 The SCOPE Card reflecting this initial state is as shown below:</p>
-<p><img alt="Scope Card at initial deployment" src="images/appendixB/SL_InvoiceRoute_001.png" /></p>
+<p><img alt="Scope Card at initial deployment|697" src="images/appendixB/SL_InvoiceRoute_001.png" /></p>
 <p><strong>90-Day Gate Review Passes</strong></p>
 <p>After 90 days:</p>
 <ul>
@@ -1158,7 +1156,7 @@ The SCOPE Card reflecting this initial state is as shown below:</p>
 <p>The system now operates at <strong>two authority levels simultaneously</strong>: Act for routine invoices (80%), Constrain for exception detection (20%).</p>
 <p><strong>Visual Diagram:</strong>
 The updated topology diagram corresponding to this expansion is shown below.</p>
-<p><img alt="Updated Topology with expansion into Act/Constrain" src="images/Updated_Topology_Act_Constrain.png" /></p>
+<p><img alt="Updated Topology with expansion into Act/Constrain" src="images/appendixB/Updated_Topology_Act_Constrain.png" /></p>
 <hr />
 <p><em>SCOPE Card — Entry 002:</em>
 The Scope Card reflecting this new state is shown below:</p>

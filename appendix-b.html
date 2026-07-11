@@ -67,7 +67,7 @@
 <p><img alt="Visual Elements for Topology Mapping" src="images/appendixB/Visual_Elements_For_Topology_Mapping.png" /></p>
 <hr />
 <h3 id="boundary-notation"><strong>Boundary Notation</strong></h3>
-<p><img alt="Visual Elements for showing Technical Boundaries|" src="images/appendixB/Visual_Elements_For_Technical_Boundaries.png" /></p>
+<p><img alt="Visual Elements for showing Technical Boundaries" src="images/appendixB/Visual_Elements_For_Technical_Boundaries.png" /></p>
 <h3 id="authority-level-notation"><strong>Authority Level Notation</strong></h3>
 <p>Use a label on the diagram to indicate current authority level:</p>
 <pre><code>[ASSIST]
@@ -164,7 +164,6 @@ Execution boundary crossed.
 <pre><code>ΔC  Context Mutation     New data access
 ΔI  Influence Mutation   New recommendation/filtering capability
 ΔV  Visibility Mutation      
-
 Decision Surface changes
 ΔA  Authority Mutation     New decision rights
 ΔE  Execution Mutation     New operational actions
@@ -183,11 +182,10 @@ Decision Surface changes
 <h2 id="the-four-authority-states-as-visual-progressions">The Four Authority States as Visual Progressions</h2>
 <p>The following shows how topologies look at each authority level. These are templates; your system will vary.</p>
 <h3 id="assist-system-provides-information">[ASSIST] — System Provides Information</h3>
-<p>``
-<img alt="Assist System Flow" src="images/appendixB/Assist_System_Flow.png" /></p>
+<p><img alt="Assist System Flow" src="images/appendixB/Assist_System_Flow.png" /></p>
 <hr />
 <h3 id="recommend-system-proposes-actions">[RECOMMEND] — System Proposes Actions</h3>
-<p><img alt="Recommend System Flow|" src="images/appendixB/Recommend_System_Flow.png" /></p>
+<p><img alt="Recommend System Flow" src="images/appendixB/Recommend_System_Flow.png" /></p>
 <hr />
 <h3 id="constrain-system-shapes-visibility">[CONSTRAIN] — System Shapes Visibility</h3>
 <p><img alt="Constrain System Flow" src="images/appendixB/Constrain_System_Flow.png" /></p>
@@ -305,21 +303,20 @@ Any reduction in visibility must be represented as a Decision Surface change, to
 <li><strong>Top:</strong> System name, authority level, entry number, approval date, ledger owner</li>
 <li><strong>Left (40%):</strong> Topology diagram (visual)</li>
 <li><strong>Bottom left:</strong> Authority state summary + human role + reversibility status</li>
-<li><strong>Bottom left:</strong> Expansion pressure (what organisational question will drive the next expansion?)</li>
+<li><strong>Bottom middle:</strong> Expansion pressure (what organisational question will drive the next expansion?)</li>
 <li><strong>Right (60%):</strong> Exposure analysis + critical metrics + gate triggers</li>
 </ul>
 <p><strong>Design Notes:</strong> The card should be scannable in 30 seconds. A practitioner should see the authority state, the topology, and the critical expansion pressure without reading dense text.</p>
 <h2 id="worked-example-invoice-routing-system">Worked Example — Invoice Routing System</h2>
-<p>This example shows a system progressing from Entry 001 (initial design at Act/Constrain) through a gate check to Entry 002 (expanded authority).</p>
+<p>This example shows a system progressing from Entry 001 (initial design at Recommend) through a gate check to Entry 002 (expanded authority).</p>
 <p><strong>Entry 001 — Initial Topology (Assist → Recommend → Constrain → Act Progression)</strong></p>
 <p>In this example, note that the invoice system does not start at Act authority. It starts at Recommend and is designed to progress.</p>
-<hr />
 <h4 id="entry-sl-invoiceroute-001a-initial-deployment-recommend">Entry SL-InvoiceRoute-001A — Initial Deployment [RECOMMEND]</h4>
 <p><strong>Topology Diagram Detail:</strong>
-<img alt="Initial Topology (Recommend)" src="images/Initial_Topology_Recommend.png" /></p>
+<img alt="Initial Topology (Recommend)|697" src="images/appendixB/Initial_Topology_Recommend.png" /></p>
 <p><em>SCOPE Card — Entry 001A:</em>
 The SCOPE Card reflecting this initial state is as shown below:</p>
-<p><img alt="Scope Card at initial deployment" src="images/appendixB/SL_InvoiceRoute_001.png" /></p>
+<p><img alt="Scope Card at initial deployment|697" src="images/appendixB/SL_InvoiceRoute_001.png" /></p>
 <p><strong>90-Day Gate Review Passes</strong></p>
 <p>After 90 days:</p>
 <ul>
@@ -333,7 +330,7 @@ The SCOPE Card reflecting this initial state is as shown below:</p>
 <p>The system now operates at <strong>two authority levels simultaneously</strong>: Act for routine invoices (80%), Constrain for exception detection (20%).</p>
 <p><strong>Visual Diagram:</strong>
 The updated topology diagram corresponding to this expansion is shown below.</p>
-<p><img alt="Updated Topology with expansion into Act/Constrain" src="images/Updated_Topology_Act_Constrain.png" /></p>
+<p><img alt="Updated Topology with expansion into Act/Constrain" src="images/appendixB/Updated_Topology_Act_Constrain.png" /></p>
 <hr />
 <p><em>SCOPE Card — Entry 002:</em>
 The Scope Card reflecting this new state is shown below:</p>
