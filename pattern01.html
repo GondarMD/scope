@@ -71,7 +71,8 @@
 
     <main class="content">
 		<article>
-			<p>One of the more subtle ways AI systems become consequential has nothing to do with better models or new capabilities.</p>
+			<h3 id="overview">Overview</h3>
+<p>One of the more subtle ways AI systems become consequential has nothing to do with better models or new capabilities.</p>
 <p>It happens through <strong>Context Creep</strong>.</p>
 <p><strong>Context Creep</strong> is when an AI system's accessible context expands gradually through a series of individually reasonable integrations, while nobody stops to reassess what that means if the system is later trusted with more responsibility.</p>
 <p>No single integration feels like a governance decision. That's precisely why it's easy to miss.</p>
@@ -89,12 +90,27 @@
 <p>The governance discussion focused on the decision being requested, because that was the visible change. Exposure had been changing all along.</p>
 <p>That's <strong>Context Creep</strong>.</p>
 <hr />
-<p><strong>Pattern:</strong> Context Creep</p>
-<p><strong>Observable signal:</strong> <em>"We're only connecting one more data source."</em></p>
-<p><strong>Underlying shift:</strong> Context expands quietly while the consequences of future decisions grow with it.</p>
-<p><strong>Governance blind spot:</strong> Authority changes usually require review. Context changes rarely do.</p>
-<p><strong>SCOPE principle:</strong> Governance should reassess exposure whenever context expands—not only when authority does.</p>
-<p><em>Learn more about SCOPE: <a href="https://gondarmd.github.io/scope">https://gondarmd.github.io/scope</a></em></p>
+<h3 id="scope-interpretation">SCOPE Interpretation</h3>
+<p>Context Creep illustrates an important distinction in SCOPE between <strong>authority</strong> and <strong>exposure</strong>.</p>
+<p>The assistant's authority has remained unchanged throughout most of its evolution. It continues to recommend rather than act. From a traditional governance perspective, this can create the impression that the system's risk profile is stable.</p>
+<p>In reality, the system's <strong>exposure</strong> has been changing continuously.</p>
+<p>Each additional integration expands the range of information available to the model, increasing the number of factors that can influence its reasoning and the potential consequences of an incorrect interpretation. Exposure therefore grows even while authority remains constant.</p>
+<p>When the organisation later proposes a seemingly modest increase in authority—such as allowing automatic routing of low-risk patients—the governance discussion naturally focuses on the new decision being delegated.</p>
+<p>SCOPE highlights a different question:</p>
+<blockquote>
+<p><em>How much exposure has accumulated since this level of authority was last assessed?</em></p>
+</blockquote>
+<p>The authority request is new, but the exposure profile may already have changed substantially.</p>
+<p>Context Creep therefore demonstrates why SCOPE treats <strong>context expansion as an exposure event</strong>, not merely a technical enhancement. Every meaningful increase in accessible context should trigger a reassessment of exposure, even if the system's authority remains unchanged.</p>
+<hr />
+<h3 id="design-implications"><strong>Design Implications</strong></h3>
+<ul>
+<li>Treat context expansion as a governance event.</li>
+<li>Reassess exposure whenever new data sources become available.</li>
+<li>Evaluate authority requests against the system's <em>current</em> exposure, not its originally approved exposure.</li>
+<li>Record significant context expansions in the Scope Ledger.</li>
+<li></li>
+</ul>
 		</article>
     </main>
 
