@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<!--
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+
+
+</header>
+-->
+
+<div >
+
+    <main class="content">
+		<section class="title-page">
+<h1 id="scope">SCOPE</h1>
+<p><em>Staged Control of Progressive Exposure</em></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>Abstract</strong></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>1. Introduction - The Authority Problem</strong></p>
+</div>
+<div class="toc-subtitle">
+<p><em>Why authority accumulates incrementally</em></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>2. The Authority Progression Model</strong></p>
+</div>
+<div class="toc-subtitle">
+<p><em>Assist → Recommend → Constrain → Act</em></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>3. Exposure, Visibility and Decision Surfaces</strong></p>
+</div>
+<div class="toc-subtitle">
+<p><em>Exposure as a design property</em></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>4. Designing Authority Topologies</strong></p>
+</div>
+<div class="toc-subtitle">
+<p><em>Structuring authority and exposure</em></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>5. Gating Expansion</strong></p>
+</div>
+<div class="toc-subtitle">
+<p><em>Governing authority growth</em></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>6. The Scope Ledger</strong></p>
+</div>
+<div class="toc-subtitle">
+<p><em>Making authority visible</em></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>7. Economic Implications of Authority Governance</strong></p>
+</div>
+<div class="toc-subtitle">
+<p><em>Incentives, exposure, and governance</em></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>8. The SCOPE Governance Cycle</strong></p>
+</div>
+<div class="toc-subtitle">
+<p><em>Governing authority evolution</em></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>Limitations and Future Direction</strong></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>Appendix A. Competitive Positioning</strong></p>
+</div>
+</div>
+<div class="toc-entry">
+<div class="toc-title">
+<p><strong>Appendix B. Topology Modeling</strong></p>
+</div>
+</div>
+</section>
+
+    <section class="chapter">
+    <h2 id="abstract">Abstract</h2>
+<p>AI systems increasingly expand from assistive tools into authority-bearing organisational roles. This expansion rarely occurs through deliberate design. Instead, authority accumulates incrementally through additional integrations, broader data access, and expanding operational responsibilities. While each individual change may appear justified, the sum of these changes often results in increasing organisational exposure that remains largely unobserved until failure occurs.</p>
+<p>Existing governance frameworks provide valuable guidance on risk management, accountability, compliance, and operational oversight. However, they generally assume that the scope and authority of an AI system have already been defined. Relatively little attention has been given to how authority should be allocated, how exposure should be designed, or how authority should expand over time.</p>
+<p>This paper introduces SCOPE (Staged Control of Progressive Exposure), a framework for governing authority as a deliberate design process. SCOPE introduces five primary concepts: the Authority Progression Model, which describes how authority evolves within AI-enabled workflows; Exposure, reframed as a design property rather than a post hoc risk assessment; Authority Topology, which governs how authority is distributed across workflows and systems; Expansion Gates, which control authority growth through explicit evidence requirements; and the Scope Ledger, which provides a persistent governance record of authority evolution.</p>
+<p>The framework identifies Constrain authority, where systems shape available options and decision spaces, as a critical governance threshold that often precedes autonomous action. By making authority, exposure, and scope expansion explicit design variables, SCOPE provides a practical methodology for governing how AI systems gain influence within organisations.</p>
+<p>Rather than replacing existing governance approaches, SCOPE occupies a complementary design layer focused on authority allocation and authority governance before and throughout deployment.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="1-the-authority-problem">1. THE AUTHORITY PROBLEM</h1>
+<h2 id="ai-systems-are-becoming-operational-systems">AI Systems Are Becoming Operational Systems</h2>
+<p>Organizations tend to approach the adoption of artificial intelligence as a standard software procurement exercise. In this approach, AI systems are evaluated as isolated productivity tools, measuring how much faster a user can summarize documents, draft emails, or complete lines of code. This framing is a fundamental category error. AI systems do not behave like passive software applications. Since they operate as embedded agents integrated directly into workflows, they progressively mediate organizational action. Their deployment is not a matter of software licensing; it is an active allocation of operational authority.</p>
+<p>To understand why this is the case, we must examine how AI systems produce value. Unlike static software, an AI’s output depends entirely on the dimensions of its environment—the quality of data feeds, workflow placement, and human interaction. Collectively, we call this <em>context</em>. This relationship is multiplicative rather than additive —context acts as a force multiplier on any capability the system possesses:</p>
+<blockquote>
+<p><em>AI Value = (Outcome_with_AI - Outcome_without_AI) * Context</em></p>
+</blockquote>
+<p>Because context acts as a multiplier, even minor shifts in how a system is integrated can cause its value, and its consequences, to scale exponentially. As organizations chase this context multiplier, they expand the system across three core operational variables: <em>scope</em> (the surface area of workflows and data the system can access), <em>authority</em> (what the system is allowed to decide or execute), and <em>exposure</em> (what is at risk when the system fails). Understood this way, AI deployment is never static. It is a dynamic redistribution of operational influence.</p>
+<h2 id="scope-expands-incrementally">Scope Expands Incrementally</h2>
+<p>How does this operational authority accumulate? Organizations rarely grant expansive decision rights to an AI system in a single, deliberate stroke. Instead, authority is acquired incrementally through localized optimization without systematic oversight—a process we call <em>rational scope drift</em>. This drift does not stem from corporate negligence or reckless experimentation. Rather, it is driven by a series of highly logical, localized optimizations: a business unit integrates a new data source to improve recommendation accuracy; a developer requests an API connection to streamline manual routing; a manager approves a minor automation script to clear a backlog. Each of these decisions appears entirely rational in isolation.</p>
+<p>The danger of these incremental shifts is not the sudden emergence of autonomous system agency, but rather the gradual normalization of expanded authority. Consider a customer support assistant. It is introduced to generate draft responses for agent review. Soon, it is permitted to categorize and route incoming tickets to optimize response times. Eventually, it is authorized to automatically process low-value customer refunds. At no point did the organization consciously decide to delegate financial authority to a machine. Yet, through successive, convenience-driven integrations, a simple productivity tool has become a core operational gatekeeper.</p>
+<h2 id="the-progression-model">The Progression Model</h2>
+<p>To manage this drift, we must formalize the path it follows. AI systems transition through a predictable progression of influence: <strong>Assist → Recommend → Constrain → Act</strong>.</p>
+<pre><code>Assist [Generates drafts] ──&gt; Recommend [Suggests actions] ──&gt; Constrain [Filters choices] ──&gt; Act [Executes autonomously]
+</code></pre>
+<p>Note that these authority levels are not properties of the AI system itself. Rather, they reflect design choices about how the system integrates into an organizational workflow. The same underlying model can operate at Assist level in one context (e.g. generating candidate hypotheses for a researcher) and Constrain level in another (filtering which hypotheses appear in a prioritized list). </p>
+<p>Authority level is determined by three design boundaries: what <strong>data</strong> the system can access, what <strong>tools</strong> it can call, and what <strong>actions</strong> it can execute. These boundaries determine where the human remains in control of outcomes. </p>
+<p>The progression model above describes the natural path such systems follow <em>when boundaries are not deliberately designed</em>: drift moves systems through Assist → Recommend → Constrain → Act. </p>
+<p>Part II demonstrates how to design those boundaries deliberately, preventing drift and staging authority expansion through measurable gates.</p>
+<p>Most governance discussions focus heavily on the final stage—autonomous execution  (<strong>Act</strong>) —as the primary source of risk. However, the core conceptual observation of the SCOPE framework is that authority increases long before autonomy does. The critical inflection point in this model is not when a system executes an action, but when it begins to <strong>Constrain</strong> the human decision space. Systems shape outcomes not by acting independently, but by structuring workflows, ranking options, and filtering possibilities. Consequently, systems become operationally consequential well before they are granted autonomy.</p>
+<h2 id="constrain-authority-and-invisible-influence">Constrain Authority and Invisible Influence</h2>
+<p>This consequential-yet-unrecognized space, which we call <em>constrain authority</em>, is particularly significant because it is invisible, normalized, and difficult to audit. Where they exist, traditional risk assessments tend to flag execution authority: if a system is allowed to move funds or deploy code, it triggers compliance checks. Yet organizations routinely overlook decision-space shaping. </p>
+<p>For instance, automated triage, escalation suppression, and recommendation ranking systems are rarely scrutinized as authority-bearing integrations. In these scenarios, a human remains "in the loop" to review and sign off. However, this oversight is often an illusion. When a clinical copilot determines which patient files enter a reviewer’s queue, or a screening tool hides resumes that fall below a proprietary threshold, the system has already structured the outcome. The human is signing off on a pre-filtered sliver of reality. As a rule, the presence of a human approver does not necessarily imply meaningful human authority.</p>
+<h2 id="why-governance-lags">Why Governance Lags</h2>
+<p>This rapid accumulation of authority occurs alongside a persistent lag in organizational oversight. This delay is not the result of administrative incompetence or negligence; it is structurally and economically reinforced. In modern enterprise operations, the primary incentives are speed and cost reduction. Operational metrics around these dimensions are immediately observable and highly quantifiable. When a team automates ticket routing or resume screening, the efficiency gains show up instantly on executive dashboards: average handling times drop, backlogs shrink, and staffing costs fall.</p>
+<p>In contrast, the corresponding increase in operational risk is long-term, silent, and cumulative. Organizations heavily instrument throughput, latency, and productivity gains. They rarely instrument authority accumulation, dependency concentration, or human oversight erosion. Because there are no real-time telemetry systems for risk, exposure accumulates invisibly until it triggers a failure. Put simply: <em>efficiency appears on dashboards; exposure appears in post-mortems</em>. Because the economic rewards of automation are immediate, while the penalties of exposure are deferred, governance is structurally positioned downstream of operational drift.</p>
+<h2 id="why-existing-governance-frameworks-struggle">Why Existing Governance Frameworks Struggle</h2>
+<p>Existing governance frameworks are structurally mismatched to the operational reality of agentic systems. Standards such as NIST’s AI Risk Management Framework, ISO/IEC 42001, and the EU AI Act treat governance as a compliance-oriented exercise. These frameworks focus on pre-deployment risk classification or post-execution safety controls like toxicity filters and post-hoc logging. </p>
+<p>What they do not address is the continuous dynamic of scope expansion after deployment has already begun. This preoccupation with how to make a system behave safely within its designated boundaries fails to question how those boundaries expand. Since they do not question authority accumulation or dynamic integration, traditional frameworks remain blind to rational scope drift. They intervene after the scope has already expanded, attempting to govern execution when they should be governing exposure.</p>
+<h2 id="the-missing-operational-layer">The Missing Operational Layer</h2>
+<p>To manage agentic systems, governance must shift from an administrative exercise to an active engineering discipline. Organizations need an operational layer that makes authority allocation observable, gated, and reversible. This requires designing exposure with the same architectural rigor applied to software permissions. To do this, organizations must establish <em>authority topologies</em> that define the boundaries of data, tools, and actions a system can access. </p>
+<p>For instance, a customer service AI might have an authority topology that permits access to customer contact history and purchase records, but explicitly excludes access to payment methods or personal health data. Similarly, it might be permitted to <em>recommend</em> refunds up to $50, but not authorize them.</p>
+<p>More importantly, they must implement <em>dynamic gating</em>—clear, telemetry-driven thresholds that a system must satisfy to expand its operational footprint. Systems must earn expansion through verified performance. When an AI system moves from assisting to recommending, or from constraining to acting, the increased exposure must be verifiable through performance and risk telemetry.</p>
+<p>This latter need brings into play an operational record that makes expansion visible, reversible, and tracked in real-time. We call this operational record a <em>scope ledger</em>. By instrumenting exposure rather than merely auditing outcomes, organizations can replace accidental drift with deliberate, staged control.</p>
+<h2 id="the-inevitability-of-progression">The Inevitability of Progression</h2>
+<p>Unless we design this operational layer explicitly, authority will continue to accumulate by default. As AI systems become more capable and context-rich, the pressure to expand their integration can only grow. Without a structured methodology to gate this progression, organizations will continue to slide from productivity gains into unmanaged operational exposure. To prevent this drift, we must move beyond execution-level safety and establish a systematic approach to governance. </p>
+<p>The answer is SCOPE: Staged Control of Progressive Exposure, a pre-deployment design methodology that replaces accidental drift with deliberate, staged authority progression.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="2-the-authority-progression-model">2. The AUTHORITY PROGRESSION MODEL</h1>
+<p>The Authority Progression Model outlines four different authority states that AI systems typically go through: Assist, Recommend, Constrain, and Act. Each stage marks a shift not in capability, but in how authority is shared between humans and AI systems.</p>
+<p>Not all systems need to progress through all four stages. Some may stay at Assist or Recommend permanently. As shown in Figure 1, the model helps map how authority changes as systems become more integrated into organisational workflows.</p>
+<h2 id="assist-supporting-human-interpretation">Assist: Supporting Human Interpretation</h2>
+<p>In the Assist stage, the AI system provides information that helps humans understand but does not suggest actions or change workflows. Examples include summarizing, classifying, extracting, transcribing, or retrieving information. </p>
+<p>The system may have access to relevant data and context, but its outputs are purely informational. Humans are responsible for interpreting the information, making decisions, and taking actions.</p>
+<p>Authority remains fully with humans. The system can help with understanding but cannot affect outcomes directly; that influence comes through human interpretation.  The main feature of Assist systems is that the decision-making framework stays the same. Humans see all available options and have complete visibility over the workflow.</p>
+<p>For instance, a recruitment team handling applications: at the Assist stage, an AI system summarizes each application and highlights key qualifications. Recruiters can view every application. The system provides helpful information without influencing which candidates are considered.</p>
+<h2 id="recommend-shaping-human-judgment">Recommend: Shaping Human Judgment</h2>
+<p>The shift into the Recommend stage happens when the system starts to suggest actions. Recommendations may include responses, routing options, risk assessments, prioritization scores, or other types of guidance.</p>
+<p>This marks a significant increase in authority as the system begins to influence human judgment rather than just providing information.</p>
+<p>Humans still make final decisions and take action, but their decision-making increasingly references the outputs from the system. Recommendations can focus attention, frame choices, and create cognitive biases.</p>
+<p>Nevertheless, humans maintain full visibility of the operational environment. The decision-making framework remains complete, and every case, option, or workflow state is visible to operators, even if recommendations affect how those options are assessed.</p>
+<p>In the recruitment example: at the Recommend stage, the system suggests which candidates should advance to interviews based on their match scores. Recruiters can review all applications, but their focus is influenced by system outputs. Recommend systems guide how decisions are considered without changing the available choices.</p>
+<h2 id="constrain-shaping-the-decision-surface">Constrain: Shaping the Decision Surface</h2>
+<p>Constrain marks the critical transition in the progression model.</p>
+<p>At this stage, the system does more than advise—it starts to shape the options, cases, or information available for human review. This can happen through prioritizing, filtering, routing, escalation management, or other means that decide what gets attention.</p>
+<p>The significant feature of Constrain systems is that they <em>alter the decision surface</em>.</p>
+<p>Instead of evaluating a complete operational picture, humans now interact with a subset chosen or organized by the system. Some cases may be prioritized for review, while others are deprioritized or omitted entirely.</p>
+<p>In the recruitment context: at the Constrain stage, the system filters the candidate pool, showing only those who meet a specific score threshold. Recruiters no longer see all applicants. The decision surface is now defined by the system, meaning errors can involve not just incorrect recommendations but also qualified candidates who were never presented.</p>
+<p>This transition has profound governance implications. Although humans may still perform all final approvals, their visibility is now shaped by the system. Here, humans remain responsible for operations but lose clarity about the entire decision landscape. The accountability gap at Constrain is hidden; humans cannot know what they aren't seeing.</p>
+<h2 id="act-executing-operational-decisions">Act: Executing Operational Decisions</h2>
+<p>At the Act stage, the system is allowed to take operational actions on its own within set limits. These actions can include approving transactions, routing cases, starting workflows, changing system states, or triggering downstream processes.</p>
+<p>Humans can still oversee, set policy limits, and review exceptions, but the system directly handles regular operational tasks.</p>
+<p>This shift presents a new kind of governance challenge. Errors can spread much more quickly than human review processes. Risks extend beyond decision quality to issues like reversibility, recovery, and auditability. The organisation depends not just on the accuracy of the system's outputs but also on the reliability of its operations.</p>
+<p>In the recruitment example: at the Act stage, the system automatically moves candidates forward or rejects them at designated stages without human review. Errors can enter offer pipelines, rejection communications, and candidate records before any human sees them.</p>
+<p><img alt="Fig 1: The Authority-Progression Model" src="images/Authority_Exposure_Landscape.png" /><em>Figure 1: The Authority-Exposure Model</em></p>
+<h2 id="progression-as-authority-expansion">Progression as Authority Expansion</h2>
+<p>Viewed together, the four stages show a shift from informational support to operational authority:</p>
+<ul>
+<li>Assist systems influence <em>interpretation</em>.</li>
+<li>Recommend systems influence <em>judgment</em>.</li>
+<li>Constrain systems influence <em>visibility and attention</em>.</li>
+<li>Act systems influence <em>operational outcomes</em> directly.</li>
+</ul>
+<p>Each transition changes the relationship between humans, systems, and important decisions. SCOPE's purpose is to make sure that each transition is intentional, clear, and deserved. It should not just happen automatically because of capability.</p>
+<p>The next question is why some transitions are more important than others. To answer this, we need to understand what is actually at risk when authority increases.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="3-exposure-visibility-and-decision-surfaces">3. EXPOSURE, VISIBILITY, AND DECISION SURFACES</h1>
+<p>The shift from Assist to Act has different governance implications. To understand this, we must look at the changes that happen at each transition, focusing not on capabilities but on what the organisation is risking.</p>
+<h2 id="exposure-as-a-system-property">Exposure as a System Property</h2>
+<p>In many governance discussions, exposure is seen as a consequence of failure — assessed through incidents, harms, or regulatory breaches after they occur. SCOPE views exposure differently. It sees exposure as a feature of a system's design that can be evaluated before deployment, not just inferred after an incident.</p>
+<p>SCOPE defines exposure as the extent to which organisational outcomes rely on system behavior. </p>
+<p>As shown in Figure 2, exposure arises from the interaction of Authority, Topology, and Context. We can examine exposure before these dependencies become established.</p>
+<p><img alt="Figure 2: Exposure as an Emergent Property" src="images/Exposure_as_an_Emergent_Property.png" />
+<em>Figure 2: Exposure as an Emergent Property</em></p>
+<hr />
+<p>This reframe is important for practical reasons. If exposure is a property, rather than a result, it can be designed, defined, and managed. We can no longer assess authority only based on what a system can do. We also need to consider how organisational outcomes rely on system behavior.</p>
+<p>The table in Figure 2 reveals another important point: two systems with the same authority levels in the same operational area can have very different exposure profiles. This difference depends on how influence is shared and the context of the system.</p>
+<p>For example, a recommendation system for patient admission sequencing (System A) operates with low exposure. In contrast, an automated triage system that decides who receives urgent care (System B) operates with high exposure, even though they have the same underlying authority.</p>
+<h2 id="visibility-and-decision-surfaces">Visibility and Decision Surfaces</h2>
+<p>Exposure grows as organisations become more dependent on how systems behave.</p>
+<p>One main way this dependency increases is through visibility into the <em>decision surface</em>. The decision surface includes the information, cases, options, or workflow states that a human decision-maker can access at a specific moment.</p>
+<p>In straightforward workflows, human operators can see the relevant information and make decisions with a complete understanding of the operational environment. As systems become more integrated into workflows, they start to customize the decision surface that remains visible.
+ 
+At the Assist stage, visibility does not change much. The system may summarize, classify, or organize information, but humans still see the entire operational picture.</p>
+<p>At the Recommend stage, the system begins to influence how information gets evaluated. Recommendations might shape judgment, but they do not change the fundamental decision surface. Human operators still see all relevant cases and options.</p>
+<p>At the Constrain stage, this shifts significantly. The system filters, prioritizes, routes, suppresses, or escalates information, which shapes the decision surface. Humans are no longer looking at the complete operational environment. Instead, their focus is limited to the version of the environment that the system presents.</p>
+<p>This results in a new kind of organisational dependency. Outcomes increasingly rely not just on human decisions, but also on what the system determines is visible for review.</p>
+<h2 id="exposure-boundaries">Exposure Boundaries</h2>
+<p>However, exposure does not increase evenly across the Authority Progression Model. Certain transitions fundamentally change the link between system behavior and organisational outcomes.</p>
+<p>SCOPE refers to these transitions as <em>exposure boundaries</em>.</p>
+<p>An exposure boundary is crossed when changes in system behavior can significantly affect organisational outcomes.</p>
+<p>As shown in Figure 2, during the Assist stage, exposure remains relatively low because humans maintain full visibility and decision authority. Therefore, changes in system behavior are not significant.</p>
+<p>At the Recommend stage, exposure starts to grow as human judgment is influenced by system outputs. The level of exposure partly depends on how operators engage with recommendations and the degree of independent evaluation maintained.</p>
+<p>The first major structural exposure boundary occurs at Constrain. Here, the system decides which cases are shown, reviewed, prioritized, or escalated. Organisational outcomes depend on decisions that humans might never see. Failures can include hidden false negatives, ignored escalations, unnoticed edge cases, and systematic blind spots.</p>
+<p>Significant exposure arises at Constrain before a system gains the authority to act autonomously. The accountability gap at Constrain is often invisible because decision-makers cannot assess information that never reaches them.</p>
+<p>Act increases the exposure seen at Constrain and introduces a new exposure dimension by allowing system behavior to directly change operational states.</p>
+<p>Instead of just shaping visibility, the system starts to alter operational states directly. The exposure boundary effectively shifts higher into the workflow, moving from attention allocation to action execution.</p>
+<p>Exposure is no longer just filtered through human review; it becomes part of the operational processes themselves. The resulting exposure profile is marked not only by visibility and dependency but also by the speed, scale, spread, and reversibility of autonomous actions.</p>
+<p>Many governance approaches primarily focus on autonomous action as the main source of organisational risk. SCOPE argues that significant exposure often arises earlier, when systems start shaping visibility and directing organisational attention. </p>
+<p>If exposure is a structural feature of how a system is designed, the next question is how to choose those structures intentionally. That is the focus of authority topology design.</p>
+<h2 id="an-example-to-ground-the-concepts">An Example to Ground the Concepts</h2>
+<p>Consider a finance team processing supplier invoices.</p>
+<p>At Assist, an AI system extracts key fields from each invoice, such as vendor, amount, and due date, and flags any issues for human review. Every invoice is seen by a human. The decision-making process remains the same: the finance team has full visibility of all invoices.</p>
+<p>At Recommend, the system suggests which invoices should be paid first, which ones should be disputed, and which should go to specific approvers. The team can still review all invoices on their own, but their focus is increasingly influenced by what the system suggests.</p>
+<p>At Constrain, the system automatically sends invoices below a set value directly for payment without human review. It only highlights invoices above that threshold for approval. Finance staff no longer see every invoice. Now, the success of the organisation relies on the system's ability to accurately identify which invoices need a human's attention. Problems may come not from wrong approvals but from invoices that should have been reviewed but were not.</p>
+<p>At Act, the system starts payment for approved invoices on its own. Risk no longer comes just from which invoices are shown, but also from the financial transactions based on them. Mistakes can affect cash flow, vendor relationships, and compliance records before any human catches them.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="4-designing-authority-topologies">4. DESIGNING AUTHORITY TOPOLOGIES</h1>
+<p>Authority topology is the main way exposure is designed. Organisations usually define system capabilities, data sources, and workflows before deployment, but they rarely define authority with the same attention. SCOPE views authority as a design object. It can be structured, limited, expanded, and governed before a system is integrated into operational workflows.</p>
+<h2 id="authority-topologies">Authority Topologies</h2>
+<p>SCOPE argues that organisational exposure comes from the authority given to an AI system. However, the exposure linked to any specific level of authority depends on how data sources, workflows, dependencies, and decision-making paths are set up within the system.</p>
+<p>For example, consider two systems, A and B. Both have Recommend authority and similar capabilities for ranking options. System A offers inputs to a single reviewer, so its recommendations are easy to understand and can be overridden. In contrast, System B provides inputs to other workflows; its rankings are not as clear, and the organisation relies on these rankings for further decisions. It is clear that the organisation faces more exposure from System B because of the unclear rankings and reliance on them.</p>
+<p>An <em>authority topology</em> is the structural arrangement of authority, visibility, and dependency within a system. It explains how information moves through a workflow, what remains visible to human operators, where decision-making authority exists, and how organisational outcomes depend on system behavior.</p>
+<p>Different topologies create very different exposure profiles, even if the system capabilities are the same. The design question is not just what a system can do, but how to organize authority, visibility, and dependency to create a specific exposure profile.</p>
+<h2 id="the-four-design-boundaries">The Four Design Boundaries</h2>
+<p>Authority topologies are defined by four types of boundaries that together determine how authority is shared between systems and human operators. These are design parameters; they are not fixed limits that are crossed once. Their placement affects the resulting exposure profile.</p>
+<p><img alt="Figure 3: Authority Topology" src="images/Authority_Topology.png" />
+<em>Figure 3: Authority Topology</em></p>
+<h3 id="data-boundary"><strong>Data Boundary</strong></h3>
+<p>Data boundaries define the information a system can access and process. </p>
+<p>Expanding a data boundary means increasing the information available to an AI system. This does not necessarily create meaningful exposure on its own, but it does broaden the information base from which authority may later develop. The more a system can access information, the greater its potential influence on downstream decisions.</p>
+<h3 id="influence-boundary"><strong>Influence Boundary</strong></h3>
+<p>Influence boundaries define how much a system can shape human judgment. </p>
+<p>Initial influence might be limited to informational suggestions. Later expansions could allow systems to rank alternatives, prioritize options, set defaults, or exert stronger influence over decision-making. </p>
+<p>As the influence boundary expands, organisational dependence on system outputs generally increases. This changes the resulting exposure profile. While human operators can technically see the entire decision surface, their assessment of that surface may be more influenced by system outputs.</p>
+<h3 id="exposure-boundary"><strong>Exposure Boundary</strong></h3>
+<p>Exposure boundaries define how much systems can shape the decision surface, meaning how they affect what is visible in the decision-making process. </p>
+<p>Exposure increases when systems filter, prioritize, suppress, route, or determine what information becomes visible for human review. In these cases, organisational outcomes depend not only on human decisions but also on what the system decides to highlight. </p>
+<p>The difference between influence and exposure boundaries is subtle but important because they change oversight in fundamentally different ways.</p>
+<p>An influence boundary shapes judgment but <em>preserves visibility</em>. Operators can still review the complete decision surface and disagree with system outputs.</p>
+<p>An exposure boundary, however, <em>alters visibility</em> itself. Once information is filtered or suppressed, human oversight relies on what the system decides deserves attention. Humans can no longer review what they cannot see. As visibility is managed, accountability gaps can arise from decisions that overlook hidden information. </p>
+<p>For this reason, Constrain represents the first major structural exposure boundary within the Authority Progression Model.</p>
+<h3 id="execution-boundary"><strong>Execution Boundary</strong></h3>
+<p>Execution boundaries define the extent to which systems are permitted to directly alter operational state.</p>
+<p>At this stage, authority goes beyond visibility and judgment into action. Systems may initiate transactions, modify records, trigger workflows, communicate externally, or perform other tasks without needing human approval.</p>
+<p>The resulting exposure profile becomes more influenced by speed, scale, propagation, and reversibility. Human oversight may still exist, but it occurs after authority has already been exercised.</p>
+<p>Exposure does not depend solely on authority. It comes from the interaction of these four boundary dimensions: what a system can see, what it can influence, what it can execute, and what is at stake when it makes a mistake.</p>
+<hr />
+<h2 id="authority-expansion-as-topology-change">Authority Expansion as Topology Change</h2>
+<p>Every authority change suggests a change in the placement of one or more of these design boundaries. A system may:</p>
+<ul>
+<li>gain access to additional information (a shift of the data boundary), </li>
+<li>exert greater influence over decision-making (changing its influence boundary) , </li>
+<li>shape larger portions of the decision surface (altering the exposure boundary), or,</li>
+<li>execute new categories of operational actions (alter its execution boundary). </li>
+</ul>
+<p>These changes are not just functional improvements; they change the relationship between the system and the organisation. They should be evaluated based on the exposure changes they introduce.</p>
+<h2 id="designing-initial-scope">Designing Initial Scope</h2>
+<p>Since authority directly influences exposure, choosing the initial scope is one of the most important design decisions in the framework.</p>
+<p>Traditional deployment approaches usually start with capability. If a system can perform a task, organisations naturally want to use that capability.</p>
+<p>SCOPE takes a different approach. The initial scope should be based on <em>desired exposure</em>, not available capability.</p>
+<p>The goal is not to maximize system capability but to achieve desired outcomes while keeping exposure as low as possible. Therefore, systems should start with the minimum authority needed to fulfil their intended purpose.</p>
+<p>This principle highlights an important operational insight. Exposure introduced at deployment is often much harder to reverse once workflows, incentives, and organisational dependencies have formed around it.</p>
+<p>Starting with a limited scope serves two purposes. First, it limits exposure while organisations learn how a system functions in a real operational environment. Second, it sets up a clear path for future growth. Additional authority should be something that needs to be earned, not automatically assumed.</p>
+<hr />
+<h2 id="a-topology-example">A Topology Example</h2>
+<p>Consider a clinical team that manages patient referrals in an outpatient setting.</p>
+<p>At Assist, an AI system extracts key clinical indicators from referral documents and flags any missing information. Every referral goes to a clinician. The structure allows for complete visibility, and decision-making remains entirely with human operators.</p>
+<p>At Recommend, the system classifies urgency levels and suggests appointment times. Authority spreads across the influence boundary, but visibility stays the same. Clinicians continue to review all referrals, even if their prioritization starts to reflect the system's suggestions more.</p>
+<p>At Constrain, the system automatically routes low-urgency referrals to a general queue and shows only high-urgency cases for immediate clinical review. Authority extends across the exposure boundary, meaning the clinical team does not see every referral during the initial review. Organisational results depend on the system's ability to classify urgency correctly. Errors lead to recommendations that are not just mistaken; they result in cases that might never be reviewed with the right priority.</p>
+<p>At Act, the system schedules appointments and sends confirmation communications without needing clinician approval. Authority crosses into execution and becomes part of the operational workflow. Errors can affect patient schedules, clinical capacity, and communication records before any human has a chance to review them.</p>
+<p>The clinical capability of the underlying system might be the same across all four stages. However, the structure, and thus the exposure profile, differs.</p>
+<h2 id="topology-design-as-exposure-design">Topology Design as Exposure Design</h2>
+<p>Topology design is the process of making exposure clear before authority is granted. By purposely arranging authority, visibility, and dependency relationships before deployment, organisations can understand what they are accepting and manage the conditions under which it changes.</p>
+<p>A topology outlines what the organisation is risking and where. This definition makes expansion governable.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="5-gating-expansion-how-systems-gain-authority">5. GATING EXPANSION: HOW SYSTEMS GAIN AUTHORITY</h1>
+<p>Authority topologies are not fixed. As systems show reliable performance, organisations often want to increase their authority. Each expansion changes the exposure profile. The key question is how to manage that expansion.</p>
+<p>SCOPE views authority expansion as a conscious governance choice. It needs justification, review, and approval rather than happening automatically from proven capability.</p>
+<p><em>Expansion gates</em> are the method used to implement authority lag, as shown in Figure 4.</p>
+<p><img alt="Figure 4: Expansion Gates" src="images/Expansion_Gates.png" />
+<em>Figure 4: Expansion Gates</em></p>
+<p>An expansion gate is a formal governance checkpoint that must be passed before authority can be expanded. Its purpose is to interrupt the natural tendency for authority to build up due to operational success and increasing organisational trust.</p>
+<p>When an organisation suggests a change in authority, such as granting access to more data, letting a system influence more of a workflow, or allowing autonomous action, that change does not happen automatically. Instead, it goes through a formal review process. The expansion gate checks whether the proposed authority has been earned.</p>
+<p>The expansion gate checks whether the proposed authority has been earned. Evidence is evaluated based on four criteria:</p>
+<ul>
+<li><em>Performance</em>: Does the system reliably achieve the intended outcome?</li>
+<li><em>Reliability</em>: Does performance remain stable under changing conditions?</li>
+<li><em>Trust Signals</em>: Do operational users show sustained confidence in system behavior?</li>
+<li><em>Compliance</em>: Does the proposed expansion align with legal, regulatory, and organisational requirements?</li>
+</ul>
+<p>Only when sufficient evidence exists across these areas should authority be expanded. This approach makes authority dependent on proven evidence rather than technical ability alone.</p>
+<h2 id="authority-should-lag-capability">Authority Should Lag Capability</h2>
+<p>Capability describes what a system can do. Authority describes what a system is allowed to do in a specific operational setting.</p>
+<p>A system may show the technical ability to perform a task well before it is appropriate to grant the related authority. Technical performance is necessary for expansion, but it is not enough on its own. Decisions about expansion must also look at the resulting risk profile and the organisation's willingness to accept it. </p>
+<p>SCOPE therefore sees demonstrated capability as necessary but not enough for authority expansion.</p>
+<h2 id="boundary-movement-and-exposure-deltas">Boundary Movement and Exposure Deltas</h2>
+<p>As mentioned in Part 4, topology changes happen through boundary movement. An expansion might involve moving a data boundary, an influence boundary, an exposure boundary, an execution boundary, or a combination of these four.</p>
+<p>Not all boundary movements have the same impact. Some movements lead to only slight additional exposure, while others change the system's role within an organisation.</p>
+<p>For example, expanding a recommendation system to include confidence scoring may involve a modest shift of the influence boundary. On the other hand, expanding that same system to automatically filter incoming cases means moving the exposure boundary and creates a fundamentally different exposure profile.</p>
+<hr />
+<p>Boundary movement has three important characteristics:</p>
+<ul>
+<li><em>Direction</em>: What authority is being added, removed, or modified?</li>
+<li><em>Magnitude</em>: How significant is the proposed movement?</li>
+<li><em>Exposure Delta</em>: How does the movement change the resulting exposure profile?</li>
+</ul>
+<p>An exposure delta shows the difference between the current exposure profile and the proposed exposure profile.</p>
+<p><img alt="Figure 5: Boundary Movements &amp; Exposure Deltas" src="images/Boundary_Movement_and_Exposure_Delta.png" />
+<em>Figure 5: Boundary Movements and Exposure Delta</em></p>
+<p>Figure 5 shows that expanding authority is not a one-time event; it's a process that crosses one or more governance boundaries. The central axis displays four dimensions that can change as a system's role grows:</p>
+<ul>
+<li>Data (what it can access), </li>
+<li>Influence (how much it shapes decisions), </li>
+<li>Exposure (the potential impact if it is wrong), and,</li>
+<li>Execution (what actions it can perform). </li>
+</ul>
+<p>The example vectors indicate that different paths of expansion lead to different exposure changes.</p>
+<p>For instance, expanding a system from Recommend to Recommend + Data mainly increases access to context and usually causes a relatively small increase in exposure. In contrast, shifting from Recommend to Constrain alters the system's influence on decision-making and can result in a much larger change in exposure.</p>
+<p>The figure's key takeaway is that governance reviews should not only consider if authority is growing, but also look at which boundaries are shifting and by how much. Different paths can create significantly different exposure profiles.</p>
+<p>Exposure deltas are the focus for reviewing authority expansion decisions.</p>
+<h2 id="expansion-reviews">Expansion Reviews</h2>
+<p>Every request for authority expansion should include four categories of information. These address four specific governance questions:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Information Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can the system perform the task?</td>
+<td>Capability Indicators</td>
+</tr>
+<tr>
+<td>Can the system perform the task consistently?</td>
+<td>Reliability Indicators</td>
+</tr>
+<tr>
+<td>What changes if authority is expanded?</td>
+<td>Exposure Assessment</td>
+</tr>
+<tr>
+<td>Why is the change worth accepting?</td>
+<td>Business Justification</td>
+</tr>
+</tbody>
+</table>
+<p>An expansion review should evaluate all four.</p>
+<p>These four categories are how the gate criteria introduced above are actually seen in practice. Capability Indicators provide evidence for the Performance gate. Reliability Indicators are the evidence for the Reliability gate, and, where user override and adoption data is available, the Trust Signals gate as well. Exposure Assessment and Business Justification determine whether the resulting exposure is acceptable, separately from whether the system is technically ready. Compliance is verified independently by the Risk and Compliance Reviewer as part of Governance Review and Approval, below, rather than through capability or reliability evidence.</p>
+<h3 id="capability-indicators"><strong>Capability Indicators</strong></h3>
+<p>Capability indicators evaluate if a system can perform the proposed task. Relevant measures may include accuracy, precision, recall, task completion rates, quality of outcomes, or other relevant indicators suitable for the operational context.</p>
+<p>Capability indicators answer a simple question: "Can the system perform the proposed function?"</p>
+<h3 id="reliability-indicators"><strong>Reliability Indicators</strong></h3>
+<p>Reliability indicators assess whether the system's performance stays stable over time, conditions, and operational environments.</p>
+<p>A system that works well under ideal conditions may still be inappropriate for authority expansion if its behavior is inconsistent, unpredictable, or hard to reproduce.</p>
+<p>Trust signals may also be relevant at this stage. Examples include user override rates, operator adoption patterns, escalation frequencies, or other indicators that show how the system performs in real operational workflows.</p>
+<p>Reliability indicators answer another question: "Can the system perform the proposed function consistently?"</p>
+<h2 id="exposure-assessment">Exposure Assessment</h2>
+<p>While capability and reliability establish the technical limits of the system, exposure assessment evaluates what changes if more authority is granted.</p>
+<p>The goal of exposure assessment is not to find out if exposure increases. Exposure nearly always goes up when authority expands. The aim is to clarify the nature and significance of that increase.</p>
+<p>SCOPE evaluates exposure across three dimensions:</p>
+<ul>
+<li><em>Visibility</em>: What information, cases, or decisions become hidden, filtered, or mediated?</li>
+<li><em>Dependency</em>: How much do organisational outcomes depend on system behavior?</li>
+<li><em>Autonomy</em>: What extra operational authority is granted, and how reversible are its consequences?</li>
+</ul>
+<p>These dimensions create a repeatable assessment framework. Each dimension can be evaluated using defined criteria and given a qualitative rating. This allows organisations to compare exposure profiles and assess proposed authority changes without needing a universal numerical exposure score. </p>
+<p>Examples of such criteria and suitable ratings are in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Criteria</th>
+<th>Possible Ratings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visibility</td>
+<td>- What percentage of cases remain visible to humans?<br>- Can hidden cases be audited?<br>- Can suppressed items be recovered?</td>
+<td>- Low: full visibility retained<br>- Medium: Partial filtering<br>- High: Significant suppression<br>- Critical: Visibility largely removed</td>
+</tr>
+<tr>
+<td>Dependency</td>
+<td>- What proportion of outcomes depend on the system?<br>- Can operations continue if the system fails?<br>- Is there an independent decision path?</td>
+<td>- Low: Advisory only<br>- Medium: Influential<br>- High: Operationally significant<br>Critical: Mission-dependent</td>
+</tr>
+<tr>
+<td>Autonomy</td>
+<td>- Can the system execute actions?<br>- Can actions be reversed?<br>- How quickly do consequences propagate?</td>
+<td>- Low: no execution<br>- Medium: Limited execution<br>- High: Autonomous execution<br>- Critical: high-scale irreversible execution</td>
+</tr>
+<tr>
+<td>Exposure assessment answers the question: "What additional exposure are we accepting?"</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Consider a support-ticket system shifting from Recommend to Constrain. Exposure assessment may show that the proposed setup would lower human review coverage from 100% of tickets to 30%. This change creates a hidden group whose outcomes rely on system filtering choices. Governance reviewers must then decide if the existing reliability indicators and business reasons are enough to justify that change.</p>
+<h2 id="business-justification">Business Justification</h2>
+<p>Capability indicators show if expansion is possible. Exposure assessment identifies what changes will occur.</p>
+<p>Business justification explains why the increase in exposure is acceptable.</p>
+<p>Relevant factors may include operational efficiency, reduced workload, faster response times, cost savings, better service quality, regulatory requirements, or other organisational goals. </p>
+<p>Business justification answers the question: "Why is the increase in exposure justified?"</p>
+<h2 id="governance-review-and-approval">Governance Review and Approval</h2>
+<p>The expansion gate serves as the governance checkpoint. The expansion review is the process for gathering and evaluating evidence. The outcome of this review is either approval or rejection.</p>
+<p>Here’s an example of the outcome from an expansion review based on the ideas discussed earlier:</p>
+<pre><code>
+Current Authority: Recommend
+
+Proposed Authority: Constrain
+
+Boundary Movement: Exposure Boundary
+
+Exposure Delta: Human review coverage reduced from 100% to 30%
+
+Expansion Review Outcome: Approved subject to quarterly review.
+
+</code></pre>
+<p>Expansion reviews should include both technical and governance stakeholders.</p>
+<p>Technical reviewers look at capability and reliability indicators. Governance reviewers assess exposure evaluations and business justification.</p>
+<p>The goal is not to remove judgment from expansion decisions. Instead, it is to ensure that capability, exposure, and organisational goals are assessed clearly rather than implicitly.</p>
+<p>Expansion reviews are not simple pass-fail processes. Capability indicators determine if expansion is technically possible. Exposure assessments clarify what changes occur if authority is expanded. Business justification explains why those changes are worth accepting. Governance reviewers must consider these aspects together. Larger exposure changes typically need stronger business justification and more supporting evidence than smaller ones.</p>
+<p>Therefore, all expansion requests must be reviewed, documented, and approved before altering authority boundaries.</p>
+<p>The specific roles, responsibilities, and approval authorities should be defined within the organisation’s governance structure and recorded in the Scope Ledger.</p>
+<h2 id="authority-staging">Authority Staging</h2>
+<p>Authority should grow gradually.</p>
+<p>The point of staging is not to delay deployment unnecessarily. It is to make sure that authority increases only after gathering supporting evidence and carefully assessing exposure.</p>
+<p>Generally, systems should move through authority stages one at a time. Jumping between non-adjacent stages should need extra justification because bigger boundary shifts usually lead to larger changes in exposure.</p>
+<p>Thus, authority staging turns expansion from an assumption into a governance process.</p>
+<h2 id="expansion-as-exposure-management">Expansion as Exposure Management</h2>
+<p>Every authority expansion suggests a change in organisational exposure. Systems gain more authority not just because they can use it, but because an evaluation of a proposed topology change has taken place, the resulting exposure change has been assessed, and the increase in exposure has been deemed acceptable.</p>
+<p>SCOPE does not set universal exposure limits. Acceptable exposure varies based on the organisation’s context, operational effects, regulatory requirements, and risk tolerance. The goal of exposure assessment is to make the changes clear so that organisations can make informed governance choices.</p>
+<p>Making a single expansion decision well is crucial but not enough. Organisations that make good decisions can still lose focus: personnel change, systems develop, and the reasons for past decisions become hard to trace. The next question is how to keep governance memory intact throughout the system's lifecycle.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="6-the-scope-ledger">6. THE SCOPE LEDGER</h1>
+<p>Every authority decision sets the stage for the decisions that come after it. A proposed expansion can't be assessed on its own; reviewers need to grasp the existing authority, the exposure that has been accepted, and the reasoning behind previous expansions. Without a solid history, authority reviews turn into isolated judgments that fail to connect with the earlier decisions shaping the current situation.</p>
+<p>SCOPE addresses this through the Scope Ledger.</p>
+<h2 id="the-scope-ledger-as-a-system-of-record">The Scope Ledger as a System of Record</h2>
+<p>The Scope Ledger is the organisational system of record for authority, exposure, and authority decisions.</p>
+<p>Its goal is not just to document the current state of a system. It aims to preserve the historical context needed to assess future changes in authority. Therefore, the Ledger records both:</p>
+<ul>
+<li>The current authority topology and exposure profile of a system.</li>
+<li>The decisions that established that topology and exposure profile.</li>
+</ul>
+<p>A system's current authority can often be observed directly. However, the reasoning behind that authority is often overlooked. This includes why the authority exists, what exposure was accepted to achieve it, and what evidence supported the decision. The Scope Ledger keeps that context.</p>
+<p>It's important to note that the Ledger is not an activity log. It captures decisions about scope and authority, not the operational history of the system. Operational logs, audit trails, and system telemetry are kept as separate records. The Ledger documents the governance decisions that define and change authority.</p>
+<h2 id="what-the-ledger-records">What the Ledger Records</h2>
+<p>Each governed system maintains a record within the Scope Ledger.</p>
+<p>At minimum, that record should contain:</p>
+<ul>
+<li>Current authority stage.</li>
+<li>Current authority topology and boundary definitions.</li>
+<li>Current exposure profile.</li>
+<li>Approved authority changes.</li>
+<li>Exposure assessments and exposure deltas.</li>
+<li>Business justification.</li>
+<li>Gate review outcomes.</li>
+<li>Approval decisions.</li>
+<li>Review schedules and outcomes.</li>
+</ul>
+<p>When authority changes are approved, new entries are added to the record. Existing entries are neither removed nor rewritten.</p>
+<p>The goal is not to create documentation just for the sake of it. The aim is to preserve the reasoning behind authority decisions so future reviews can assess them in context.</p>
+<p>Figure 6 shows how these fields are recorded in a real Ledger entry for an invoice processing system that is expanding from Recommend to Constrain authority.</p>
+<p><img alt="Figure 6: Scope Ledger Entry" src="images/Scope_Ledger_Entry_Example.png" />
+<em>Figure 6: Example of a SCOPE Ledger Entry</em></p>
+<hr />
+<h2 id="triggering-review-and-change">Triggering Review and Change</h2>
+<p>The Scope Ledger is not a passive repository. It serves as  an active governance mechanism.</p>
+<p>New entries or reviews start with specific trigger events. Common triggers include:</p>
+<ul>
+<li>
+<p>Scheduled periodic review.</p>
+</li>
+<li>
+<p>Changes in performance or reliability indicators that could impact operations.</p>
+</li>
+<li>
+<p>Significant environmental changes, such as regulatory changes, organisational restructuring, vendor replacement, or major data source modifications.</p>
+</li>
+<li>
+<p>Formal requests to expand, reduce, or otherwise modify system authority.</p>
+</li>
+</ul>
+<p>These triggers make sure that authority governance stays linked to operational reality instead of turning into a simple documentation task.</p>
+<p>Authority changes go through the expansion review process explained earlier in Part 5. This process looks at capability indicators, reliability indicators, exposure assessments, and business justifications before recording approval decisions in the Ledger.</p>
+<p>This includes approved expansions, rejected expansions, deferred decisions, and authority contractions.</p>
+<p>A Ledger that only logs approved changes does not serve as a governance tool. Governance needs to show both the decisions that were accepted and those that were turned down.</p>
+<h2 id="authority-expansion-and-historical-context">Authority Expansion and Historical Context</h2>
+<p>Authority decisions build on one another.</p>
+<p>A system might start at Assist, move to Recommend, later cross an exposure boundary to Constrain, and eventually gain limited execution authority. Each expansion may be justified on its own.</p>
+<hr />
+<p>However, the overall authority profile shows the result of many decisions made over time. Future expansion reviews should go beyond just evaluating the proposed changes. Reviewers need to understand:</p>
+<ul>
+<li>What authority already exists.</li>
+<li>What exposure has already been accepted.</li>
+<li>What assumptions supported previous expansions.</li>
+<li>Whether those assumptions still hold true.</li>
+<li>How authority has built up over time.</li>
+</ul>
+<p>The Scope Ledger offers this context. Without it, authority reviews risk becoming isolated decisions that are disconnected from the history that shaped the current system.</p>
+<h2 id="roles-and-accountability">Roles and Accountability</h2>
+<p>The Scope Ledger defines responsibility for authority decisions.</p>
+<p>Authority ownership follows accountability for outcomes, not technical management.</p>
+<p>The person responsible for the operational outcomes of the system should also manage its authority level. For instance, in an invoice processing system, the finance function would typically hold authority ownership instead of the technology function.</p>
+<p>Several roles are involved in the governance process:</p>
+<ul>
+<li>A Ledger Owner accountable for business outcomes and current authority level.</li>
+<li>Technical reviewers who validate topology definitions, check exposure assessments, and assess technical feasibility.</li>
+<li>Risk and compliance reviewers, who evaluate consistency with the organisation’s risk appetite and regulatory requirements.</li>
+<li>Independent auditors or reviewers, who verify governance integrity and ensure compliance with the process.</li>
+</ul>
+<p>This separation of roles ensures that authority decisions are assessed independently, preventing any single stakeholder from controlling both the request for authority and the record of that authority.</p>
+<hr />
+<h2 id="integrity-traceability-and-immutability">Integrity, Traceability, and Immutability</h2>
+<p>Since the Scope Ledger serves as the system of record for authority, its contents must be durable, attributable, and traceable.</p>
+<p>Authority decisions should not be deleted when systems change, personnel shift, or organisational priorities adjust. Instead, new entries should replace earlier entries while keeping the historical record intact.</p>
+<p>Immutability has two key purposes. First, it maintains the historical context needed for future authority decisions. Second, it prevents the past alteration of authority decisions, exposure assessments, and approval outcomes.</p>
+<h2 id="the-ledger-as-a-shared-governance-artifact">The Ledger as a Shared Governance Artifact</h2>
+<p>In many cases, authority is not managed only within the organisation using the system.</p>
+<p>Vendors, implementation partners, external assessors, and regulators may all influence the lifecycle of authority decisions. Therefore, the Scope Ledger offers a common governance tool that can be shared across organisational lines.</p>
+<p>In more developed implementations, the Ledger may play a role in contractual, procurement, assurance, or regulatory processes. Extending authority may require vendor involvement, approval, or renegotiating commercial terms, creating a shared governance system for authority growth.</p>
+<p>The wider economic implications of this model are discussed in the next section.</p>
+<h2 id="review-reaffirmation-and-contraction">Review, Reaffirmation, and Contraction</h2>
+<p>The Scope Ledger does more than support authority expansion.</p>
+<p>Periodic reviews enable organisations to assess whether existing authority is still justified. The frequency of reviews should relate to the authority level, exposure profile, and operational consequences of the system.</p>
+<p>Changes in operating conditions, organisation priorities, regulatory needs, or system performance may challenge the assumptions made when authority was first granted, triggering a review.</p>
+<p>Review outcomes may include:</p>
+<ul>
+<li>Reaffirmation of the current authority level.</li>
+<li>Additional controls or monitoring requirements.</li>
+<li>Authority contraction or shifting boundaries.</li>
+<li>Starting a new authority expansion review.</li>
+</ul>
+<p>The Ledger thus manages the entire lifecycle of authority: its growth, maintenance, and contraction.</p>
+<p>A worked example showing how topology changes are recorded across Ledger entries is provided in Appendix B.</p>
+<p>The Scope Ledger makes authority visible and traceable. However, it cannot, on its own, align the incentives that promote authority expansion. Achieving that requires a different mechanism that connects authority to its economic impacts.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="7-economic-implications-of-authority-governance">7 — ECONOMIC IMPLICATIONS OF AUTHORITY GOVERNANCE</h1>
+<h2 id="the-expansion-imperative">The Expansion Imperative</h2>
+<p>Earlier sections have shown that authority grows because each small step seems justified on its own. A system already has access to data, so it makes sense to extend that access to a nearby data source. A system already recommends actions, so it seems logical to let it carry out low-risk ones. A system already manages routine cases, so expanding it to similar workflows also seems reasonable.</p>
+<p>Market forces strengthen this trend. Organisations that successfully grow their authority lower their operating costs, speed up their cycle times, and improve their throughput. Competitors see these results and feel pressured to keep up. The market rewards expansion with higher capital valuations, better rankings, and a competitive edge. As a result, expanding authority often becomes hard to resist.</p>
+<h2 id="the-economic-invisibility-problem">The Economic Invisibility Problem</h2>
+<p>This is where an important insight arises: authority expansion creates both value and exposure, but current economic models tend to focus on the value.</p>
+<p>The value of expansion is clear and immediate. A system that takes action directly cuts operating costs. Lower costs show up on balance sheets. Improvements in efficiency appear in quarterly results. Competitors' expansion sets expectations for investors. </p>
+<p>The exposure that comes with expansion is real but often goes unnoticed until a crisis occurs.</p>
+<p>To understand why this may happen, let's revisit the value relationship mentioned earlier:</p>
+<p>$$AI\ Value ≈ (Outcome_{with\ AI} - Outcome_{without\ AI}) \times Context$$</p>
+<p>The value equation does not directly account for exposure. However, in practice, achieving bigger outcome improvements often needs broader authority, deeper integration into workflows, and more dependence on the system within the organisation. Thus, value creation and exposure often rise together, even though they are not the same thing.</p>
+<p>A system that makes more decisions needs stronger governance. Governance adds costs, such as review processes, oversight roles, technical controls, and audit requirements. These costs are real but can easily be postponed. An organisation can expand authority today and handle governance costs later, when exposure becomes undeniable.</p>
+<p>A system that carries out more actions opens up the possibility for larger failures. That failure exposure can be measured but is not certain. Organisations can justify the risk: the likelihood is low, the controls are enough, and the exposure is manageable.</p>
+<p>This creates a consistent bias toward expansion. The benefits are immediate and measurable, while the costs are spread out and can be delayed. Exposure is based on probability and is often underestimated.</p>
+<p>As a result, authority tends to grow to the limits of organisational risk tolerance, rather than the limits of governance capability. Authority expands until exposure becomes critical, not before.</p>
+<p>This is not a judgment error but a visibility issue. The economic reasoning behind authority expansion is incomplete. Organisations cannot make informed trade-offs between value and exposure when exposure remains hidden.</p>
+<h2 id="exposure-as-an-economic-object">Exposure as an Economic Object</h2>
+<p>The main issue is that organisations view authority expansion as a technical or operational choice, rather than an economic one. This exposure can lead to financial loss, disruptions in operations, regulatory issues, or damage to reputation.</p>
+<p>A system's authority level, therefore, is an economic factor that affects both the value it can generate and the exposure the organisation faces.</p>
+<p>A system at Assist is a tool for productivity. Its value increases with throughput and user adoption. Its exposure is limited: the system produces outputs while humans are accountable for outcomes.</p>
+<p>A system at Recommend influences human decisions. Its value can be much greater, as it can reduce poor decisions on a large scale, improve decision quality, or speed up decision-making. However, its exposure is also significantly higher: the system's recommendations guide human judgment, and mistakes in recommendations lead to systematic errors in decisions.</p>
+<p>A system at Constrain determines what information humans can access. Its value can be groundbreaking, as it affects what decisions are possible, not just what decisions get made. Its exposure is also transformative: the system becomes part of the infrastructure. Failures in the system are infrastructure failures that impact entire workflows, rather than just individual decisions.</p>
+<p>A system at Act operates on its own. Its value comes from removing human judgment entirely for specific types of decisions. Its exposure is at its highest: the organisation takes on responsibility for outcomes beyond its direct control.</p>
+<p>These are not just differences in degree. They represent differences that can significantly affect organisations, particularly in terms of reputation and trust. Yet these distinctions often do not show up in commercial valuations, risk assessments, and pricing arrangements.</p>
+<p>The result is misalignment. Organisations expand authority to gain value but do not take into account the exposure they are assuming. Vendors increase authority to boost revenue but fail to consider the exposure they bring into the buyer’s organisation.</p>
+<h2 id="authority-as-both-governance-and-economic-object">Authority as Both Governance and Economic Object</h2>
+<p>Authority governance is essentially a design challenge that has economic effects. The main question is how to distribute influence between systems and humans as capabilities grow. The expansion of authority depends not just on what technology can do but also on economic motivations.</p>
+<p>While governance methods may outline how authority <em>should</em> change, financial pressures often decide how it <em>actually</em> changes. Effective authority governance needs to look at both aspects together, making the effects of authority expansion clear before it takes place.</p>
+<p>Economic assessment plays a similar role as topology and exposure assessment. It reveals the effects of authority expansion before it happens. </p>
+<p>To illustrate how such an assessment brings important factors to light, consider the following:</p>
+<pre><code>Recommend System
+Exposure: Low (human overrides possible)
+Annual Cost: $100k
+
+Constrain System
+Exposure: Medium (visibility surface reduced)
+Annual Cost: $120k
+
+Governance Cost:
++ 1 review committee
++ quarterly audit
++ compliance reporting
+
+Question:
+Does the additional value justify the additional exposure and governance cost?
+
+</code></pre>
+<p>Currently, the economic and governance aspects of authority are often in conflict. Governance recommends caution. Markets reward expansion. Governance requires review. Pricing models encourage growth. Governance aims to control exposure. Business pressure pushes for increased value.</p>
+<p>SCOPE brings these aspects together. With the Scope Ledger and expansion reviews, it follows the principle that authority must remain flexible. It also creates clear connections between changes in governance and economic outcomes. SCOPE makes governance and economics work together more effectively.</p>
+<p><img alt="Figure 7: Economic Implications by Authority Level" src="images/Economic_Implications_by_Authority_Level.png" />
+<em>Figure 7: Economic Implications by Authority Level</em></p>
+<p>Figure 7 shows an important economic aspect of the SCOPE framework: as authority increases, both value potential and exposure increase together.</p>
+<p>As we move from Assist to Recommend, then Constrain, and finally to Act, systems gain more influence over outcomes. This brings greater operational benefits but also increases the risks of failure and the governance effort needed to manage that risk. The table displays this progression across five areas: authority level, typical value created, exposure profile, governance cost, and possible commercial alignment mechanisms.</p>
+<hr />
+<h2 id="the-scope-ledger-as-shared-governance-artifact">The Scope Ledger as Shared Governance Artifact</h2>
+<p>The Scope Ledger serves as an internal governance document that records authority decisions within the organisation. It can also extend its reach beyond internal governance when used as a shared governance document between organisations. </p>
+<p>In this way, the Ledger has purposes beyond just internal governance:</p>
+<ul>
+<li><strong>Governance record:</strong> It shows how authority has changed and what assumptions supported each change. </li>
+<li><strong>Commercial commitment:</strong> It outlines the scope within which the vendor is allowed to operate, and the pricing related to each scope level. </li>
+<li><strong>Enforcement mechanism:</strong> Any changes to the Ledger must be approved by both parties. Neither party can independently expand the scope. Expanding authority requires a signed entry in the Ledger by both the vendor and the buyer. </li>
+<li><strong>Accountability trigger:</strong> If evidence shows the system operated outside the authorized scope of the Ledger, there will be clear consequences outlined in the contract.</li>
+</ul>
+<p>This changes the Scope Ledger from an internal governance document into a binding shared obligation.</p>
+<p>The practical implications are significant. In typical software agreements, vendors might roll out new features through system updates, and organisations can decide whether to adopt them. In the SCOPE governance model, any changes that expand authority cannot take effect without an explicit review.</p>
+<p>The economic methods for implementing authority governance—like authority-linked pricing, contractual contingency provisions, or Scope Ledger contract annexes—are implementation choices, not core parts of the framework. Therefore, they are beyond the focus of this paper.</p>
+<h2 id="the-resulting-authority-expansion-conversation">The Resulting Authority Expansion Conversation</h2>
+<p>A key point from Figure 7 is that governance costs do not stay the same as authority grows. Systems with higher authority usually need more oversight, more formal review processes, greater assurance, and clearer accountability. As a result, the economic conversation shifts from simple usage metrics to discussions about influence, responsibility, and accepted exposure.</p>
+<p>Importantly, SCOPE does not dictate a specific pricing model. Organisations and vendors can adopt different commercial approaches based on their market, risk tolerance, regulatory environment, and contractual needs. The intention of the pricing suggestions in Figure 7 is not to endorse specific pricing structures but to emphasize the idea that as systems gain more significance, both governance requirements and economic considerations usually change.</p>
+<p>The outcome is that expanding authority forces organisations to answer not just one question but two—and they need to answer them together.</p>
+<p>The first question is: <em>How much is this system allowed to matter?</em></p>
+<p>The second question is: <em>What economic and governance mechanisms ensure that authority remains what we intended it to be?</em></p>
+<p>Until both questions are answered, authority expansion is not truly governed. It is simply recorded.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="8-the-scope-governance-cycle">8. THE SCOPE GOVERNANCE CYCLE</h1>
+<p>Each section of this paper has looked at a different aspect of authority governance. Together, they create a continuous lifecycle, which is an ongoing process of proposing, reviewing, deciding, recording, and monitoring changes in authority as systems evolve within organisations. This lifecycle is not about governing AI deployment; it is about governing the evolution of authority.</p>
+<p>The SCOPE Governance Cycle begins with a proposed change in authority.</p>
+<p>Operational monitoring can spot opportunities for expansion. For instance, a system may work well at its current authority level, and evidence might suggest it could function at a higher authority with proper oversight. On the other hand, monitoring might highlight the need for contraction, such as performance issues, unexpected failures, or behavioral shifts that indicate the current authority level is no longer justified.</p>
+<p>Business goals can drive the need for broader capabilities. Competitive pressures may lead to decisions on whether to align with competitor functions. Changes in regulations, technological progress, or shifts in organisational priorities may lead to proposals for expanding or redefining authority.</p>
+<p>Formally, monitoring provides feedback that can prompt a new authority review if certain threshold events happen. These may include significant changes in system performance, material changes in the organisational context, explicit requests from the business to change the scope, or regular review cycles that are scheduled.</p>
+<p>Regardless of how they arise, every proposal goes through the same governance process. The proposal undergoes an Expansion Review—not as a mere formality, but as the key mechanism within the framework.</p>
+<p>The SCOPE Governance Cycle, shown in Figure 8, moves from proposal through assessment, decision, recording, and monitoring. The process is complete when evidence prompts the next review.</p>
+<p><img alt="Figure 8: The SCOPE Governance Cycle" src="images/SCOPE_Governance_Cycle.png" />
+<em>Figure 8: The SCOPE Governance Cycle</em></p>
+<p>Figure 8 shows that systems function within their current authority state until monitoring, performance signals, or business needs lead to a proposed authority change. That proposal enters the Expansion Review, where three assessment disciplines evaluate topology implications, exposure consequences, and economic justification. The Authority Decision weighs evidence against gate criteria, and the outcome—approval, rejection, or modification—is recorded in the Scope Ledger, setting the new operational authority state.</p>
+<h2 id="the-expansion-review">The Expansion Review</h2>
+<p>The Expansion Review does not make decisions alone. It gathers evidence from various assessment disciplines, each providing different insights into the key question: Is this proposed authority change justified?</p>
+<p>The Expansion Review checks the proposal against the gate criteria outlined in the governance framework. These criteria—Performance, Reliability, Trust Signals, and Compliance—are not abstract; they are concrete measures of whether the system has earned the proposed authority.</p>
+<p>To address these criteria, three assessment disciplines conduct parallel analyses.</p>
+<p>Topology Assessment looks at how the proposed change affects authority structure. It analyses which boundaries would shift, what dependencies the new authority would create, and how the system's place in organisational workflows would change. This assessment asks: <em>What would authority at this new level really mean in practice?</em></p>
+<p>Exposure Assessment examines the potential consequences of the proposed change. It assesses how organisational exposure would change, the potential impact of failure at the new authority level, and what measures might be needed to manage the increased exposure. This assessment asks: <em>What risks would the organisation face if this expansion happened?</em></p>
+<p>Economic Assessment determines whether the change is justified. It evaluates the expected benefits for the organisation, the governance and operational costs of operating the system at the new authority level, and the risk-adjusted value of the expansion—or, in the case of contraction, the efficiency gains from functioning at a lower authority level. This assessment asks: <em>Would the created value justify the assumed exposure and the governance burden?</em></p>
+<p>Together, these three assessments provide the evidence needed to evaluate whether a proposed authority change is justified. That evidence informs the authority decision.</p>
+<h2 id="authority-decisions">Authority Decisions</h2>
+<p>The Authority Decision compares evidence from all three assessment disciplines against the applicable gate criteria. A proposal gets approved only when all criteria are fully met. This is a non-negotiable standard—partially met criteria do not equal approval. The requirement for complete satisfaction of all criteria turns gate reviews into true governance mechanisms instead of mere advisory checkpoints. </p>
+<p>The Authority Decision is made by the Ledger Owner, the individual responsible for the business outcomes related to the system. They consult with the governance roles outlined in the Scope Ledger governance policy: the Technical Reviewer, who certifies technical feasibility, the Risk and Compliance Reviewer, who evaluates organisational risk appetite and regulatory compliance, and independent auditors who verify governance integrity.</p>
+<p>This separation of roles ensures that authority decisions are genuinely independent. No single stakeholder controls both the request for authority and the approval process. </p>
+<p>The decision can lead to approval, rejection, deferral for more evidence, or approval with modifications. Importantly, this distinction matters: the decision concerns authority, not capability. A system may technically be able to function at a higher authority level without being authorized for it. SCOPE deliberately separates these two aspects to make sure that governance decisions are clear and intentional, not just implicit in engineering choices.</p>
+<p>Once a decision is made, it is recorded in the Scope Ledger. This record includes not only the decision itself but also the evidence supporting it and the gate criteria that were met. The record is unchangeable; future decisions do not erase this history but build on it.</p>
+<h2 id="the-scope-ledger-as-institutional-memory">The Scope Ledger as Institutional Memory</h2>
+<p>The Scope Ledger acts as the organisation's official record for authority governance.</p>
+<p>It documents the current scope, authority level, and decision history that led to the present state. Without this memory, organisations risk facing a structural issue: they keep revisiting the same authority questions without understanding how the current state developed. Old assumptions become hidden, risk acceptances are forgotten, and boundary decisions lose their rationale.</p>
+<p>The Ledger changes governance from a series of isolated decisions into a cumulative process. It ensures that future reviews start with understanding instead of assuming. When a new reviewer takes over governance of a system, they inherit not just the current authority but also the reasoning that led to it. This context helps them assess future proposals appropriately.</p>
+<h2 id="operational-state-and-feedback">Operational State and Feedback</h2>
+<p>Once recorded in the Ledger, the approved authority state becomes the system's current operational state. The system functions within its approved scope and authority limits.</p>
+<p>During operation, monitoring mechanisms gather information about system behavior, reliability, performance, incidents, overrides, and other operational signals. This evidence does not instantly change authority. Instead, it generates information that may lead to future authority reviews, closing the feedback loop that connects governance to operational reality.</p>
+<p>In this way, monitoring works as feedback rather than governance. Its goal is not to make real-time authority decisions but to provide information that might lead to revisiting authority decisions and to start the review process when the evidence is significant.</p>
+<hr />
+<h2 id="governing-authority-evolution">Governing Authority Evolution</h2>
+<p>The lifecycle continues indefinitely. New information leads to new proposals. New proposals result in new reviews. New reviews bring about new decisions. New decisions update the Scope Ledger and set a revised authority state. Over time, authority evolves through a series of intentional, visible, and reviewable changes. </p>
+<p>This is the central objective of SCOPE.</p>
+<p>The framework does not seek to prevent authority expansion. Nor does it assume authority should stay fixed. Organisations must be able to increase authority when justified and decrease authority when necessary. The important factor is that these changes happen through governance rather than by default.</p>
+<p>The SCOPE Governance Cycle provides the method for this governance. It ensures that every authority change is proposed, reviewed against clear criteria, decided through independent assessment, recorded in a lasting record system, and monitored for evidence that might justify future reviews. Every expansion includes set review and reversal mechanisms. These are invoked as routine elements of ongoing governance, not as exception cases.</p>
+<p>The result is a system where authority remains clear, reviewable, and contingent during its evolution.</p>
+<p>Traditional governance assumes that authority is assigned once and then controlled by policy. Agentic systems challenge this view. Their authority changes constantly due to integration, operational success, and the build-up of organisational dependency. Governing that evolution needs more than just rules about what systems can do. It necessitates a disciplined approach to determine how much authority systems should have and under what conditions over time.</p>
+<p>The central question of AI governance is therefore not: <em>"Is this system safe?"</em> but rather <em>"How much authority should this system have, and how will we govern its evolution from here?"</em></p>
+<p>SCOPE exists to answer that question.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="part-9-limitations-and-future-directions">PART 9 - LIMITATIONS AND FUTURE DIRECTIONS</h1>
+<p>SCOPE focuses on designing and managing authority before systems are integrated into operational workflows, which is known as pre-deployment governance.</p>
+<p>The framework suggests that authority can be identified, described, and managed through clear boundaries, review processes, and organisational decision-making. As AI systems grow more complex, distributed, and independent, maintaining these assumptions may become harder to sustain. Several areas represent key opportunities for future improvement and validation</p>
+<h2 id="multi-agent-systems">Multi-Agent Systems</h2>
+<p>New agent-based frameworks feature coordinated networks of agents. In these settings, authority stems from the delegation and coordination between agents rather than from an individual system. The current SCOPE framework assumes authority lies within a manageable system boundary; however, multi-agent setups challenge this belief.</p>
+<p>Future work should address: (1) how to model chains of delegated authority among agents, (2) how to combine exposure when several agents impact outcomes, and (3) how to control transitions in composite systems where no single agent gains new authority, but the system as a whole does.</p>
+<h2 id="boundary-recognition-in-complex-environments">Boundary Recognition in Complex Environments</h2>
+<p>SCOPE relies on the ability to pinpoint and define authority boundaries. In many operational settings, this is straightforward. Data access, execution rights, workflow integration points, and decision authority can often be clearly described and managed.</p>
+<p>However, some systems function in highly interconnected environments where authority develops gradually through integration instead of explicit design choices. Recommendation systems might subtly influence behavior through ranking effects. Routing systems could shape outcomes based on cumulative workflow dependencies. Agent-based systems may gain new capabilities through tool use, orchestration, or dynamic changes. </p>
+<p>In such settings, it may not always be easy to determine where one authority boundary ends and another begins. The issue may not just be governing the expansion of authority but recognizing that it has expanded at all.</p>
+<p>Future work may investigate ways to systematically identify authority boundaries, map influence paths, and detect authority growth in complex operational environments.</p>
+<h2 id="human-adaptation">Human Adaptation</h2>
+<p>SCOPE mainly addresses governance concerning system authority, not the organisational and behavioral impacts of authority distribution.</p>
+<p>In reality, human behavior adapts to system behavior. Operators may grow more reliant on recommendations. Organisations might redesign workflows around automated functions. Skills, responsibilities, incentives, and oversight patterns may change over time.</p>
+<p>These adjustments can change the real impact of authority in ways that authority topology alone does not capture. A recommendation system that starts with limited influence may become significant if users frequently rely on its outputs. Conversely, strong organisational practices may lessen dependency even when authority is considerable.</p>
+<p>Human factors like automation bias, skill maintenance, organisational learning, and workforce adjustments remain significant areas beyond the current scope of the framework.</p>
+<p>Future work may examine how authority governance affects organisational behavior and how human adaptation impacts realized exposure over time.</p>
+<h2 id="exposure-quantification">Exposure Quantification</h2>
+<p>SCOPE intentionally does not define a universal exposure score.</p>
+<p>Exposure emerges from the interaction of authority, topology, and operational outcomes, all of which depend on context. </p>
+<p>Financial loss, operational disruption, reputational damage, safety impacts, and regulatory issues are possible results of authority expansion. Trying to combine these different types of exposure into one metric seems impractical.</p>
+<p>Future work should create sector-specific exposure models that maintain contextual relevance.</p>
+<hr />
+<h2 id="empirical-validation">Empirical Validation</h2>
+<p>This paper offers a conceptual and operational framework. It suggests a method for managing authority evolution but does not claim empirical validation across a wide range of organisational deployments.</p>
+<p>The framework has been developed by analysing common patterns seen in the deployment and evolution of AI-enabled systems. Its concepts aim to provide a practical way to describe authority, exposure, topology, and governance choices.</p>
+<p>Future work should assess the framework through case studies, operational implementations, long-term observations, and comparative analysis across various industries and deployment contexts. Such efforts may help verify the framework's usefulness, identify limitations that are not yet clear, and guide future improvements.</p>
+<h2 id="closing-observation">Closing Observation</h2>
+<p>These limitations do not undermine the main idea of the framework. Instead, they emphasize the complexity of the issue it aims to address.</p>
+<p>The governance challenges posed by AI systems are likely to change over time. As systems become more capable, more connected, and more integrated into organisational workflows, the ways authority builds up will continue to evolve.</p>
+<p>SCOPE should be seen not as a final solution to authority governance but as a starting point for a broader discipline focused on how operational authority is assigned, expanded, limited, and reviewed over time.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h2 id="appendix-a-competitive-positioning">APPENDIX A — COMPETITIVE POSITIONING</h2>
+<h2 id="the-emerging-ai-governance-stack">The Emerging AI Governance Stack</h2>
+<p>As AI systems become increasingly embedded in organisational workflows, a governance ecosystem is emerging around them. Different frameworks, platforms, and technical controls address different stages of the AI lifecycle.</p>
+<p>Viewed collectively, these approaches form a layered governance stack:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Purpose</th>
+<th>Representative Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L5</td>
+<td>Audit &amp; Assurance</td>
+<td>Logging, observability platforms, audit frameworks</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>Multi-Agent Orchestration</td>
+<td>LangGraph, CrewAI, Azure AI Foundry, Amazon Bedrock Agents</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>Runtime Governance</td>
+<td>Oracle OCI Governance, Bedrock Guardrails, runtime policy enforcement</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Governance Platforms</td>
+<td>IBM OpenPages, Credo AI, ServiceNow, MetricStream</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>Governance Frameworks &amp; Standards</td>
+<td>NIST AI RMF, ISO/IEC 42001, EU AI Act, Singapore Model AI Governance Framework</td>
+</tr>
+<tr>
+<td>L0</td>
+<td>Scope Design &amp; Authority Governance</td>
+<td>SCOPE</td>
+</tr>
+</tbody>
+</table>
+<p>Each layer addresses a different governance concern. Together they form a complementary ecosystem rather than competing approaches.</p>
+<p><img alt="AI Governance Stack" src="images/appendixA/Governance_Landscape.png" /></p>
+<p>Across the governance ecosystem, a common assumption appears repeatedly:</p>
+<blockquote>
+<p>Someone has already decided what the system should be allowed to do.</p>
+</blockquote>
+<p>Existing governance approaches provide extensive guidance on how to govern, monitor, audit, orchestrate, and control AI systems.</p>
+<p>Far fewer address the design decisions that precede deployment:</p>
+<ul>
+<li>Where should the system operate?</li>
+<li>What information should it access?</li>
+<li>What decisions should it influence?</li>
+<li>What actions should it execute?</li>
+<li>How should its authority expand over time?</li>
+<li>What evidence should be required before additional authority is granted?</li>
+</ul>
+<p>Yet these decisions largely determine both the value the system can create and the exposure it introduces.</p>
+<h2 id="the-role-of-scope">The Role of SCOPE</h2>
+<p>SCOPE occupies the pre-deployment design layer of the governance stack.</p>
+<p>Rather than focusing on how a system should be governed after deployment, SCOPE focuses on how its authority should be designed before deployment and how that authority should evolve as trust is earned.</p>
+<p>The framework introduces a structured methodology for:</p>
+<ul>
+<li>defining initial scope</li>
+<li>assessing exposure</li>
+<li>staging authority</li>
+<li>governing scope expansion</li>
+<li>making scope accumulation visible through the Scope Ledger</li>
+<li>aligning authority growth with evidence and performance</li>
+</ul>
+<p>In this sense, SCOPE complements rather than replaces existing governance approaches.</p>
+<table>
+<thead>
+<tr>
+<th>Governance Question</th>
+<th>Existing Governance Ecosystem</th>
+<th>SCOPE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How should AI be governed?</td>
+<td>Strong coverage</td>
+<td>Complementary</td>
+</tr>
+<tr>
+<td>How should AI be monitored?</td>
+<td>Strong coverage</td>
+<td>Minimal</td>
+</tr>
+<tr>
+<td>How should AI be audited?</td>
+<td>Strong coverage</td>
+<td>Minimal</td>
+</tr>
+<tr>
+<td>How should AI behave at runtime?</td>
+<td>Emerging coverage</td>
+<td>Complementary</td>
+</tr>
+<tr>
+<td>How should authority be allocated?</td>
+<td>Limited coverage</td>
+<td>Primary focus</td>
+</tr>
+<tr>
+<td>How should authority expand over time?</td>
+<td>Limited coverage</td>
+<td>Primary focus</td>
+</tr>
+<tr>
+<td>How should scope accumulation be made visible?</td>
+<td>Limited coverage</td>
+<td>Primary focus</td>
+</tr>
+<tr>
+<td>How should exposure and authority remain aligned?</td>
+<td>Limited coverage</td>
+<td>Primary focus</td>
+</tr>
+</tbody>
+</table>
+<p>SCOPE therefore occupies a distinct position within the emerging AI governance landscape. Rather than governing systems after scope has been defined, it provides a methodology for designing scope itself.</p>
+<p>Its focus is not governance after deployment, but the deliberate design of authority progression before and throughout deployment.</p>
+<h2 id="commercial-governance-ai-procurement-standards">Commercial Governance &amp; AI Procurement Standards</h2>
+<p>Existing AI procurement guidance (EU Model Contractual Clauses, GSA GSAR clauses) addresses data rights, performance SLAs, liability, and audit. None address scope progression as a jointly governed variable with pricing implications.</p>
+<p>SCOPE extends procurement governance by making scope expansion a contractual event, not just an operational one. The Scope Ledger as a contract annex creates economic consequences for scope decisions — a mechanism absent from current procurement frameworks.</p>
+    </section>
+    
+
+    <section class="chapter">
+    <h1 id="appendix-b-topology-modeling">APPENDIX B - TOPOLOGY MODELING</h1>
+<h2 id="modelling-language">Modelling Language</h2>
+<h3 id="purpose">Purpose</h3>
+<p>This appendix introduces a visual modelling language for representing how AI systems accumulate authority over time. The language uses a notation system to show four critical boundaries — data, influence, exposure, execution — and how they shift as systems evolve.</p>
+<p>Authority topology diagrams are the primary artifact. The design conversation that produces them is supporting context.</p>
+<h2 id="visual-primitives-notation">Visual Primitives &amp; Notation</h2>
+<p>The following symbols form the vocabulary for authority topology diagrams. Use these consistently across all topologies to enable comparison and pattern recognition.</p>
+<h3 id="core-elements"><strong>Core Elements</strong></h3>
+<p><img alt="Visual Elements for Topology Mapping" src="images/appendixB/Visual_Elements_For_Topology_Mapping.png" /></p>
+<hr />
+<h3 id="boundary-notation"><strong>Boundary Notation</strong></h3>
+<p><img alt="Visual Elements for showing Technical Boundaries" src="images/appendixB/Visual_Elements_For_Technical_Boundaries.png" /></p>
+<h3 id="authority-level-notation"><strong>Authority Level Notation</strong></h3>
+<p>Use a label on the diagram to indicate current authority level:</p>
+<pre><code>[ASSIST]
+Human sees all options. System provides interpretation.
+No boundary crossed.
+
+[RECOMMEND]  
+Human sees all options + system recommendation.
+Judgment boundary crossed (anchoring effect).
+
+[CONSTRAIN]
+Human sees filtered options (system decides visibility).
+Influence boundary crossed. Exposure boundary crossed.
+
+[ACT]
+System executes directly. Human audits/handles exceptions.
+Execution boundary crossed.
+</code></pre>
+<hr />
+<h3 id="topology-mutation-notation"><strong>Topology Mutation Notation</strong></h3>
+<p><img alt="Visual Elements for Topology Mutation" src="images/appendixB/Visual_Elements_For_Topology_Mutation.png" /></p>
+<h2 id="topology-diagram-methodology">Topology Diagram Methodology</h2>
+<p>A topology diagram shows the current authority state visually. It answers: What can the system see? What can it influence? What can it execute? Where do humans operate?</p>
+<h3 id="basic-structure"><strong>Basic Structure</strong></h3>
+<p>Every topology diagram has three horizontal zones (read top to bottom):</p>
+<pre><code>┌─────────────────────────────────────────────────┐
+│ DATA ZONE                                       │
+│ (What the system can see / what is restricted)  │
+├─────────────────────────────────────────────────┤
+│ DECISION ZONE                                   │
+│ (Where influence happens / where humans decide) │
+├─────────────────────────────────────────────────┤
+│ EXECUTION ZONE                                  │
+│ (What actually happens in the world)            │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2 id="drawing-a-topology-diagram-step-by-step">Drawing a Topology Diagram: Step-by-Step</h2>
+<p><strong>Step 1: Identify Data Sources</strong> Draw all data the system accesses (top zone). Use ⬡ for each category. Draw ⛔ for restricted data. Draw ████ between them to show the boundary.</p>
+<p>Example:</p>
+<p><img alt="Example showing Data Boundary" src="images/appendixB/Visual_Elements_For_Data_Access.png" /></p>
+<p><strong>Step 2: Draw the AI System:</strong> Place □ in the decision zone, positioned to show what it influences.</p>
+<p><strong>Step 3: Draw Decision Points &amp; Humans:</strong> Draw ◇ for each critical decision/transition. Draw ○ for each human actor involved.</p>
+<p><strong>Step 4: Draw Influence Arrows:</strong> Use ⇢ to show where the system shapes what humans see or decide.</p>
+<p><strong>Step 5: Draw Execution Arrows:</strong> Use → to show where the system directly executes actions.</p>
+<p><strong>Step 6: Mark Boundaries:</strong> Draw ════════ to show where the exposure boundary is crossed (where human visibility becomes incomplete).</p>
+<p><strong>Step 7: Mark Oversight:</strong> Draw 👁 to show how humans monitor the system.</p>
+<hr />
+<h2 id="visibility-decision-surfaces">Visibility &amp; Decision Surfaces</h2>
+<p>Authority topologies do not just describe workflow; they explain how visibility is shared.</p>
+<p>A useful way to think about this is through the concept of a Decision Surface.</p>
+<p>The Decision Surface represents the set of cases, options, information, or actions that a human decision-maker can see. Instead of trying to model the Decision Surface visually, provide a state description. The possible states include:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Decision Surface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complete</td>
+<td>Human sees the full relevant set</td>
+</tr>
+<tr>
+<td>Augmented</td>
+<td>Human sees the full set plus AI-generated information</td>
+</tr>
+<tr>
+<td>Filtered</td>
+<td>AI determines which subset is shown</td>
+</tr>
+<tr>
+<td>Generated</td>
+<td>AI creates options not otherwise available</td>
+</tr>
+</tbody>
+</table>
+<p>Changes to the Decision Surface reflect changes in how influence is allocated. A decrease in Decision Surface visibility often signals an early sign of expanding authority.</p>
+<p>The Decision Surface differs from authority. A system might lack execution authority but can still significantly impact outcomes by controlling the Decision Surface available to humans.</p>
+<p>This is most evident in Constrain authority, where the system decides what humans see, review, or consider.</p>
+<hr />
+<h2 id="indicating-topology-mutation">Indicating Topology Mutation</h2>
+<h3 id="mutation-format">Mutation Format</h3>
+<pre><code>Δ Recommend → Constrain
+
++ Queue prioritization
++ Visibility filtering
+- Full human visibility
++ Hidden false-negative risk
++ Attention allocation authority
+</code></pre>
+<h3 id="mutation-categories">Mutation Categories</h3>
+<pre><code>ΔC  Context Mutation     New data access
+ΔI  Influence Mutation   New recommendation/filtering capability
+ΔV  Visibility Mutation      
+Decision Surface changes
+ΔA  Authority Mutation     New decision rights
+ΔE  Execution Mutation     New operational actions
+ΔX  Exposure Mutation     New consequential risk
+</code></pre>
+<p>This becomes extremely powerful later, as it allows for describing a system's evolution. </p>
+<p>For instance:</p>
+<pre><code>ΔC Historical invoices added
+ΔI Routing recommendations introduced
+ΔV Queue filtering enabled
+ΔA Exception routing delegated
+ΔE Routine invoices auto-routed
+</code></pre>
+<p>Now the topology evolution becomes visible.</p>
+<hr />
+<h2 id="the-four-authority-states-as-visual-progressions">The Four Authority States as Visual Progressions</h2>
+<p>The following shows how topologies look at each authority level. These are templates; your system will vary.</p>
+<h3 id="assist-system-provides-information">[ASSIST] — System Provides Information</h3>
+<p><img alt="Assist System Flow" src="images/appendixB/Assist_System_Flow.png" /></p>
+<hr />
+<h3 id="recommend-system-proposes-actions">[RECOMMEND] — System Proposes Actions</h3>
+<p><img alt="Recommend System Flow" src="images/appendixB/Recommend_System_Flow.png" /></p>
+<hr />
+<h3 id="constrain-system-shapes-visibility">[CONSTRAIN] — System Shapes Visibility</h3>
+<p><img alt="Constrain System Flow" src="images/appendixB/Constrain_System_Flow.png" /></p>
+<hr />
+<h3 id="act-system-executes-directly">[ACT] — System Executes Directly</h3>
+<p><img alt="Act System Flow" src="images/appendixB/Act_System_Flow.png" /></p>
+<hr />
+<h2 id="the-five-question-conversation-supporting-context">The Five-Question Conversation (Supporting Context)</h2>
+<p>The visual topology diagram is created through a structured design conversation. This discussion brings out the decisions that fill the diagram.</p>
+<h3 id="why-this-conversation-first">Why This Conversation First?</h3>
+<p>You don't begin with drawing a diagram. You start by considering five key questions. The answers to these questions form the diagram.</p>
+<p>The diagram is the result. The conversation is the thinking behind it.</p>
+<h3 id="the-five-questions">The Five Questions</h3>
+<p><strong>Question 1: What Problem Are We Solving?</strong> Be specific: scale, current process, cost, failure modes, success metrics. 
+<em>Output for diagram</em>: Problem statement (label at top of diagram).</p>
+<p><strong>Question 2: What Can the System See?</strong>  Compare capability needs with the organisation's willingness to provide access.
+<em>Output for diagram:</em> Data sources (⬡) and boundaries (████, ⛔) in DATA ZONE.</p>
+<p><strong>Question 3: What Transitions Can This System Influence?</strong> Consider filtering, prioritization, routing, escalation.
+<em>Output for diagram</em>: Influence arrows (⇢) in DECISION ZONE.</p>
+<p><strong>Question 4: What Can This System Execute?</strong> Identify operational state changes the system can directly cause. 
+<em>Output for diagram:</em> Execution arrows (→) in EXECUTION ZONE.</p>
+<p><strong>Question 5: Where Does Exposure Begin?</strong> Determine at what point humans lose sight of the entire operational surface.<br />
+<em>Output for diagram:</em> Exposure boundary marker (════════) at the right level.</p>
+<h3 id="conversation-diagram-mapping">Conversation → Diagram Mapping</h3>
+<pre><code>QUESTION 2 DATA        →  DATA ZONE (⬡, ⛔, ████)
+QUESTION 3 INFLUENCE   →  DECISION ZONE (⇢, ◇, ○)
+QUESTION 4 EXECUTION   →  EXECUTION ZONE (→, ⬢, 👁)
+QUESTION 5 EXPOSURE    →  EXPOSURE BOUNDARY (════════) placement
+</code></pre>
+<hr />
+<h2 id="b5-five-consistency-checks-as-visual-validation-gates">B5: Five Consistency Checks as Visual Validation Gates</h2>
+<p>Before a topology diagram is approved, it must pass five validation checks. These checks are expressed visually and textually.</p>
+<h3 id="coherence-checks">Coherence Checks</h3>
+<h4 id="check-1-data-influence-alignment">Check 1: Data → Influence Alignment</h4>
+<pre><code>
+Visual: 
+Can you draw an arrow from the data sources (⬡) to the influence actions (⇢) the system claims to perform?
+
+Note: If there are influence actions but no data source to support them diagram is incomplete.
+
+Textual: 
+Does the system have access to all data categories needed to perform the influence it claims?
+
+Pass criteria: 
+Every ⇢ arrow has a supporting ⬡ data source.
+
+</code></pre>
+<h4 id="check-2-influence-authority-alignment">Check 2: Influence → Authority Alignment</h4>
+<pre><code>Visual:
+Do the ⇢ arrows match the claimed authority level?
+
+- Assist: No ⇢ arrows (no influence)
+- Recommend: ⇢ to decision point (shapes judgment)
+- Constrain: ⇢ to filtered dataset/queue (shapes visibility)
+- Act: → arrows instead (direct execution)
+
+Pass criteria:
+The arrows match the authority label on the card.
+
+</code></pre>
+<h4 id="check-3-boundaries-exposure-alignment">Check 3: Boundaries → Exposure Alignment</h4>
+<pre><code>Visual: 
+Is there an ════════ marker? Is it at the right level?
+
+Note: If system claims Constrain authority, the ════════ should be drawn between the system and human visibility. If Act authority, the ════════ should be drawn at execution.
+
+Pass criteria: 
+All exposure points are visually represented; no unacknowledged boundaries.
+
+</code></pre>
+<h4 id="check-4-authority-human-role-alignment">Check 4: Authority → Human Role Alignment</h4>
+<pre><code>Visual: 
+Are there enough ○ actors to perform the role claimed?
+
+Note: If system claims Act authority with humans in &quot;oversight&quot; role, count whether humans have time to audit the volume shown.
+
+Pass criteria: 
+Human role is operationally feasible given volume shown.
+
+</code></pre>
+<h3 id="governance-checks">Governance Checks</h3>
+<h4 id="check-5-reversibility-gate-robustness">Check 5: Reversibility &amp; Gate Robustness</h4>
+<pre><code>Visual: 
+Can you draw a demotion path?
+
+Note: Add a dashed arrow showing: If this system fails, it demotes one level and enters a more restrictive topology.
+
+Example: Act → Constrain (system stops direct execution; humans review before execution).
+
+Pass criteria: 
+Demotion path is clear and executable.
+
+</code></pre>
+<h3 id="operational-checks">Operational Checks</h3>
+<h4 id="check-6-decision-surface-integrity">Check 6: Decision Surface Integrity</h4>
+<pre><code>Visual:  
+Can you clearly identify:
+    - what humans see
+    - what humans do not see
+    - who determines that visibility
+
+Textual: 
+Does the topology accurately represent the Decision Surface available to each actor?
+
+Pass Criteria: 
+Every human decision point has an explicitly modelled Decision Surface. 
+Any reduction in visibility must be represented as a Decision Surface change, topology mutation, or an Increase in exposure.
+</code></pre>
+<h2 id="scope-card-format-visual-first">SCOPE Card Format (Visual-First)</h2>
+<p>A SCOPE Card is a one-page visual record of a system's authority state at a specific point. It is filed in the Scope Ledger.</p>
+<h3 id="scope-card-layout">SCOPE Card Layout</h3>
+<p><img alt="SCOPE Card Layout" src="images/appendixB/Scope_Card_Layout.png" /></p>
+<p><strong>Card Content Details:</strong></p>
+<ul>
+<li><strong>Top:</strong> System name, authority level, entry number, approval date, ledger owner</li>
+<li><strong>Left (40%):</strong> Topology diagram (visual)</li>
+<li><strong>Bottom left:</strong> Authority state summary + human role + reversibility status</li>
+<li><strong>Bottom middle:</strong> Expansion pressure (what organisational question will drive the next expansion?)</li>
+<li><strong>Right (60%):</strong> Exposure analysis + critical metrics + gate triggers</li>
+</ul>
+<p><strong>Design Notes:</strong> The card should be scannable in 30 seconds. A practitioner should see the authority state, the topology, and the critical expansion pressure without reading dense text.</p>
+<h2 id="worked-example-invoice-routing-system">Worked Example — Invoice Routing System</h2>
+<p>This example shows a system progressing from Entry 001 (initial design at Recommend) through a gate check to Entry 002 (expanded authority).</p>
+<p><strong>Entry 001 — Initial Topology (Assist → Recommend → Constrain → Act Progression)</strong></p>
+<p>In this example, note that the invoice system does not start at Act authority. It starts at Recommend and is designed to progress.</p>
+<h4 id="entry-sl-invoiceroute-001a-initial-deployment-recommend">Entry SL-InvoiceRoute-001A — Initial Deployment [RECOMMEND]</h4>
+<p><strong>Topology Diagram Detail:</strong>
+<img alt="Initial Topology (Recommend)|697" src="images/appendixB/Initial_Topology_Recommend.png" /></p>
+<p><em>SCOPE Card — Entry 001A:</em>
+The SCOPE Card reflecting this initial state is as shown below:</p>
+<p><img alt="Scope Card at initial deployment|697" src="images/appendixB/SL_InvoiceRoute_001.png" /></p>
+<p><strong>90-Day Gate Review Passes</strong></p>
+<p>After 90 days:</p>
+<ul>
+<li>Accuracy: 99.2% ✓</li>
+<li>Override rate: 3.2% ✓</li>
+<li>Exception detection: 96% sensitivity, 0.8% false negatives ✓</li>
+<li>Finance team articulates routing rules confidently ✓</li>
+</ul>
+<p>*All gate criteria met.  Authority can expand.</p>
+<p><strong>Entry SL-InvoiceRoute-002 — Expanded Topology (Constrain + Act)</strong></p>
+<p>The system now operates at <strong>two authority levels simultaneously</strong>: Act for routine invoices (80%), Constrain for exception detection (20%).</p>
+<p><strong>Visual Diagram:</strong>
+The updated topology diagram corresponding to this expansion is shown below.</p>
+<p><img alt="Updated Topology with expansion into Act/Constrain" src="images/appendixB/Updated_Topology_Act_Constrain.png" /></p>
+<hr />
+<p><em>SCOPE Card — Entry 002:</em>
+The Scope Card reflecting this new state is shown below:</p>
+<p><img alt="Second SCOPE Card reflecting authority expansion" src="images/appendixB/SL_InvoiceRoute_002.png" /></p>
+<h2 id="visualizing-the-progression">Visualizing the Progression</h2>
+<p>The visual progression shows how topology changes at expansion:</p>
+<p><img alt="Visual Progression of Authority Expansion in the example" src="images/appendixB/Invoice_Example_Visual_Progression.png" /></p>
+<hr />
+<h2 id="integration-with-scope-ledger">INTEGRATION WITH SCOPE LEDGER</h2>
+<p>The topology diagram and SCOPE Card are filed in the Scope Ledger as visual + textual records.</p>
+<p>The Scope Ledger Entry for Entry 002 includes:</p>
+<ol>
+<li><strong>Visual:</strong> SCOPE Card (topology diagram + summary info)</li>
+<li><strong>Textual:</strong> Extended entry with detailed boundaries, exposures, gates, monitoring plan</li>
+<li><strong>Governance:</strong> Approval signatures, review dates, monitoring cadence</li>
+</ol>
+<p>The visual is primary. The text is supporting detail.</p>
+<h2 id="summary-visual-first-governance">Summary: Visual-First Governance</h2>
+<p>Authority topologies are best understood <em>visually</em>, not through text.</p>
+<ul>
+<li>A practitioner looking at the Entry 001A diagram immediately understands: "All invoices visible; the system recommends, humans decide." </li>
+<li>A practitioner looking at the Entry 002 diagram sees right away: "80% are invisible (auto-routed); 20% are filtered (exceptions)." </li>
+<li>The shift from Entry 001A to Entry 002 shows visually how exposure increases.</li>
+</ul>
+<p>The five-question conversation is how you create the diagram. The consistency checks ensure the diagram is clear. The SCOPE Card stores the diagram in the Ledger.</p>
+<p>The diagram itself, the visual representation of authority allocation, is the key artifact.</p>
+    </section>
+    
+    </main>
+
+</div>
+
+</body>
+
+</html>

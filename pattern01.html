@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pattern 01 - Context Creep | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p>Staged Control of Progressive Exposure</p>
+    </div>
+
+    
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+	<div class="actions">
+        
+    </div>
+	
+	<div class="feedback">
+		<div class="title">Discussion & Feedback</div>
+
+		SCOPE is an evolving framework. I welcome comments, critiques, implementation experiences and suggestions for improvement.
+		<a href="mailto:mathew.m.daniel@gmail.com?subject=SCOPE%20Framework%20Feedback&body=Thank%20you%20for%20taking%20the%20time%20to%20review%20SCOPE.%0A%0AName:%0A%0AOrganisation%20(optional):%0A%0ASection(s)%20reviewed:%0A%0AComments:%0A%0ASuggestions:%0A">
+		Email me
+		</a>
+	</div>
+	
+        
+    <details name='test'  open>
+        <summary>Framework</summary>
+
+        <ul>
+            <li><a href="index.html">Abstract</a></li>
+<li><a href="problem.html">1. Introduction - The Authority Problem</a></li>
+<li><a href="authority-model.html">2. The Authority Progression Model</a></li>
+<li><a href="exposure-property.html">3. Exposure, Visibility and Decision Surfaces</a></li>
+<li><a href="authority-topologies.html">4. Designing Authority Topologies</a></li>
+<li><a href="expansion-gates.html">5. Gating Expansion</a></li>
+<li><a href="scope-ledger.html">6. The Scope Ledger</a></li>
+<li><a href="economics.html">7. Economic Implications of Authority Governance</a></li>
+<li><a href="governance-cycle.html">8. The SCOPE Governance Cycle</a></li>
+<li><a href="limitations.html">Limitations and Future Direction</a></li>
+<li><a href="appendix-a.html">Appendix A. Competitive Positioning</a></li>
+<li><a href="appendix-b.html">Appendix B. Topology Modeling</a></li>
+        </ul>
+    </details>
+    
+
+    <details name='test'  open>
+        <summary>Patterns</summary>
+
+        <ul>
+            <li><a href="pattern01.html">Pattern 01 - Context Creep</a></li>
+        </ul>
+    </details>
+    
+    </aside>
+
+    <main class="content">
+		<article>
+			<p>One of the more subtle ways AI systems become consequential has nothing to do with better models or new capabilities.</p>
+<p>It happens through <strong>Context Creep</strong>.</p>
+<p><strong>Context Creep</strong> is when an AI system's accessible context expands gradually through a series of individually reasonable integrations, while nobody stops to reassess what that means if the system is later trusted with more responsibility.</p>
+<p>No single integration feels like a governance decision. That's precisely why it's easy to miss.</p>
+<p>Take a clinical triage assistant.</p>
+<p>It starts with a narrow role: reading symptoms captured during patient intake and suggesting a priority level for a clinician to review. Every recommendation is checked before anything happens.</p>
+<p>The system proves useful, so its context grows. It gains access to medical history. Then medication records. Pathology results. Previous admissions. Later, clinician notes, allergies and data from wearable devices.</p>
+<p>Each addition makes sense. Better context leads to better recommendations.</p>
+<p>On paper, very little has changed. The assistant still isn't diagnosing patients or making decisions independently.</p>
+<p>Months later, the organisation proposes a seemingly modest change: allow the assistant to route low-risk patients directly into standard treatment pathways.</p>
+<p>At first glance, the new authority appears limited.</p>
+<p>But this isn't the system that was originally assessed.</p>
+<p>Its decisions are now informed by a far richer view of each patient. Misread a pathology trend, overlook a drug interaction, or place too much weight on an historical diagnosis, and a patient may be directed down the wrong pathway before a clinician ever reviews the case.</p>
+<p>The request for authority is new. The exposure isn't.</p>
+<p>That changed quietly over months, one integration at a time.</p>
+<p>The governance discussion focused on the decision being requested, because that was the visible change. Exposure had been changing all along.</p>
+<p>That's <strong>Context Creep</strong>.</p>
+<hr />
+<p><strong>Pattern:</strong> Context Creep</p>
+<p><strong>Observable signal:</strong> <em>"We're only connecting one more data source."</em></p>
+<p><strong>Underlying shift:</strong> Context expands quietly while the consequences of future decisions grow with it.</p>
+<p><strong>Governance blind spot:</strong> Authority changes usually require review. Context changes rarely do.</p>
+<p><strong>SCOPE principle:</strong> Governance should reassess exposure whenever context expands—not only when authority does.</p>
+<p><em>Learn more about SCOPE: <a href="https://gondarmd.github.io/scope">https://gondarmd.github.io/scope</a></em></p>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>
