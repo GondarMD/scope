@@ -77,44 +77,126 @@
     <main class="content">
 		<article>
 			<h2 id="pattern-01-context-creep">Pattern 01: Context Creep</h2>
-<h3 id="overview">Overview</h3>
-<p>One of the more subtle ways AI systems become consequential has nothing to do with better models or new capabilities.</p>
-<p>It happens through <strong>Context Creep</strong>.</p>
-<p><strong>Context Creep</strong> is when an AI system's accessible context expands gradually through a series of individually reasonable integrations, while nobody stops to reassess what that means if the system is later trusted with more responsibility.</p>
-<p>No single integration feels like a governance decision. That's precisely why it's easy to miss.</p>
-<p>Take a clinical triage assistant.</p>
-<p>It starts with a narrow role: reading symptoms captured during patient intake and suggesting a priority level for a clinician to review. Every recommendation is checked before anything happens.</p>
-<p>The system proves useful, so its context grows. It gains access to medical history. Then medication records. Pathology results. Previous admissions. Later, clinician notes, allergies and data from wearable devices.</p>
-<p>Each addition makes sense. Better context leads to better recommendations.</p>
-<p>On paper, very little has changed. The assistant still isn't diagnosing patients or making decisions independently.</p>
-<p>Months later, the organisation proposes a seemingly modest change: allow the assistant to route low-risk patients directly into standard treatment pathways.</p>
-<p>At first glance, the new authority appears limited.</p>
-<p>But this isn't the system that was originally assessed.</p>
-<p>Its decisions are now informed by a far richer view of each patient. Misread a pathology trend, overlook a drug interaction, or place too much weight on an historical diagnosis, and a patient may be directed down the wrong pathway before a clinician ever reviews the case.</p>
-<p>The request for authority is new. The exposure isn't.</p>
-<p>That changed quietly over months, one integration at a time.</p>
-<p>The governance discussion focused on the decision being requested, because that was the visible change. Exposure had been changing all along.</p>
-<p>That's <strong>Context Creep</strong>.</p>
-<hr />
-<h3 id="scope-interpretation">SCOPE Interpretation</h3>
-<p>Context Creep illustrates an important distinction in SCOPE between <strong>authority</strong> and <strong>exposure</strong>.</p>
-<p>The assistant's authority has remained unchanged throughout most of its evolution. It continues to recommend rather than act. From a traditional governance perspective, this can create the impression that the system's risk profile is stable.</p>
-<p>In reality, the system's <strong>exposure</strong> has been changing continuously.</p>
-<p>Each additional integration expands the range of information available to the model, increasing the number of factors that can influence its reasoning and the potential consequences of an incorrect interpretation. Exposure therefore grows even while authority remains constant.</p>
-<p>When the organisation later proposes a seemingly modest increase in authority—such as allowing automatic routing of low-risk patients—the governance discussion naturally focuses on the new decision being delegated.</p>
-<p>SCOPE highlights a different question:</p>
-<blockquote>
-<p><em>How much exposure has accumulated since this level of authority was last assessed?</em></p>
-</blockquote>
-<p>The authority request is new, but the exposure profile may already have changed substantially.</p>
-<p>Context Creep therefore demonstrates why SCOPE treats <strong>context expansion as an exposure event</strong>, not merely a technical enhancement. Every meaningful increase in accessible context should trigger a reassessment of exposure, even if the system's authority remains unchanged.</p>
-<hr />
-<h3 id="design-implications"><strong>Design Implications</strong></h3>
+<h3 id="intent">Intent</h3>
+<p>Prevent exposure from increasing unnoticed as an AI system accumulates additional context through incremental integrations.</p>
+<h3 id="problem">Problem</h3>
+<p>AI systems rarely become more consequential through a single major change.</p>
+<p>Instead, they accumulate access to additional data sources over time, each justified independently. While each integration appears low risk, together they can substantially change the consequences of future decisions.</p>
+<p>Traditional governance tends to review changes in authority while overlooking gradual changes in exposure.</p>
+<h3 id="forces-trade-offs">Forces / Trade-offs</h3>
+<table>
+<thead>
+<tr>
+<th>Pressure</th>
+<th>Counter-pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Better context improves system performance</td>
+<td>More context increases potential exposure</td>
+</tr>
+<tr>
+<td>Integrations deliver incremental business value</td>
+<td>Accumulated integrations change system risk</td>
+</tr>
+<tr>
+<td>Authority appears unchanged</td>
+<td>Exposure changes continuously</td>
+</tr>
+<tr>
+<td>Teams optimise locally</td>
+<td>Governance must evaluate globally</td>
+</tr>
+</tbody>
+</table>
+<p>This tension is what creates Context Creep.</p>
+<h3 id="applicability">Applicability</h3>
+<p>Use this pattern whenever:</p>
 <ul>
-<li>Treat context expansion as a governance event.</li>
-<li>Reassess exposure whenever new data sources become available.</li>
-<li>Evaluate authority requests against the system's <em>current</em> exposure, not its originally approved exposure.</li>
-<li>Record significant context expansions in the Scope Ledger.</li>
+<li>AI systems consume multiple organisational data sources.</li>
+<li>Context is expected to expand over time.</li>
+<li>Future authority increases are likely.</li>
+<li>Integrations are owned by different teams.</li>
+<li>Governance reviews occur less frequently than technical changes.</li>
+</ul>
+<h3 id="authority-stages">Authority Stage(s)</h3>
+<p><strong>Primary:</strong> Recommend
+<strong>Also relevant:</strong> Assist and Constrain</p>
+<p>Although authority may remain static, this pattern explains why exposure should still be reassessed.</p>
+<h3 id="actors">Actors</h3>
+<ul>
+<li>AI System</li>
+<li>System Owner</li>
+<li>Data Owners</li>
+<li>Governance Reviewers</li>
+<li>Scope Ledger Custodian</li>
+</ul>
+<h3 id="interaction">Interaction</h3>
+<ol>
+<li>Initial deployment with limited context.</li>
+<li>Additional data source integrated.</li>
+<li>Performance improves.</li>
+<li>Another integration follows.</li>
+<li>Context expands further.</li>
+<li>Exposure silently increases.</li>
+<li>Authority expansion requested.</li>
+<li>Governance discovers it is evaluating a fundamentally different system.</li>
+</ol>
+<h3 id="decision-flow">Decision Flow</h3>
+<pre><code>New data source proposed
+        │
+        ▼
+Does this materially expand accessible context?
+        │
+     Yes ▼
+Exposure reassessment
+        │
+        ▼
+Update Scope Ledger
+        │
+        ▼
+Future authority requests evaluated
+against revised exposure profile
+</code></pre>
+<h3 id="scope-interpretation">SCOPE Interpretation</h3>
+<p>Context Creep illustrates one of SCOPE's central distinctions:</p>
+<blockquote>
+<p>Authority and exposure evolve independently.</p>
+</blockquote>
+<p>Authority determines what the system is permitted to do. Exposure reflects what is at risk if the system is wrong. A system can accumulate significant exposure while exercising exactly the same authority. This is why SCOPE treats context expansion as an exposure event rather than merely a technical enhancement.</p>
+<h3 id="governance-implications">Governance Implications</h3>
+<p>Governance should:</p>
+<ul>
+<li>Treat meaningful context expansion as a review trigger.</li>
+<li>Compare requested authority against current—not historical—exposure.</li>
+<li>Record significant context changes in the Scope Ledger.</li>
+<li>Require reassessment whenever accumulated exposure materially exceeds the exposure profile under which the current authority was approved.</li>
+</ul>
+<h3 id="failure-modes">Failure Modes</h3>
+<p>Common misconceptions that drive failure modes seen in this pattern:</p>
+<ul>
+<li>Reviewing only authority changes.</li>
+<li>Assuming unchanged authority means unchanged risk.</li>
+<li>Treating integrations as purely technical work.</li>
+<li>Failing to maintain an up-to-date Scope Ledger.</li>
+<li>Allowing multiple small changes to bypass governance individually.</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>A clinical triage assistant:</p>
+<ul>
+<li>starts with a narrow role: reading symptoms captured during patient intake and suggesting a priority level for a clinician to review. Every recommendation is reviewed before anything happens.  </li>
+<li>The system proves useful, so its context grows. It gains access to medical history. Then medication records. Pathology results. Previous admissions. Later, clinician notes, allergies and data from wearable devices.  </li>
+<li>Months later, the organisation proposes a seemingly modest change: allow the assistant to route low-risk patients directly into standard treatment pathways.  </li>
+</ul>
+<p>While the increase in authority appears modest, the assistant's decisions are now informed by a far richer view of each patient. </p>
+<p>Equally, the possible consequences of a system error (e.g. misinterpreting a pathology trend, overlooking a drug interaction, etc.), are more severe (e.g. a patient may be directed down the wrong treatment pathway before a clinician ever reviews the case).</p>
+<p>The assistant hasn't simply become more capable. It has become more consequential.</p>
+<h3 id="related-patterns">Related Patterns</h3>
+<p><em>To be completed as the pattern catalogue grows.</em></p>
+<h3 id="references">References</h3>
+<ul>
+<li>LinkedIn Article:  https://www.linkedin.com/posts/mathewdaniel_scope-activity-7483369881598332928-LPev?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAADHJj4B5xWkS0nzPFKPH1KAT_ngRZkoBRM)</li>
 </ul>
 		</article>
     </main>
