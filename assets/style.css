@@ -59,8 +59,17 @@ h2{
     padding-bottom:.4rem;
 }
 
-h4 {
-	margin-top: -30px;
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+    border-radius: 6px;
+    background: #f7f9fc;
+}
+
+pre code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
 }
 
 details {
@@ -171,10 +180,7 @@ img{
     margin: 2rem auto;
 }
 
-.content li,
-.sidebar li {
-    margin-bottom: 0.5rem;
-}
+
 
 .chapter {
     page-break-before: always;
@@ -202,6 +208,30 @@ img{
     color: #666;
 }
 
+.scope-subtitle {
+	margin-top: -30px;
+	font-weight: 800;
+	font-size: 1.5em;
+}
+
+.paper .content {
+    padding: 0;
+    overflow: visible;
+}
+
+.paper article {
+    width: 170mm;
+    margin: 0 aauto;
+}
+
+.paper img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+}
+
 
 @media print {
 
@@ -217,6 +247,17 @@ img{
     .chapter:first-of-type {
 		page-break-before: auto;
         break-before: auto;
+    }
+
+	p,
+    ul,
+    ol,
+    blockquote,
+    table,
+	pre,
+	code
+	{
+        max-width: 100%;
     }
 
     img {
@@ -252,9 +293,10 @@ img{
 
 .collections li,
 .page-nav li {
-
-    margin-bottom: .4rem;
+    margin-bottom: .2rem;
+	font-size: .9rem;
 }
+
 .collections a {
     display: block;
     padding: .45rem .75rem;
@@ -294,4 +336,13 @@ img{
     border: 0;
     border-top: 1px solid #ececec;
     margin: 1.5rem 0;
+}
+
+.actions {
+    margin-top: 1rem;
+    min-height: 2.5rem;   /* Reserve enough height */
+}
+
+.actions a.hidden {
+    visibility: hidden;
 }
