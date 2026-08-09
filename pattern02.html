@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pattern 02 - Recommendation Trap | SCOPE</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="title">
+        <h1>SCOPE</h1>
+        <p class="scope-subtitle">Staged Control of Progressive Exposure</p>
+    </div>
+
+    
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+	<div class="actions">
+        
+        <div class="actions">
+            <a class="hidden" href="patterns.pdf">
+                Download Framework PDF
+            </a>
+        </div>
+        
+    </div>
+	
+	<div class="feedback">
+		<div class="title">Discussion & Feedback</div>
+
+		SCOPE is an evolving framework. I welcome comments, critiques, implementation experiences and suggestions for improvement.
+		<a href="mailto:mathew.m.daniel@gmail.com?subject=SCOPE%20Framework%20Feedback&body=Thank%20you%20for%20taking%20the%20time%20to%20review%20SCOPE.%0A%0AName:%0A%0AOrganisation%20(optional):%0A%0ASection(s)%20reviewed:%0A%0AComments:%0A%0ASuggestions:%0A">
+		Email me
+		</a>
+	</div>
+	
+        
+    <div class="collection-nav">
+
+        <div class="nav-title">
+            Knowledge Base
+        </div>
+
+        <ul class="collections">
+            <li class=""><a href="index.html">Framework</a></li>
+<li class="active"><a href="pattern01.html">Patterns</a></li>
+        </ul>
+
+    </div>
+
+    <hr>
+
+    <div class="page-nav">
+
+        <div class="nav-title">
+            Contents
+        </div>
+
+        <ul>
+            <li><a  href="pattern01.html">Pattern 01 - Context Creep</a></li>
+<li><a  class="active" href="pattern02.html">Pattern 02 - Recommendation Trap</a></li>
+        </ul>
+
+    </div>
+    
+    </aside>
+
+    <main class="content">
+		<article>
+			<h2 id="pattern-02-recommendation-trap">Pattern 02: Recommendation Trap</h2>
+<h3 id="intent">Intent</h3>
+<p>Identify situations where an AI system's practical influence over a decision increases without a corresponding change in its formally delegated authority.</p>
+<p>The pattern is particularly concerned with the transition from <strong>Recommend</strong> to <strong>Constrain</strong> that can occur through changes in human behaviour and workflow rather than through an explicit authority decision.</p>
+<h3 id="problem">Problem</h3>
+<p>An AI system is introduced to provide recommendations while a human retains formal decision authority.</p>
+<p>As confidence in the system grows, people naturally adapt how they work with it. Recommendations become the starting point for human judgement rather than one input among several.</p>
+<p>Over time, the human may shift from:</p>
+<blockquote>
+<p><strong>considering a recommendation and making a decision</strong></p>
+</blockquote>
+<p>to:</p>
+<blockquote>
+<p><strong>confirming a recommendation unless there is a reason to challenge it.</strong></p>
+</blockquote>
+<p>No formal authority has been delegated to the system. Yet its influence over the decision has increased.</p>
+<p>The resulting governance problem is that <strong>formal authority no longer provides a reliable indication of practical influence</strong>.</p>
+<h3 id="forces-trade-offs">Forces / Trade-offs</h3>
+<p>The pattern is driven by several mutually reinforcing forces:</p>
+<ul>
+<li><strong>Efficiency</strong>: accepting a reliable recommendation is faster than independently reviewing all available information.</li>
+<li><strong>Reliability</strong>: successful recommendations increase confidence in the system.</li>
+<li><strong>Consistency</strong>: following the recommendation produces a more standardised workflow.</li>
+<li><strong>Cognitive effort</strong>: challenging a recommendation requires more effort than accepting it.</li>
+<li><strong>Accountability</strong>:  the human remains formally responsible for the decision, even as the system increasingly shapes it.</li>
+<li><strong>Automation pressure</strong>: once the recommendation is routinely accepted, further automation becomes an apparently natural next step.</li>
+</ul>
+<p>The central tension is between <strong>human deliberation and operational efficiency</strong>.</p>
+<h3 id="applicability">Applicability</h3>
+<p>Applies where:</p>
+<ul>
+<li>AI recommendations inform consequential human decisions.</li>
+<li>Humans retain formal decision authority.</li>
+<li>Recommendations can influence what receives attention or scrutiny.</li>
+<li>The cost of independently evaluating each case creates pressure to rely on the system.</li>
+</ul>
+<p>Examples include:</p>
+<ul>
+<li>lending and credit assessment</li>
+<li>clinical decision support</li>
+<li>insurance underwriting</li>
+<li>recruitment</li>
+<li>fraud detection</li>
+<li>compliance review</li>
+<li>security operations</li>
+<li>professional judgement workflows</li>
+</ul>
+<h3 id="authority-stages">Authority Stage(s)</h3>
+<p>Primarily:</p>
+<p><strong>Recommend → Constrain</strong></p>
+<p>The system is initially operating at <strong>Recommend</strong>: it proposes or highlights a course of action while the human remains the decision-maker.</p>
+<p>The pattern emerges when the recommendation begins to shape the available decision space: what receives attention, what is investigated, and what appears to be the default outcome.</p>
+<p>The system can therefore begin exhibiting characteristics of <strong>Constrain</strong> without an explicit transition in formal authority.</p>
+<h3 id="actors">Actors</h3>
+<ul>
+<li><strong>AI system</strong>: generates recommendations, classifications, rankings or proposed actions.</li>
+<li><strong>Human decision-maker</strong>: retains formal decision authority.</li>
+<li><strong>Workflow owner</strong>: designs or modifies the process in which recommendations are consumed.</li>
+<li><strong>Governance function</strong>: defines and reviews the intended authority boundary.</li>
+<li><strong>Organisation</strong>: remains accountable for the resulting decisions and outcomes.</li>
+</ul>
+<h3 id="interaction">Interaction</h3>
+<p>The key interaction is not simply:</p>
+<blockquote>
+<p>AI → Human → Decision</p>
+</blockquote>
+<p>but the gradual transformation of that interaction:</p>
+<pre><code>Initial:
+
+AI recommendation
+       ↓
+Human considers evidence
+       ↓
+Independent judgement
+       ↓
+Decision
+</code></pre>
+<p>into:</p>
+<pre><code>Mature workflow:
+
+AI recommendation
+       ↓
+Human starts from recommendation
+       ↓
+Challenge if necessary
+       ↓
+Decision
+</code></pre>
+<p>The formal decision point remains human.</p>
+<p>The practical starting point has moved to the AI.</p>
+<h3 id="decision-flow">Decision Flow</h3>
+<p>A typical progression is:</p>
+<pre><code>Recommendation introduced
+        ↓
+Recommendation proves useful
+        ↓
+Human confidence increases
+        ↓
+Recommendation becomes starting point
+        ↓
+Attention is allocated according to recommendation
+        ↓
+Alternative judgements require additional effort
+        ↓
+Human increasingly confirms rather than evaluates
+        ↓
+System begins to constrain the decision space
+</code></pre>
+<p>The critical governance point is the transition between <strong>evaluation</strong> and <strong>confirmation</strong>.</p>
+<h3 id="governance-implications">Governance Implications</h3>
+<p>Governance should not assess authority solely by asking:</p>
+<blockquote>
+<p>"Who has the final decision?"</p>
+</blockquote>
+<p>It should also examine:</p>
+<ul>
+<li>What does the human see first?</li>
+<li>What receives human attention?</li>
+<li>Which cases receive additional scrutiny?</li>
+<li>How often are recommendations challenged?</li>
+<li>What effort is required to override the recommendation?</li>
+<li>Has the workflow been redesigned around the AI's output?</li>
+<li>Has the human's role changed from judgement to confirmation?</li>
+</ul>
+<p>The pattern suggests that <strong>formal authority is a lagging indicator of practical influence</strong>.</p>
+<p>A governance review that observes only explicit permissions may therefore miss a transition from <strong>Recommend</strong> toward <strong>Constrain</strong>.</p>
+<h3 id="failure-modes">Failure Modes</h3>
+<ul>
+<li><strong>Confirmation behaviour</strong>: humans routinely approve recommendations without independent evaluation.</li>
+<li><strong>Attention bias</strong>: recommendations determine which cases receive detailed scrutiny.</li>
+<li><strong>Override friction</strong>: challenging the system becomes materially harder than accepting it.</li>
+<li><strong>Workflow capture</strong>: surrounding processes become structured around the system's recommendations.</li>
+<li><strong>Authority ambiguity</strong>: humans remain formally accountable while practical influence shifts toward the system.</li>
+<li><strong>Silent progression</strong>: the system crosses into constraining behaviour without an explicit authority review.</li>
+</ul>
+<h3 id="related-patterns">Related Patterns</h3>
+<ul>
+<li><strong>Context Creep</strong>: expanded context can increase the significance of recommendations without changing formal authority.</li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li>SCOPE Framework: <em>Progression Model: Assist → Recommend → Constrain → Act</em></li>
+<li>SCOPE Framework: <em>Authority Staging</em></li>
+<li>SCOPE Framework: <em>Exposure Definition</em></li>
+<li>SCOPE Pattern 01: <em>Context Creep</em></li>
+<li><a href="https://www.linkedin.com/posts/mathewdaniel_scope-share-7492216948957839360-J4l0/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAADHJj4B5xWkS0nzPFKPH1KAT_ngRZkoBRM">LinkedIn article: Recommendation Trap</a></li>
+</ul>
+		</article>
+    </main>
+
+</div>
+
+</body>
+
+</html>
